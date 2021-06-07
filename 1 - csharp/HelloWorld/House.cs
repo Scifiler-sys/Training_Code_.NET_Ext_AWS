@@ -1,5 +1,8 @@
-public class House
+namespace HouseFunction //Similar to Java packages
 {
-    //This is a field
-    public string _color = "Red"; //Convert public to private later
+    public class House
+    {
+        //This is a field
+        public string _color = "Red"; //Convert public to private later
+    }
 }
