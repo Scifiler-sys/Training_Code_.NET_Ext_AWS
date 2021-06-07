@@ -29,7 +29,12 @@ namespace HelloWorld
             Console.WriteLine(Program._first + prgm._last); //Second thing you write when talking about static
             Console.WriteLine(Program.Hello()); //For void method
 
-            Console.WriteLine(args[0] + args[1]); //To test string[] args parameter
+            // Console.WriteLine(args[0] + args[1]); //To test string[] args parameter
+
+            House house1 = new House(); //The new keyword tells the compiler to make a new object
+            Console.WriteLine(house1._color);
+            House house2 = new House();
+            Console.WriteLine(house2._color);
         }
 
         static string Hello() //Method we will use
