@@ -23,6 +23,7 @@ namespace HelloWorld
         */
         static void Main(string[] args)
         {
+            Console.WriteLine("====Hello World====");
             // Console.WriteLine(Program._first + Program._last); //First thing you write
 
             Program prgm = new Program();
@@ -32,10 +33,15 @@ namespace HelloWorld
 
             // Console.WriteLine(args[0] + args[1]); //To test string[] args parameter
 
+            Console.WriteLine("====Classes and Objects====");
             House house1 = new House(); //The new keyword tells the compiler to make a new object
             Console.WriteLine(house1._color);
             House house2 = new House();
             Console.WriteLine(house2._color);
+
+            Console.WriteLine("====Collections Tests====");
+            Collections collectObj = new Collections();
+            collectObj.CollectionsMain();
         }
 
         static string Hello() //Method we will use
