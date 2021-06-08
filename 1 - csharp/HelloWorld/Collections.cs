@@ -44,7 +44,5 @@ public class Collections
         {
             Console.WriteLine(element);
         }
-
-        
     }
 }
