@@ -35,9 +35,14 @@ namespace HelloWorld
 
             Console.WriteLine("====Classes and Objects====");
             House house1 = new House(); //The new keyword tells the compiler to make a new object
-            Console.WriteLine(house1._color);
+            Console.WriteLine(house1.Color);
             House house2 = new House();
-            Console.WriteLine(house2._color);
+            house2.Color = "Blue";
+            Console.WriteLine(house2.Color);
+            // house2.Price = 5000;
+            Console.WriteLine(house2.Price);
+            House house3 = new House(10000);
+            Console.WriteLine(house3.Price);
 
             Console.WriteLine("====Collections Tests====");
             Collections collectObj = new Collections();
