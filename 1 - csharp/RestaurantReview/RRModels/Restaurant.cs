@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 /*
     This RRModels namespace is responsible for holding the data structure of our application
@@ -18,7 +19,14 @@ namespace RRModels
         public string City
         {
             get { return $"This restaurant is at {_city}"; }
-            set { _city = value.ToLower(); }
+            set 
+            { 
+                //This checks the string if it has anything but letters
+                if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
+                    throw new Exception("City can only hold letters!");
+                    
+                _city = value;
+            }
         }
         
         //You can just create stand alone properties

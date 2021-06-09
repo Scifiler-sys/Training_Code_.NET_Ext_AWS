@@ -3,33 +3,27 @@ using System.Threading;
 
 namespace RRUI
 {
-    public class RestaurantMenu
+    public class RestaurantMenu : IMenu
     {
-
-        //This method will start our UI
-        public void Start()
+        public void Menu()
         {
-            bool repeat = true;
+            Console.WriteLine("Welcome to the Restaurant Menu!");
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("[0] Go Back");
+        }
 
-            //Will keep repeating until we choose to exit out of it
-            while (repeat)
+        public MenuType YourChoice()
+        {
+            string userInput = Console.ReadLine();
+            switch (userInput)
             {
-                Console.Clear();
-                Console.WriteLine("Welcome to my Restaurant!");
-                Console.WriteLine("What would you like to do?");
-                Console.WriteLine("[0] Exit");
-                string input = Console.ReadLine();
-                switch (input)
-                {
-                    case "0":
-                        repeat = false;
-                        break;
-                    default:
-                        Console.WriteLine("Please input a valid response");
-                        Thread.Sleep(1000);
-                        break;
-                }
-            }
+                case "0":
+                    return MenuType.MainMenu;
+                default:
+                    Console.WriteLine("Please input a valid response");
+                    Thread.Sleep(1000);
+                    return MenuType.RestaurantMenu;
+            };
         }
     }
 }
