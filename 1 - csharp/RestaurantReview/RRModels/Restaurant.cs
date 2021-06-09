@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 /*
     This RRModels namespace is responsible for holding the data structure of our application
@@ -24,7 +25,7 @@ namespace RRModels
         public string State { get; set; }
 
         public int Id { get; set; }
-        
 
+        public List<Review> Reviews { get; set; }
     }
 }
