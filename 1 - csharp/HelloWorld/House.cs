@@ -1,3 +1,5 @@
+using System;
+
 namespace HouseFunction //Similar to Java packages
 {
     public class House
@@ -30,5 +32,20 @@ namespace HouseFunction //Similar to Java packages
         }
 
         public int Price { get; set; }
+
+        public static void HouseMain()
+        {
+            Console.WriteLine("====Classes and Objects====");
+            House house1 = new House(); //The new keyword tells the compiler to make a new object
+            Console.WriteLine(house1.Color);
+            House house2 = new House();
+            house2.Color = "Blue";
+            Console.WriteLine(house2.Color);
+            // house2.Price = 5000;
+            Console.WriteLine(house2.Price);
+            House house3 = new House(10000);
+            Console.WriteLine(house3.Price);
+            
+        }
     }
 }

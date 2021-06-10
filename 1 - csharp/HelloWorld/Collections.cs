@@ -12,6 +12,7 @@ public class Collections
 
     public void CollectionsMain()
     {
+        Console.WriteLine("====Collections Tests====");
         Console.WriteLine("=List Demo=");
         strings.Add("First element");
         strings.Add("Second element");
