@@ -43,6 +43,7 @@ namespace RRUI
                         break;
                     default:
                         Console.WriteLine("Please put a valid response");
+                        currentMenu = MenuType.MainMenu;
                         break;
                 }
             }

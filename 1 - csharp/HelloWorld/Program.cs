@@ -48,14 +48,9 @@ namespace HelloWorld
             Collections collectObj = new Collections();
             collectObj.CollectionsMain();
 
-            Console.WriteLine("====OOP Tests====");
-            Dog dog1 = new Dog()
-            {
-                OwnerName = "Stephen"
-            };
-            Console.WriteLine(dog1.OwnerName);
-            dog1.Speak();
-            dog1.Speak("Bark2");
+            OOP.OOPMain();
+
+            BoxingAndUnboxing.BoxingMainMethod();
         }
 
         static string Hello() //Method we will use
