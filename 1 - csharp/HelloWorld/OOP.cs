@@ -56,10 +56,14 @@ namespace HelloWorld
         public static void OOPMain()
         {
             Console.WriteLine("====OOP Tests====");
+
+            //Created new dog object
             Dog dog1 = new Dog()
             {
                 OwnerName = "Stephen"
             };
+
+            //Test the properties of dog object
             Console.WriteLine(dog1.OwnerName);
             dog1.Speak();
             dog1.Speak("Bark2");

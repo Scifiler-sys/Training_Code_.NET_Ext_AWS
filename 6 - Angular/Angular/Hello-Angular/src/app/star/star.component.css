@@ -1,0 +1,7 @@
+.crop{
+    overflow:hidden; /* We hide the stars that goes past their rank */
+}
+
+div {
+    cursor:pointer; /* Changes our mouse icon to a pointer icon when we hover over the stars*/
+}

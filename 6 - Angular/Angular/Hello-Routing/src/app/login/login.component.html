@@ -1,0 +1,19 @@
+<div class = "container">
+    <h1 @fade>Login information</h1>
+    <form #userForm = "ngForm" class = "form-group" (ngSubmit) = "onSubmit(userForm.value)">
+        <div @move @fade class = "form-group">
+            <label>Name</label>
+            <input type = "text" #nameRef = "ngModel" class = "form-control" [(ngModel)] = "name" name = "name" required>
+            <div [hidden] = "nameRef.valid || nameRef.untouched" class = "alert alert-danger"> Please Enter a name </div>
+        </div>
+        <div @move @fade>
+            <label>Password</label>
+            <input type = "text" #passRef = "ngModel" class ="form-control" [(ngModel)] = "password" name = "password">
+        </div>
+        <div @move @fade>
+            <label>Phone Number</label>
+            <input type = "number" #phoneNum = "ngModel" class = "form-control" [(ngModel)] = "phoneNumber" name = "phoneNumber">
+        </div>
+        <button @fade type = "submit" class = "btn btn-primary">Submit</button>
+    </form>
+</div>
