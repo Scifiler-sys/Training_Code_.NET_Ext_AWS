@@ -22,6 +22,7 @@ export class StarComponent implements OnInit, OnChanges{ //Child component of th
     -In this case, we are sending a string value
     They might ask you about EventEmitters and what are they/used for
   */
+ 
   @Output() starClick = new EventEmitter<string>();
 
   starWidth: number = 0;
