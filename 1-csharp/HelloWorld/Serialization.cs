@@ -7,7 +7,7 @@ namespace HelloWorld
 {
     public class Serialization
     {
-        private const string _filePath = "./StoredJsonFile/House.json";
+        private const string _filePath = "./StoredFile/House.json";
         public static void SerialMain()
         {
             //Created house object to be serialized
