@@ -38,9 +38,14 @@ namespace HelloWorld
             Collections collectObj = new Collections();
             collectObj.CollectionsMain();
 
+            //Testing OOP Pillars
             OOP.OOPMain();
 
+            //Testing Boxing and Unboxing
             BoxingAndUnboxing.BoxingMainMethod();
+
+            //Testing Serialization
+            Serialization.SerialMain();
         }
 
         static string Hello() //Method we will use

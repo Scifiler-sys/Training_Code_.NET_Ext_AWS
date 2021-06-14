@@ -33,6 +33,10 @@ namespace HouseFunction //Similar to Java packages
 
         public int Price { get; set; }
 
+        public override string ToString()
+        {
+            return $"Color: {Color}\nPrice: {Price}";
+        }
         public static void HouseMain()
         {
             Console.WriteLine("====Classes and Objects====");
