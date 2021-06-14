@@ -22,7 +22,7 @@ namespace PokeUI
                     case MenuType.MainMenu:
                         restMenu = new MainMenu();
                         break;
-                    case MenuType.RestaurantMenu:
+                    case MenuType.BattleMenu:
                         restMenu = new RestaurantMenu();
                         break;
                     case MenuType.ShowRestaurant:

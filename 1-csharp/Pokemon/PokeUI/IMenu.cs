@@ -1,5 +1,4 @@
 using System;
-using static RRUI.Program;
 
 namespace PokeUI
 {
@@ -7,7 +6,6 @@ namespace PokeUI
     {
         MainMenu,
         BattleMenu,
-        ChoosePokeMenu,
         FightMenu,
         Exit
     }
