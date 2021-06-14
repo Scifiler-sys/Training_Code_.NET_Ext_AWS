@@ -42,7 +42,7 @@ namespace HelloWorld
         //Must state override (non-access modifier) that this method overrides a method in the base class
         public override void Speak()
         {
-            base.Speak(); //Will call the base class method (put during Liskov substitution principle)
+            //base.Speak(); //Will call the base class method (put during Liskov substitution principle)
             Console.WriteLine("Bark");
         }
         //Example of Method Overloading
