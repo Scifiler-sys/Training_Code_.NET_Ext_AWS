@@ -12,7 +12,7 @@ namespace RRDL
     /// </summary>
     public class Repository : IRepository
     {
-        private const string _filePath = "./Database/Restaurant.json";
+        private const string _filePath = "./../RRDL/Database/Restaurant.json";
         private string _jsonString;
         public Restaurant AddRestaurant(Restaurant p_rest)
         {

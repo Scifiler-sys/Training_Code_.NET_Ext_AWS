@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RRModels", "RRModels\RRModels.csproj", "{833BC7DA-0C23-412D-8EAA-39F787BC2D4E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RRUI", "RRUI\RRUI.csproj", "{B42DC9FA-7CAF-4512-ACD0-4E63070F43D6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AF477A0-1D38-4582-A7DD-A8146D2DC9E7} = {3AF477A0-1D38-4582-A7DD-A8146D2DC9E7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RRDL", "RRDL\RRDL.csproj", "{3B8080B4-C3CC-4F3A-A62F-7419FB01F5C9}"
 	ProjectSection(ProjectDependencies) = postProject
