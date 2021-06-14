@@ -40,5 +40,11 @@ namespace RRModels
         {
             return (p_rest.State == this.State && p_rest.City == this.City && p_rest.Name == this.Name);
         }
+
+        //Will be called upon when the object needs to display a string value
+        public override string ToString()
+        {
+            return $"Name: {Name}\nCity: {City}\nState: {State}";
+        }
     }
 }

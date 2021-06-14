@@ -23,7 +23,9 @@ namespace RRUI
             List<Restaurant> restaurants = _restBL.GetAllRestaurant();
             foreach (Restaurant item in restaurants)
             {
+                Console.WriteLine("=============================");
                 Console.WriteLine(item);
+                Console.WriteLine("=============================");
             }
             Console.WriteLine("[0] Go Back");
         }

@@ -11,9 +11,9 @@ namespace RRUI
             switch (userInput)
             {
                 case "0":
-                    return MenuType.RestaurantMenu;
-                case "1":
                     return MenuType.Exit;
+                case "1":
+                    return MenuType.RestaurantMenu;
                 default:
                     Console.WriteLine("Please input a valid response");
                     Thread.Sleep(1000);
@@ -26,8 +26,8 @@ namespace RRUI
         {
             Console.WriteLine("Welcome to the Main Menu!");
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("[0] Go to Restaurant Menu");
-            Console.WriteLine("[1] Exit");
+            Console.WriteLine("[1] Go to Restaurant Menu");
+            Console.WriteLine("[0] Exit");
         }
     }
 }
