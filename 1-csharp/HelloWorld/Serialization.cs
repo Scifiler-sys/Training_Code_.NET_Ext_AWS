@@ -18,7 +18,8 @@ namespace HelloWorld
             };
 
             //declared a string var and point it to the serialized version of the house1
-            string jsonString = JsonSerializer.Serialize(house1);
+            //We added JsonSerializerOptions to format it better for us (it uses more memory though thats why by default it is a single line to save space)
+            string jsonString = JsonSerializer.Serialize(house1, new JsonSerializerOptions {WriteIndented = true});
 
             //Seeing the string
             Console.WriteLine(jsonString);
@@ -31,7 +32,7 @@ namespace HelloWorld
             {
                 //ReadAllText method might throw an error if it isn't able to find the filepath
                 //We will handle it 
-                jsonString = File.ReadAllText(_filePath+ "sedf");//+"askljhfe");
+                jsonString = File.ReadAllText(_filePath);//+"askljhfe");
                 House house2 = JsonSerializer.Deserialize<House>(jsonString);
                 Console.WriteLine(house2);
                 // throw new Exception("unknown error");

@@ -1,1 +1,4 @@
-{"Color":"red","Price":100000}
+{
+  "Color": "red",
+  "Price": 100000
+}
