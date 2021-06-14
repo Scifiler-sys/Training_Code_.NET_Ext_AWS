@@ -32,8 +32,13 @@ namespace RRModels
         //You can just create stand alone properties
         public string State { get; set; }
 
-        public int Id { get; set; }
+        public string Name { get; set; }
 
         public List<Review> Reviews { get; set; }
+
+        public bool Equals(Restaurant p_rest)
+        {
+            return (p_rest.State == this.State && p_rest.City == this.City && p_rest.Name == this.Name);
+        }
     }
 }
