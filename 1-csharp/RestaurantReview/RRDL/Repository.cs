@@ -49,7 +49,7 @@ namespace RRDL
         public Restaurant GetRestaurant(Restaurant p_rest)
         {
             //LINQ expressions has a handful of methods for us to utilize (GO RESEARCH IT SINCE IT WILL MAKE YOUR CODING LIFE EASIER)
-            //This is an example of a delegates 
+            //This is an example of a delegate
             //FirstOrDefault allows us to grab one instance from the List given some sort of condition we set
             return GetAllRestaurant().FirstOrDefault(rest => rest.Equals(p_rest)); //=> gives a lambda operator
             //Create the equals method in the model so it makes more sense what we are comparing

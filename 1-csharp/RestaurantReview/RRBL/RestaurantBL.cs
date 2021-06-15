@@ -9,6 +9,12 @@ namespace RRBL
     {
         private IRepository _repo;
 
+        /// <summary>
+        /// We are defining the dependencies this class needs in the constructor
+        /// We do it this way (with interfaces) because we can easily switch out which implementation we will be using later on
+        /// Such as later on, (next week) we will switch out our data storage to instead of file storage, we will connect to a cloud service
+        /// </summary>
+        /// <param name="p_repo">Passes the repository object from our DLs</param>
         public RestaurantBL(IRepository p_repo)
         {
             _repo = p_repo;
