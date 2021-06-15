@@ -40,7 +40,7 @@ namespace RRUI
                 default:
                     Console.WriteLine("Please input a valid response");
                     Thread.Sleep(1000);
-                    return MenuType.ShowRestaurant;
+                    return MenuType.ShowRestaurantMenu;
             };
         }
     }

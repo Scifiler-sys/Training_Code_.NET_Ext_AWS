@@ -18,7 +18,7 @@ namespace RRModels
         //You can also manipulate how this field will be get
         public string City
         {
-            get { return $"This restaurant is at {_city}"; }
+            get { return _city; }
             set 
             { 
                 //This checks the string if it has anything but letters

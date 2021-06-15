@@ -21,7 +21,7 @@ namespace RRUI
             // Console.WriteLine(rest.City);
 
             IMenu restMenu = new MainMenu();
-            IRestaurantBL restBL = new RestaurantBL(new Repository());
+            IFactory factory = new MenuFactory();
             MenuType currentMenu = MenuType.MainMenu;
             bool repeat = true;
 
@@ -34,13 +34,13 @@ namespace RRUI
                 switch (currentMenu)
                 {
                     case MenuType.MainMenu:
-                        restMenu = new MainMenu();
+                        restMenu = factory.getMenu(MenuType.MainMenu);
                         break;
                     case MenuType.RestaurantMenu:
-                        restMenu = new RestaurantMenu();
+                        restMenu = factory.getMenu(MenuType.RestaurantMenu);
                         break;
-                    case MenuType.ShowRestaurant:
-                        restMenu = new ShowRestaurantMenu(restBL);
+                    case MenuType.ShowRestaurantMenu:
+                        restMenu = factory.getMenu(MenuType.ShowRestaurantMenu);
                         break;
                     case MenuType.Exit:
                         Console.WriteLine("Good bye!");

@@ -2,6 +2,7 @@ using System;
 
 namespace PokeUI
 {
+    //enum to make our switch cases make more sense
     public enum MenuType
     {
         MainMenu,

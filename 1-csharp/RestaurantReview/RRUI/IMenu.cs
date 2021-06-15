@@ -7,7 +7,7 @@ namespace RRUI
     {
         MainMenu,
         RestaurantMenu,
-        ShowRestaurant,
+        ShowRestaurantMenu,
         Exit
     }
     //The purpose of the interface is to ensure every menu that we create will have a start method
