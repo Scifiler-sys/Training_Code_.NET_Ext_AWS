@@ -46,6 +46,9 @@ namespace HelloWorld
 
             //Testing OOP Pillars
             OOP.OOPMain();
+
+            //Testing Boxing and Unboxing
+            BoxingAndUnboxing.BoxingMainMethod();
         }
 
         static string Hello() //Method we will use
