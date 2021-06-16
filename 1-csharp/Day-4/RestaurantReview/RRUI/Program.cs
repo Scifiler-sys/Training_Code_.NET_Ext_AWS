@@ -2,7 +2,6 @@
 using System.Threading;
 using RRBL;
 using RRDL;
-using RRModels;
 
 namespace RRUI
 {
@@ -31,6 +30,9 @@ namespace RRUI
                         break;
                     case MenuType.RestaurantMenu:
                         restMenu = new RestaurantMenu();
+                        break;
+                    case MenuType.ShowRestaurantMenu:
+                        restMenu = new ShowRestaurantMenu(new RestaurantBL(new Repository()));
                         break;
                     case MenuType.Exit:
                         Console.WriteLine("Good bye!");
