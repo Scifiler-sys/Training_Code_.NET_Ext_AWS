@@ -49,6 +49,9 @@ namespace HelloWorld
 
             //Testing Boxing and Unboxing
             BoxingAndUnboxing.BoxingMainMethod();
+
+            //Testing Serialization
+            Serialization.SerialMain();
         }
 
         static string Hello() //Method we will use

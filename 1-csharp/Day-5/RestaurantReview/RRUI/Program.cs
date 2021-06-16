@@ -2,7 +2,6 @@
 using System.Threading;
 using RRBL;
 using RRDL;
-using RRModels;
 
 namespace RRUI
 {
@@ -12,6 +11,7 @@ namespace RRUI
         {
             IMenu restMenu = new MainMenu();
             MenuType currentMenu = MenuType.MainMenu;
+            IFactory factory = new MenuFactory();
             bool repeat = true;
 
             //Will keep repeating until we choose to exit out of it
@@ -27,10 +27,13 @@ namespace RRUI
                 switch (currentMenu)
                 {
                     case MenuType.MainMenu:
-                        restMenu = new MainMenu();
+                        restMenu = factory.getMenu(MenuType.MainMenu);
                         break;
                     case MenuType.RestaurantMenu:
-                        restMenu = new RestaurantMenu();
+                        restMenu = factory.getMenu(MenuType.RestaurantMenu);
+                        break;
+                    case MenuType.ShowRestaurantMenu:
+                        restMenu = factory.getMenu(MenuType.ShowRestaurantMenu);
                         break;
                     case MenuType.Exit:
                         Console.WriteLine("Good bye!");
