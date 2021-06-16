@@ -21,6 +21,9 @@ namespace HouseFunction //Similar to Java packages
 
         public int Price { get; set; }
 
+        //A special type of method that you inherit from the System.Object
+        //This method is invoked whenever you need a string representation of the object
+        //By default, it just gives the current namespace of the object
         public override string ToString()
         {
             return $"Color: {Color}\nPrice: {Price}";
@@ -33,11 +36,9 @@ namespace HouseFunction //Similar to Java packages
             House house2 = new House();
             house2.Color = "Blue";
             Console.WriteLine(house2.Color);
-            // house2.Price = 5000;
+            house2.Price = 5000;
             Console.WriteLine(house2.Price);
-            House house3 = new House(10000);
-            Console.WriteLine(house3.Price);
-            
+            Console.WriteLine(house2);
         }
     }
 }
