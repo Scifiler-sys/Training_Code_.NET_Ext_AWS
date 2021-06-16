@@ -4,17 +4,17 @@ using System.Collections.Generic;
 
 public class Collections
 {
-    //Generic
+    //Generic collection
     List<string> strings = new List<string>();
 
-    //Non-generic
+    //Non-generic collection
     ArrayList arrayLists = new ArrayList();
 
     public void CollectionsMain()
     {
         Console.WriteLine("====Collections Tests====");
         Console.WriteLine("=List Demo=");
-        //We are adding elements to the strings List
+        //We are adding elements to the strings List (You can show List documentation for the methods)
         strings.Add("First element");
         strings.Add("Second element");
         strings.Add("Third element");
