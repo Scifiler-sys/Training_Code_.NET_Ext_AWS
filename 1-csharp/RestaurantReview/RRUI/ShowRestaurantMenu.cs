@@ -20,6 +20,9 @@ namespace RRUI
         public void Menu()
         {
             Console.WriteLine("List of Restaurant");
+            //We used our BLs to get information for our UI
+            //Our UI should NEVER interact with our DL
+            //Since BL might have futher data clean up and we want that rather than the raw data from DL
             List<Restaurant> restaurants = _restBL.GetAllRestaurant();
             foreach (Restaurant item in restaurants)
             {

@@ -3,6 +3,7 @@ using static RRUI.Program;
 
 namespace RRUI
 {
+    //we are using enumerations so our program class will make it more readable
     public enum MenuType
     {
         MainMenu,
@@ -10,10 +11,10 @@ namespace RRUI
         ShowRestaurantMenu,
         Exit
     }
-    //The purpose of the interface is to ensure every menu that we create will have a start method
+    //The purpose of the interface is to ensure every menu that we create will have a menu and yourchoice method
+    //as an interface, it will automatically fill in public (access-modifier) and abstract (non-access modifier)
     public interface IMenu
     { 
-        //as an interface, it will automatically fill in public (access-modifier) and abstract (non-access modifier)
         /// <summary>
         /// Will display the overall menu of the project and the choices you can make
         /// </summary>

@@ -14,7 +14,7 @@ namespace RRModels
         public Restaurant()
         { }
 
-        //The benefit of this is adding restrictions to how you want this field to be set.
+        //The one of the benefits of properties is adding restrictions to how you want this field to be set.
         //You can also manipulate how this field will be get
         public string City
         {
@@ -22,6 +22,8 @@ namespace RRModels
             set 
             { 
                 //This checks the string if it has anything but letters
+                //You can check Regex class for advance string manipulation/validation
+                //This Regex expression will just check if the entire string is composed of letters
                 if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
                     throw new Exception("City can only hold letters!");
                     
