@@ -16,8 +16,18 @@ namespace HelloWorld
                                 where num%2 == 0
                                 select num);
 
+            //Example of Method syntax
+            //Where method is similarish to the where statement in SQL
+            var queryMethodResult = numbers.Where(num => num%2 == 0);
+
             //Execution
             foreach (var item in queryResult)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Method Syntax way");
+            foreach (var item in queryMethodResult)
             {
                 Console.WriteLine(item);
             }
