@@ -18,7 +18,6 @@ namespace HelloWorld
 
             //Example of Method syntax
             //Where method is similar to the where statement in SQL
-            //https://www.tutorialsteacher.com/linq/linq-filtering-operators-where
             var queryMethodResult = numbers.Where(num => num%2 == 0);
 
             //Execution
@@ -35,4 +34,6 @@ namespace HelloWorld
                             
         }
     }
+    //Documentation
+    //https://www.tutorialsteacher.com/linq/linq-filtering-operators-where
 }
