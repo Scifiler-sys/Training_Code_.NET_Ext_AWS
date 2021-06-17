@@ -52,4 +52,7 @@ public class Collections
             Console.WriteLine(element);
         }
     }
+
+    //Documentation
+    //https://www.tutorialsteacher.com/csharp/csharp-collection
 }

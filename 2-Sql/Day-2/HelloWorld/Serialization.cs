@@ -49,5 +49,8 @@ namespace HelloWorld
                 Console.WriteLine("Code went through some unknown error");
             }
         }
+
+        //Documentation
+        //https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to?pivots=dotnet-5-0
     }
 }

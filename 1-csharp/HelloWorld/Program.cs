@@ -52,6 +52,9 @@ namespace HelloWorld
 
             //Testing Serialization
             Serialization.SerialMain();
+
+            //Testing Linq
+            LINQ.LINQMain();
         }
 
         static string Hello() //Method we will use

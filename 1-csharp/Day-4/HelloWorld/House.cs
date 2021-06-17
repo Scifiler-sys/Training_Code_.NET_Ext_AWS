@@ -41,4 +41,10 @@ namespace HouseFunction //Similar to Java packages
             Console.WriteLine(house2);
         }
     }
+
+    //Documentation
+    //Class members in C#
+    //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/members
+    //Classes and Objects
+    //https://www.w3schools.com/cs/cs_classes.php
 }
