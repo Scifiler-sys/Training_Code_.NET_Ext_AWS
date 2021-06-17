@@ -74,5 +74,8 @@ namespace HelloWorld
             dog1.Speak("Bark2");
         }
     }
+
+    //Documentation
+    //https://www.w3schools.com/cs/cs_inheritance.php
 }
 
