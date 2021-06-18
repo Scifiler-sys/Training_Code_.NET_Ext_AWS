@@ -31,35 +31,35 @@ drop table avenger;
 ----------------- DML or Data Manipulation Language -----------------
 
 --Will insert data into a table (also known as Seeding)
-insert into avenger(superhero_name, superhero_power, real_name, power_level)
+insert into avengers(superhero_name, superhero_power, real_name, power_level)
     values ('Capt. America', 'Drugs', 'Steve Rogers', 25),
             ('Spiderman', 'Web', 'Peter Parker', 37);
 
 --Will update either a specific or multiple rows
-update avenger set power_level = 30
+update avengers set power_level = 30
 where power_level < 20;
 
 --Will delete either a specific or multiple rows
-delete from avenger 
+delete from avengers 
 where real_name = 'Steve Rogers';
 
-insert into avenger (superhero_name, superhero_power, real_name, power_level)
+insert into avengers (superhero_name, superhero_power, real_name, power_level)
     values ('Ironman', 'Money and knowledge', 'Tony Stark', 85);
 
 ----------------- DQL or Data Query Language -----------------
 
 --Will grabe all the data from a table
-select * from avenger
+select * from avengers
 
 --Will grab a specific data from a table
-select * from avenger
+select * from avengers
 where superhero_name = 'Ironman';
 
 --Will grab a specific column from a table
-select superhero_name, superhero_power from avenger;
+select superhero_name, superhero_power from avengers;
 
 --Alias, renames the column of a table
-select superhero_name as Name from avenger; --you can also do as "Name with space"
+select superhero_name as Name from avengers; --you can also do as "Name with space"
 
 ----------------- TCL or Transaction Control Language -----------------
 
@@ -67,9 +67,9 @@ select superhero_name as Name from avenger; --you can also do as "Name with spac
 
 begin transaction --The start of a transaction in postgres
 
-truncate table avenger; --Cleans the table from previous data
+truncate table avengers; --Cleans the table from previous data
 
-insert into avenger(superhero_name, superhero_power, real_name, power_level)
+insert into avengers(superhero_name, superhero_power, real_name, power_level)
     values ('Capt. America', 'Super String Frisbee', 'Steve Rogers', 25),
         ('Thor', 'Lightning', 'Thor Odinson', 256);
 
@@ -85,19 +85,19 @@ commit transaction --The end of the transaction
 ----------------- Aggregate Functions -----------------
 
 --Summation of the entire column
-select sum(power_level) from avenger;
+select sum(power_level) from avengers;
 
 --Average
-select avg(power_level) from avenger;
+select avg(power_level) from avengers;
 
 --Count
-select count(*) from avenger;
+select count(*) from avengers;
 
 --Minimal
-select min(power_level) from avenger;
+select min(power_level) from avengers;
 
 --Maximal
-select max(power_level) from avenger;
+select max(power_level) from avengers;
 
 ----------------- Multiplicity -----------------
 
@@ -204,4 +204,30 @@ select * from avengers
 where power_level > (
 	select avg(power_level) from avengers
 );
+
+--Show this on day 3
+----------------- Set Operations -----------------
+
+--Adding a Stephen named superhero
+insert into avengers (superhero_name) values ('Stephen');
+
+--Union
+select person_name from person
+union
+select superhero_name from avengers
+
+--Union all
+select person_name from person
+union all
+select superhero_name from avengers
+
+--Except
+select person_name from person
+except
+select superhero_name from avengers
+
+--Intersect
+select person_name from person
+intersect
+select superhero_name from avengers
 
