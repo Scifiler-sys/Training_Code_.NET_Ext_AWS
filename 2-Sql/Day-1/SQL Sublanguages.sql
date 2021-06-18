@@ -185,3 +185,23 @@ select p.person_name , c.course_name from person p
 inner join person_course pc on pc.person_ssn = p.SSN 
 inner join course c on c.course_id = pc.course_id;
 
+----------------- Subqueries -----------------
+
+--Old way
+select avg(power_level) from avengers;
+
+select * from avengers
+where power_level > 140;
+
+/*
+ * Doesn't work because where clause cannot use aggregate functions
+ * Select * from avengers
+ * where power_level > avg(power_level)
+ */
+
+--Subquery way
+select * from avengers
+where power_level > (
+	select avg(power_level) from avengers
+);
+
