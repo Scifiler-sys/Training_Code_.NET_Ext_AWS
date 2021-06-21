@@ -7,7 +7,7 @@
 
 ----------------- DDL or Data Definition Language -----------------
 
---Will create a new table called Avengers
+--Will create a new table called avenger
 create table avenger (
     superhero_name varchar(30),
     superhero_power varchar(30),
@@ -31,35 +31,35 @@ drop table avenger;
 ----------------- DML or Data Manipulation Language -----------------
 
 --Will insert data into a table (also known as Seeding)
-insert into avengers(superhero_name, superhero_power, real_name, power_level)
+insert into avenger(superhero_name, superhero_power, real_name, power_level)
     values ('Capt. America', 'Drugs', 'Steve Rogers', 25),
             ('Spiderman', 'Web', 'Peter Parker', 37);
 
 --Will update either a specific or multiple rows
-update avengers set power_level = 30
+update avenger set power_level = 30
 where power_level < 20;
 
 --Will delete either a specific or multiple rows
-delete from avengers 
+delete from avenger 
 where real_name = 'Steve Rogers';
 
-insert into avengers (superhero_name, superhero_power, real_name, power_level)
+insert into avenger (superhero_name, superhero_power, real_name, power_level)
     values ('Ironman', 'Money and knowledge', 'Tony Stark', 85);
 
 ----------------- DQL or Data Query Language -----------------
 
 --Will grabe all the data from a table
-select * from avengers
+select * from avenger
 
 --Will grab a specific data from a table
-select * from avengers
+select * from avenger
 where superhero_name = 'Ironman';
 
 --Will grab a specific column from a table
-select superhero_name, superhero_power from avengers;
+select superhero_name, superhero_power from avenger;
 
 --Alias, renames the column of a table
-select superhero_name as Name from avengers; --you can also do as "Name with space"
+select superhero_name as Name from avenger; --you can also do as "Name with space"
 
 ----------------- TCL or Transaction Control Language -----------------
 
@@ -67,9 +67,9 @@ select superhero_name as Name from avengers; --you can also do as "Name with spa
 
 begin transaction --The start of a transaction in postgres
 
-truncate table avengers; --Cleans the table from previous data
+truncate table avenger; --Cleans the table from previous data
 
-insert into avengers(superhero_name, superhero_power, real_name, power_level)
+insert into avenger(superhero_name, superhero_power, real_name, power_level)
     values ('Capt. America', 'Super String Frisbee', 'Steve Rogers', 25),
         ('Thor', 'Lightning', 'Thor Odinson', 256);
 
@@ -85,19 +85,35 @@ commit transaction --The end of the transaction
 ----------------- Aggregate Functions -----------------
 
 --Summation of the entire column
-select sum(power_level) from avengers;
+select sum(power_level) from avenger;
 
 --Average
-select avg(power_level) from avengers;
+select avg(power_level) from avenger;
 
 --Count
-select count(*) from avengers;
+select count(*) from avenger;
 
 --Minimal
-select min(power_level) from avengers;
+select min(power_level) from avenger;
 
 --Maximal
-select max(power_level) from avengers;
+select max(power_level) from avenger;
+
+----------------- Scalar Functions -----------------
+
+--Will uppercase the string
+SELECT upper(superhero_name) FROM avenger
+--lower() will lowercase the string
+
+--Will return the number of characters in a string
+SELECT superhero_name, len(superhero_name) AS name_length FROM avenger
+
+--You can also use scalar functions in where clause
+SELECT superhero_name FROM avenger
+WHERE len(superhero_name) > 5
+
+--Time scalar function
+SELECT getdate()
 
 ----------------- Multiplicity -----------------
 
@@ -188,46 +204,25 @@ inner join course c on c.course_id = pc.course_id;
 ----------------- Subqueries -----------------
 
 --Old way
-select avg(power_level) from avengers;
+select avg(power_level) from avenger;
 
-select * from avengers
+select * from avenger
 where power_level > 140;
 
 /*
  * Doesn't work because where clause cannot use aggregate functions
- * Select * from avengers
+ * Select * from avenger
  * where power_level > avg(power_level)
  */
 
 --Subquery way
-select * from avengers
+select * from avenger
 where power_level > (
-	select avg(power_level) from avengers
+	select avg(power_level) from avenger
 );
 
---Show this on day 3
------------------ Set Operations -----------------
-
---Adding a Stephen named superhero
-insert into avengers (superhero_name) values ('Stephen');
-
---Union
-select person_name from person
-union
-select superhero_name from avengers
-
---Union all
-select person_name from person
-union all
-select superhero_name from avengers
-
---Except
-select person_name from person
-except
-select superhero_name from avengers
-
---Intersect
-select person_name from person
-intersect
-select superhero_name from avengers
-
+/*
+ * Now with subqueries you can use 
+ * in, not in, exists, any, for the important ones
+ * https://docs.microsoft.com/en-us/sql/t-sql/language-elements/in-transact-sql?view=sql-server-ver15
+ * /

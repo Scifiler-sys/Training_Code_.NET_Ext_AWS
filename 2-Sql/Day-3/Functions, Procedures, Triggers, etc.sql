@@ -1,145 +1,134 @@
 
 -------------------- Our initial setup of Database -------------------- 
-CREATE TABLE roles (
-	roles_id serial PRIMARY KEY,
-	roles_title varchar(50),
-	roles_salary integer
+CREATE TABLE role (
+	role_id serial PRIMARY KEY,
+	role_title varchar(50),
+	role_salary integer
 );
 
 
-CREATE TABLE employees (
+CREATE TABLE employee (
 	employee_id serial PRIMARY KEY,
-	f_name varchar(30),
-	l_name varchar(30),
-	hire_date date, --Format AS YYYY-MM-DD 
+	first_name varchar(30),
+	last_name varchar(30),
 	role_id integer REFERENCES roles(roles_id) --FOREIGN KEY REFERENCES TO the roles TABLE specifically the roles_id column
 );
 
-INSERT INTO roles(roles_title, roles_salary)
+INSERT INTO role(roles_title, roles_salary)
 	VALUES ('CEO', 100000),
 			('Scientist', 80000),
 			('Fry Cook', 50000),
 			('Cashier', 27000),
 			('Interns', 10000);
 			
-INSERT INTO employees (f_name, l_name, hire_date, role_id)
-	VALUES ('Eugene', 'Krabs', '1977-10-01', 1),
-			('Spongebob', 'Squarepant', '1997-05-12', 3),
-			('Sandy', 'Cheeks', '1998-06-12', 2),
-			('Squidward', 'Tentacles', '1997-01-10', 4),
-			('Sheldon', 'Plankton', '1977-10-01', 2);
+INSERT INTO employee(first_name, last_name, role_id)
+	VALUES ('Eugene', 'Krabs', 1),
+			('Spongebob', 'Squarepant', 3),
+			('Sandy', 'Cheeks', 2),
+			('Squidward', 'Tentacles', 4),
+			('Sheldon', 'Plankton', 2);
 
 -------------------- End of Statement -------------------- 
 
+-------------------- Set Operations -------------------- 
 
--------------------- Group By and Having -------------------- 
---They are mosly used with conjucture with aggregate FUNCTIONS 
+--Adding a Cashier first name in employee for duplicated value
+insert into employee (first_name) values ('Cashier');
 
---Goup By lets us combine records based on equiavlent VALUES 
---We want to group our result based on start date
-SELECT hire_date, count(f_name)
-FROM employees GROUP BY hire_date;
+--Union
+select first_name from employee
+union
+select role_title from role
 
---Having behaves like where clause, but it is only used for aggregate FUNCTIONS 
-SELECT hire_date, count(f_name)
-FROM employees GROUP BY hire_date
-HAVING count(f_name) > 1;
+--Union all
+select first_name from employee
+union all
+select role_title from role
 
--------------------- Order BY -------------------- 
---It lets you order your select queries
+--Except
+select first_name from employee
+except
+select role_title from role
 
-SELECT f_name, l_name FROM employees
-ORDER BY f_name; --ADD DESC (descending) IF you want TO flip the ORDER
---By default it is in ASC (Ascending)
+--Intersect
+select first_name from employee
+intersect
+select role_title from role 
 
 -------------------- User-defined Functions -------------------- 
 
---A function that will delete spongebob from our employees
-CREATE OR REPLACE FUNCTION squidward_kills_spongebob()
-RETURNS void
-AS 
-'delete from employees where f_name = ''Spongebob''; '
-LANGUAGE SQL; 
-
---You can also remove functions using Drop statement
---drop function squidward_kills_spongebob();
-
-SELECT squidward_kills_spongebob();
-
-SELECT * FROM employees
-
---A function that will add two numbers
-CREATE OR REPLACE FUNCTION addTwoNums(num1 integer, num2 integer)
-RETURNS integer 
-LANGUAGE plpgsql
-AS 
-$$ --It IS just used TO DEFINED a USER-DEFINED functions
-DECLARE
-	--Where you put variable declarations
-	total integer;
-BEGIN
-	SELECT (num1+num2)
-	INTO total;
-	
-	RETURN total;
-END;
-$$
-
-SELECT addTwoNums(8,10);
-
---A function that will get average and summation of our employee's salary
-CREATE OR REPLACE FUNCTION getAvgAndSum(
-	OUT avg_salary integer,
-	OUT sum_salary integer
+--Example of a Scalar Function
+--A function that will reduce the employee's salary
+CREATE FUNCTION reduceEmpSalary(
+	@reduction int,
+	@name varchar(30)
 )
-LANGUAGE plpgsql
+RETURNS int
 AS 
-$$
-BEGIN 
-	SELECT avg(roles_salary), sum(roles_salary)
-	INTO avg_salary, sum_salary
-	FROM (
-		SELECT r.roles_salary FROM employees e
-		INNER JOIN roles r ON r.roles_id = e.role_id
-	) AS test_table;
-END;
-$$
+begin
+	declare @newSalary int;
+	
+	set @newSalary = (select (r.role_salary - @reduction) from employee e 
+	inner join role r on r.role_id = e.role_id
+	where e.first_name = @name);
 
-SELECT getAvgAndSum(); --Gives you a record OR a whole ROW 
-SELECT * FROM getAvgAndSum();
+	return @newSalary;
+end;
 
--------------------- Procedure Statements --------------------
-CREATE OR REPLACE PROCEDURE procedure_delete_spongebob()
-LANGUAGE plpgsql
-AS 
-$$
-	BEGIN 
-		DELETE FROM employees WHERE f_name = 'Spongebob';
-		
-		COMMIT;
-	END;
-$$
+select dbo.reduceEmpSalary(100, 'Spongebob');
 
-CALL procedure_delete_spongebob();
+--Example of a Table function
+--A function that will return the inner join table of employee and role
+create function employeeWithSalary()
+returns TABLE 
+as
+return
+(
+	select e.first_name, e.last_name, r.role_salary from employee e
+	inner join role r on r.role_id = e.role_id
+);
 
-SELECT * FROM employees
+--Gets employees with salaries that is above the avg of employee's salary
+select * from dbo.employeeWithSalary()
+where role_salary > (select avg(role_salary) 
+					from dbo.employeeWithSalary());
 
-INSERT INTO employees (f_name, l_name, role_id) VALUES ('Spongebob', 'Squarepants', 3);
-
--------------------- Prepared Statements -------------------- 
-
---Creates a prepared statement in which you fill in certain portions of your statement (i.e. $variable)
---When you call the prepared statement
-PREPARE create_employee
+-------------------- Stored Procedure --------------------
+				
+--It will add employee or/and role in table
+alter procedure proc_addData(
+	@which varchar(30),
+	@first_name varchar(30) = null, --Adding null will give this parameter a default value of null if not given data
+	@last_name varchar(30) = null,
+	@role_id varchar(30) = null,
+	@role_title varchar(30) = null,
+	@role_salary varchar(30) = null,
+	@status bit output --Will return if procedure is successful or not
+)
 AS
-INSERT INTO employees (f_name, l_name, hire_date,role_id)
-	VALUES ($1, $2, $3, $4);
+BEGIN
+	if(@which = 'employee')
+	BEGIN 
+		insert into employee(first_name, last_name, role_id)
+			values(@first_name, @last_name, @role_id);
+		set @status = 1;
+	END
+	if(@which = 'role')
+	begin
+		insert into role(role_title, role_salary)
+			values(@role_title, @role_salary);
+		set @status = 1;
+	end
+	else
+	begin
+		set @status = 0;
+	end
+END;
 
-EXECUTE create_employee('Spongebob', 'Squarepants', '1997-05-12', 3);
+declare @currentStatus bit;
+exec proc_addData @which = 'fea', @role_title = 'Test', @role_salary = 10, @status = @currentStatus output;
+select @currentStatus;
 
-SELECT * FROM employees
-
---DEALLOCATE create_employee deletes the PREPARED statement
 
 -------------------- Triggers -------------------- 
 --They are a special type of function that will run when a certain event happens such as insert, update, or delete queries
