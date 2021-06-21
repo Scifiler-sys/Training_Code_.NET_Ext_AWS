@@ -14,7 +14,7 @@ drop table person;
 --Creating our database architecture
 
 create table Restaurant(
-	Id int primary key identity,
+	Id int primary key identity, --Identity will auto-increment the column every time you add a new entry
 	Name varchar(50),
 	City varchar(30),
 	State varchar(30)
