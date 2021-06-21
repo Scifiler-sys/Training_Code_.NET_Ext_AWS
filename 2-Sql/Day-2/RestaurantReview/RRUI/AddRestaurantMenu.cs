@@ -32,6 +32,7 @@ namespace RRUI
                 case "0":
                     return MenuType.RestaurantMenu;
                 case "1":
+                    //Checks if there are values in the properties
                     if (_newRest.Name == null || _newRest.City == null || _newRest.State == null)
                     {
                         Console.WriteLine("Please fill all of the fields listed above");
