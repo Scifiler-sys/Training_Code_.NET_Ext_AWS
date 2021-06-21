@@ -29,7 +29,6 @@ namespace RRDL
             _context.Restaurants.Add(
                 new Entity.Restaurant
                 {
-                    Id = p_rest.Id,
                     Name = p_rest.Name,
                     City = p_rest.City,
                     State = p_rest.State
@@ -88,9 +87,9 @@ namespace RRDL
                         where rest.Name == p_rest.Name &&
                             rest.City == p_rest.City &&
                             rest.State == p_rest.State
-                        select rest).ToList(); 
+                        select rest).ToList(); //You can add .First method syntax to get the first instance but this is strictly query way 
 
-            if(found[0] == null)
+            if(found.Count == 0)
                 return null;
 
             //We are just getting the first element

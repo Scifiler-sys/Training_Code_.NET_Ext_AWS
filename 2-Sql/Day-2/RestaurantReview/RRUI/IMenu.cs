@@ -9,6 +9,7 @@ namespace RRUI
         MainMenu,
         RestaurantMenu,
         ShowRestaurantMenu,
+        AddRestaurantMenu,
         Exit
     }
     //The purpose of the interface is to ensure every menu that we create will have a menu and yourchoice method

@@ -36,6 +36,8 @@ namespace RRUI
                     return new RestaurantMenu();
                 case MenuType.ShowRestaurantMenu:
                     return new ShowRestaurantMenu(new RestaurantBL(new Repository(context)));
+                case MenuType.AddRestaurantMenu:
+                    return new AddRestaurantMenu(new RestaurantBL(new Repository(context)));
                 default:
                     return null;
             }

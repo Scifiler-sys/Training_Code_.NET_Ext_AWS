@@ -11,7 +11,7 @@ namespace RRUI
         {
             IMenu restMenu = new MainMenu();
             MenuType currentMenu = MenuType.MainMenu;
-            IFactory factory = new MenuFactory();
+            IFactory menuFactory = new MenuFactory();
             bool repeat = true;
 
             //Will keep repeating until we choose to exit out of it
@@ -27,13 +27,16 @@ namespace RRUI
                 switch (currentMenu)
                 {
                     case MenuType.MainMenu:
-                        restMenu = factory.getMenu(MenuType.MainMenu);
+                        restMenu = menuFactory.getMenu(MenuType.MainMenu);
                         break;
                     case MenuType.RestaurantMenu:
-                        restMenu = factory.getMenu(MenuType.RestaurantMenu);
+                        restMenu = menuFactory.getMenu(MenuType.RestaurantMenu);
                         break;
                     case MenuType.ShowRestaurantMenu:
-                        restMenu = factory.getMenu(MenuType.ShowRestaurantMenu);
+                        restMenu = menuFactory.getMenu(MenuType.ShowRestaurantMenu);
+                        break;
+                    case MenuType.AddRestaurantMenu:
+                        restMenu = menuFactory.getMenu(MenuType.AddRestaurantMenu);
                         break;
                     case MenuType.Exit:
                         Console.WriteLine("Good bye!");
@@ -42,6 +45,7 @@ namespace RRUI
                         break;
                     default:
                         Console.WriteLine("Please put a valid response");
+                        Thread.Sleep(1000);
                         currentMenu = MenuType.MainMenu;
                         break;
                 }
