@@ -131,42 +131,24 @@ select @currentStatus;
 
 
 -------------------- Triggers -------------------- 
---They are a special type of function that will run when a certain event happens such as insert, update, or delete queries
---You must create a function first then a trigger
 
---Function will add everyone's salary if an employee is removed
-CREATE OR REPLACE FUNCTION employee_removed()
-RETURNS TRIGGER
-LANGUAGE plpgsql
-AS
-$$
-	BEGIN
-		UPDATE roles SET roles_salary = roles_salary + 10000;
-		RETURN null;
-	END;
-$$
+--Will add 10000 from everyone's salary when an employee is removed
+create trigger employee_removed on employee
+after DELETE 
+as 
+begin
+	update role set role_salary = role_salary + 10000;
+end;
 
-CREATE TRIGGER employee_removed AFTER DELETE ON employees
-FOR EACH ROW EXECUTE PROCEDURE employee_removed(); --FOR EACH ROW will EXECUTE the FUNCTION AS many times AS the amount OF ROWS has been updated
+delete from employee 
+where first_name = 'Test';
 
-SELECT * FROM roles
-SELECT * FROM employees
-DELETE FROM employees WHERE employee_id = 7
-
---Function will remove a portion of everyone's salary if an employee is added
-CREATE OR REPLACE FUNCTION employee_added()
-RETURNS TRIGGER 
-LANGUAGE plpgsql
+--Will deduct 10000 from everyone's salary when an employee is added
+create trigger employee_added on employee
+after insert
 AS 
-$$
-	BEGIN 
-		UPDATE roles SET roles_salary = roles_salary - 10000;
-		RETURN NULL;
-	END;
-$$
+BEGIN 
+	update role set role_salary = role_salary - 10000;
+END
 
-CREATE TRIGGER employee_added AFTER INSERT ON employees
-FOR EACH ROW EXECUTE PROCEDURE employee_added();
-
-INSERT INTO employees (f_name, l_name, hire_date, role_id) 
-	VALUES ('test', 'testl', '1578-10-05', 4)
+insert into employee (first_name) values('Test');

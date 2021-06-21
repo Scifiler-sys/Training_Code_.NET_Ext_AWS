@@ -225,4 +225,5 @@ where power_level > (
  * Now with subqueries you can use 
  * in, not in, exists, any, for the important ones
  * https://docs.microsoft.com/en-us/sql/t-sql/language-elements/in-transact-sql?view=sql-server-ver15
+ * https://www.w3schools.com/sql/ - Best resource for all things sql
  * /
