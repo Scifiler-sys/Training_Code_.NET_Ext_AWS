@@ -25,3 +25,16 @@ create table Review(
 	Rating float,
 	Desciption varchar(100)
 )
+
+--Seeding our database architecture
+INSERT INTO Restaurant
+(Name, City, State)
+VALUES('Mcdonald', 'Houston', 'Texas'),
+	('Jack in the Box', 'Reston', 'Virginia'),
+	('Taco Bell', 'Dallas','Texas');
+
+INSERT INTO Review
+(Rating, Desciption, RestaurantId)
+VALUES(4, 'Good', 1),
+	(3, 'Meh', 1),
+	(5, 'God like', 2);

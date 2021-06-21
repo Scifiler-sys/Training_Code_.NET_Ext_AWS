@@ -30,6 +30,8 @@ namespace RRModels
                 _city = value;
             }
         }
+
+        public int Id { get; set; }
         
         //You can just create stand alone properties
         public string State { get; set; }

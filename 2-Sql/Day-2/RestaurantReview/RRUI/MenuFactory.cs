@@ -6,6 +6,7 @@ namespace RRUI
 {
     public class MenuFactory : IFactory
     {
+        
         public IMenu getMenu(MenuType p_menu)
         {
             switch (p_menu)
