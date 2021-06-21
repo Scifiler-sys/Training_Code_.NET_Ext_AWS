@@ -20,6 +20,7 @@ namespace RRDL.Entities
         public virtual DbSet<Restaurant> Restaurants { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
 
+//      Delete this to protect our sensitive information
 //         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 //         {
 //             if (!optionsBuilder.IsConfigured)
