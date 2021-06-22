@@ -152,3 +152,27 @@ BEGIN
 END
 
 insert into employee (first_name) values('Test');
+
+-------------------- View -------------------- 
+create view EmployeeDetails
+as
+select
+	first_name as "First Name",
+	last_name as "Last Name",
+	role_salary as Salary
+from dbo.employeeWithSalary()
+
+select * from EmployeeDetails
+
+--We cannot DML or DDL into virtual tables to protect from malicious intent
+--insert into EmployeeDetails("First Name", "Last Name", Salary)
+--	values ('Test' , 'Test', 57000)
+--	
+--alter table EmployeeDetails add active bit;
+
+--If you really want user to change values into virtual tables you need to use triggers
+--(I'll let you research how to implement that)
+
+
+
+
