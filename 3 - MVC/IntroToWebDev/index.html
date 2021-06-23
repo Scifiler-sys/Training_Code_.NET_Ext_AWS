@@ -1,0 +1,162 @@
+<!DOCTYPE html> <!-- This declares that this file will be an HTML file -->
+<html lang="en"> <!-- This wraps all the content on the page (the root element)-->
+    
+    <!-- The head contains all the metadata that this html file will need -->
+    <!-- Metadata is just extra information that the end-user will use to interpret the browser -->
+    <head>
+        <meta charset="UTF-8"> <!-- this is the set of characters you can use (HTML:5 dictates that this should cover all characters) -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- gives compatibility to old IE -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport depending on the device screen size -->
+        <title>Intro to Web Development</title>
+
+        <style> /* This is an example of Internal CSS */
+            p { /* Example of Element selector */
+
+                /* 
+                    The way css applies styling in HTML is using key value pairs
+                    As shown below, we used font-family (a key value that is used to change your text's fonts)
+                    then we specify the value on what that key should hold
+
+                */
+                font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+                background-color: #A2DBFA;
+                width: 50%;
+            }
+
+            body {
+                background-color: #E8F0F2;
+            }
+
+            .apple { /* Example of Class selector */
+                font-size: 40px;
+                line-height: 1;
+                font-weight: 600;
+                letter-spacing: 0;
+                font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+            }
+
+            .background { 
+                background-color: #39A2DB;
+            }
+
+            #ThisDiv { /* One difference with class selector is you can't have multiple ids to stack css */
+                color: #39A2DB;
+            }
+        </style>
+
+    </head>
+
+    <!-- Contains all the content that you want to show to end-users -->
+    <body>
+        <h1>Introduction to HTML</h1>
+        <h6>I'm so tiny</h6>
+        
+        <h3>Div tag demo</h3>
+        
+        <!-- You can have multiple classes and create a modular styling in where you can pick and choose what to apply-->
+        <div class = "apple background"> 
+            It is a generic block element that is used to separate a secion in an HTML document.
+            Block elements are just any elements that creates a new line when you use the tag
+        </div>
+
+        <div class = "apple">
+            You can have multiple divs
+            <div>
+                This is a nested div (a nested element also)
+            </div>
+        </div>
+
+        <div id = "ThisDiv">
+            <h3>Span tag demo</h3>
+            <span>Span is used to create inline element</span>
+            <span>
+                This is another span but guess what it is on 
+                the same line as the other span (as long as space exists)
+            </span>
+        </div>
+
+        <div>
+            <h3>Paragraph tag demo</h3>
+            <p>This is a paragraph tag. Also a block element</p>
+            <p>Creates a new line but adds a margin unlike div tags</p>
+
+            <h3>Article tag demo</h3>
+            <article> 
+                It is used to create self-contained composition of a document (such as forum post, a magazine, or newspaper article)
+                <p>A sematic element</p>
+                <p>They are elements that clearly describes its meaning to both browser and developer</p>
+                <p>
+                    So essentially, when a person sees this article tag then 
+                    this portion of the html tag will be used for documents 
+                    (or heavily worded portion of the webpage)
+                </p>
+            </article>
+        </div>
+
+        <div>
+            <h3>Link tag demo</h3>
+            <a href="https://www.w3schools.com/html/html_links.asp" target = "_blank">This is a link tag</a>
+            <p>Attributes provide extra information that the tag can use</p>
+            <h3>Image tag demo</h3>
+            <img src = "https://upload.wikimedia.org/wikipedia/commons/4/46/My_Grandfather_Photo_from_January_17.JPG" height = "500px">
+        </div>
+
+        <div>
+            <h3>List tag demo</h3>
+
+            <h4>Unordered list</h4>
+            <ul>
+                <li>This is an unordered list</li>
+                <li>doesn't how the sequence or order of the list</li>
+                <ul>
+                    <li>Adding a nested list</li>
+                </ul>
+            </ul>
+
+            <h4>Ordered list</h4>
+            <ol>
+                <li>This is an ordered list</li>
+                <ul>
+                    <li>You can combine them</li>
+                </ul>
+                <li>Notice how numbers are used to create a sequence</li>
+                <ol>
+                    <li>Nested List is also possible</li>
+                </ol>
+            </ol>
+        </div>
+
+        <div>
+            <h3>Table tag demo</h3>
+            <table>
+                <!-- Defines the name of the columns you'll put in the table -->
+                <thead>
+                    <th>Name</th>
+                    <th>Favorite Fruit</th>
+                </thead>
+
+                <!-- Defines the content of that table -->
+                <tbody>
+                    <!-- tr indicates each row of the table-->
+                    <tr>
+                        <!-- this one holds the data of that cell -->
+                        <td>Stephen</td>
+                        <td>Mango</td>  
+                    </tr>
+
+                    <tr>
+                        <td>Marielle</td>
+                        <td>Jackfruit</td>
+                    </tr>
+
+                    <tr>
+                        <td>John</td>
+                        <td>Mango</td>
+                        <td>Jackfruit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>
