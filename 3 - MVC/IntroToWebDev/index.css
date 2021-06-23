@@ -1,0 +1,12 @@
+
+/* Example of Pseudo Selectors */
+h3:hover { /* Example of Pseudo Class Selectors - applies css to the entire element */
+    background-color: #39A2DB;
+}
+
+.apple::first-letter /* Example of Pseudo Element Selectors -- applies css to specifc portion of the element */
+{
+    background-color: #39A2DB;
+}
+
+/* Example of Combinators */
