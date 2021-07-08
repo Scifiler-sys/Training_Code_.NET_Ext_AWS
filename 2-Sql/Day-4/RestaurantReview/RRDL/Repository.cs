@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace RRDL
 {
@@ -40,11 +41,26 @@ namespace RRDL
             return p_rest;
         }
 
+        public Model.Review AddReview(Model.Restaurant p_rest, Model.Review p_rev)
+        {
+            _context.Reviews.Add(
+                new Entity.Review
+                {
+                    Rating = p_rev.rating,
+                    Desciption = p_rev.Description,
+                    RestaurantId = this.GetRestaurant(p_rest).Id
+                }
+            );
+            _context.SaveChanges();
+
+            return p_rev;
+        }
+
         public List<Model.Restaurant> GetAllRestaurant()
         {
             //Query Syntax way
             var result = (from rest in _context.Restaurants
-                        select rest);
+                        select rest).AsNoTracking();
 
             List<Model.Restaurant> listOfRest = new List<Model.Restaurant>();
             foreach (var item in result)
@@ -87,7 +103,7 @@ namespace RRDL
                         where rest.Name == p_rest.Name &&
                             rest.City == p_rest.City &&
                             rest.State == p_rest.State
-                        select rest).ToList(); //You can add .First method syntax to get the first instance but this is strictly query way 
+                        select rest).AsNoTracking().ToList(); //You can add .First method syntax to get the first instance but this is strictly query way 
 
             if(found.Count == 0)
                 return null;
@@ -101,7 +117,7 @@ namespace RRDL
             };
 
             //Method syntax way
-            // Entity.Restaurant found = _context.Restaurants.FirstOrDefault( rest => 
+            // Entity.Restaurant found = _context.Restaurants.AsNoTracking().FirstOrDefault( rest => 
             //     rest.Name == p_rest.Name &&
             //     rest.City == p_rest.City &&
             //     rest.State == p_rest.State

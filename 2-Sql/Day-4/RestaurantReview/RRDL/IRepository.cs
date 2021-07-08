@@ -31,5 +31,13 @@ namespace RRDL
         /// <param name="p_rest">The restaurant object that will get added</param>
         /// <returns>Returns the added restaurant</returns>
         Restaurant AddRestaurant(Restaurant p_rest);
+
+        /// <summary>
+        /// Add a review to a restaurant.
+        /// </summary>
+        /// <param name="p_rest">Restaurant we will put the review on</param>
+        /// <param name="p_rev">Review we will add to that Restaurant</param>
+        /// <returns></returns>
+        Review AddReview(Restaurant p_rest, Review p_rev);
     }
 }
