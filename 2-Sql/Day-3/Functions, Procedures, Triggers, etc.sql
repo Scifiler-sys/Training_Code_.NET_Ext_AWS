@@ -59,11 +59,11 @@ select role_title from role
 
 --Example of a Scalar Function
 --A function that will reduce the employee's salary
-CREATE FUNCTION reduceEmpSalary(
+create function reduceEmpSalary(
 	@reduction int,
 	@name varchar(30)
 )
-RETURNS int
+returns int
 AS 
 begin
 	declare @newSalary int;
@@ -105,14 +105,14 @@ alter procedure proc_addData(
 	@role_salary varchar(30) = null,
 	@status bit output --Will return if procedure is successful or not
 )
-AS
-BEGIN
+as
+begin
 	if(@which = 'employee')
-	BEGIN 
+	begin 
 		insert into employee(first_name, last_name, role_id)
 			values(@first_name, @last_name, @role_id);
 		set @status = 1;
-	END
+	end
 	if(@which = 'role')
 	begin
 		insert into role(role_title, role_salary)
@@ -123,7 +123,7 @@ BEGIN
 	begin
 		set @status = 0;
 	end
-END;
+end;
 
 declare @currentStatus bit;
 exec proc_addData @which = 'fea', @role_title = 'Test', @role_salary = 10, @status = @currentStatus output;
@@ -146,10 +146,10 @@ where first_name = 'Test';
 --Will deduct 10000 from everyone's salary when an employee is added
 create trigger employee_added on employee
 after insert
-AS 
-BEGIN 
+as 
+begin 
 	update role set role_salary = role_salary - 10000;
-END
+end
 
 insert into employee (first_name) values('Test');
 

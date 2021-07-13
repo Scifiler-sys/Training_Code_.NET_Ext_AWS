@@ -102,23 +102,23 @@ select max(power_level) from avenger;
 ----------------- Scalar Functions -----------------
 
 --Will uppercase the string
-SELECT upper(superhero_name) FROM avenger
+select upper(superhero_name) from avenger
 --lower() will lowercase the string
 
 --Will return the number of characters in a string
-SELECT superhero_name, len(superhero_name) AS name_length FROM avenger
+select superhero_name, len(superhero_name) as name_length from avenger
 
 --You can also use scalar functions in where clause
-SELECT superhero_name FROM avenger
-WHERE len(superhero_name) > 5
+select superhero_name from avenger
+where len(superhero_name) > 5
 
 --Time scalar function
-SELECT getdate()
+select getdate()
 
 ----------------- Multiplicity -----------------
 
 -- One to One relationship
-Create table person (
+create table person (
     SSN integer,
     person_name varchar(30),
     person_age int,
