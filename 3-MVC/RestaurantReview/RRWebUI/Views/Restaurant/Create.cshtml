@@ -1,0 +1,41 @@
+﻿@model RRWebUI.Models.RestaurantVM
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h3>Create a Restaurant</h3>
+
+    <div>
+        <form asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name" type ="text" class="form-control" placeholder="Put Name Of Restaurant Here">
+                <span asp-validation-for = "Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="City" class="form-label">City</label>
+                <input asp-for="City" type="text" class="form-control">
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="State" class="form-label">State</label>
+                <input asp-for="State" type="text" class="form-control">
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Revenue" class="form-label">Revenue</label>
+                <input asp-for="Revenue" type="number" step="0.01" min="0" class="form-control">
+                <span asp-validation-for="Revenue" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <a asp-action="Index" class="btn btn-danger" style="position:relative; top:15px; width:100px">Back</a>
+    </div>
+</body>
+</html>

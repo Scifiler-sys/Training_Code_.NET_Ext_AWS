@@ -1,43 +1,63 @@
-﻿using RRModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RRModels;
 
 namespace RRDL
 {
     /// <summary>
-    /// Responsible for accessing our database (for this case our database for now will be a json file)
+    /// It is responsible for accessing our database (in this case it will be a JSON file stored in our folder)
     /// </summary>
     public interface IRepository
     {
         /// <summary>
-        /// Gets a specific restaraunt that matches with the restaurant object we give
+        /// Gets a list of Restaurants stored in our database
         /// </summary>
-        /// <param name="p_rest">The object that will get compared</param>
-        /// <returns>Returns the matching restaurant</returns>
-        Restaurant GetRestaurant(Restaurant p_rest);
-
-        /// <summary>
-        /// Gives a list of restaurants stored in our database
-        /// </summary>
-        /// <returns>Returns a List of restaurant</returns>
+        /// <returns>Returns a list of Restaurant</returns>
         List<Restaurant> GetAllRestaurant();
 
         /// <summary>
-        /// Will add a restaurant in our database
+        /// It will get a specific restaurant
         /// </summary>
-        /// <param name="p_rest">The restaurant object that will get added</param>
-        /// <returns>Returns the added restaurant</returns>
-        Restaurant AddRestaurant(Restaurant p_rest);
+        /// <param name="p_rest">This restaurant object will be used to check the properties that should match in the database</param>
+        /// <returns>Will return the restaurant object from the database</returns>
+        Restaurant GetRestaurant(Restaurant p_rest);
+        /// <summary>
+        /// It will get a specific restaurant based on id
+        /// </summary>
+        /// <param name="p_id">the id to look for</param>
+        /// <returns></returns>
+        Restaurant GetRestaurant(int p_id);
 
         /// <summary>
-        /// Add a review to a restaurant.
+        /// It will add a restaurant in our database
         /// </summary>
-        /// <param name="p_rest">Restaurant we will put the review on</param>
-        /// <param name="p_rev">Review we will add to that Restaurant</param>
+        /// <param name="p_rest">This is the restaurant object that will be added to the database</param>
+        /// <returns>Will return the restaurant object we just added</returns>
+        Restaurant AddRestaurant(Restaurant p_rest);
+        /// <summary>
+        /// It will update a restaurant in our database
+        /// </summary>
+        /// <param name="p_rest">Passes the restaurant we will update</param>
+        /// <returns></returns>
+        Restaurant UpdateRestaurant(Restaurant p_rest);
+        /// <summary>
+        /// It will delete a restaurant in our database
+        /// </summary>
+        /// <param name="p_rest">The restaurant it will delete</param>
+        /// <returns></returns>
+        Restaurant DeleteRestaurant(Restaurant p_rest);
+        /// <summary>
+        /// It will add a review and attach it to a restaurant
+        /// </summary>
+        /// <param name="p_rest">Passes the restaurant we will attach the review to</param>
+        /// <param name="p_rev">The review we will add to the restaurant</param>
         /// <returns></returns>
         Review AddReview(Restaurant p_rest, Review p_rev);
+        /// <summary>
+        /// It will get all the reviews
+        /// </summary>
+        /// <param name="p_rest">Gets the reviews that is attached to that restaurant</param>
+        /// <returns></returns>
+        List<Review> GetReviews(Restaurant p_rest);
     }
 }

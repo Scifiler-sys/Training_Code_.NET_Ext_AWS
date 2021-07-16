@@ -12,7 +12,9 @@ namespace RRModels
         private string _city;
 
         public Restaurant()
-        { }
+        {
+            Reviews = new List<Review>();
+        }
 
         //The one of the benefits of properties is adding restrictions to how you want this field to be set.
         //You can also manipulate how this field will be get
@@ -37,6 +39,8 @@ namespace RRModels
         public string State { get; set; }
 
         public string Name { get; set; }
+
+        public double Revenue { get; set; }
 
         public List<Review> Reviews { get; set; }
 

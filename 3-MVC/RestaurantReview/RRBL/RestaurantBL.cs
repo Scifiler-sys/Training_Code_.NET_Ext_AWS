@@ -25,7 +25,18 @@ namespace RRBL
             {
                 throw new Exception("Restaurant already exists!");
             }
+
             return _repo.AddRestaurant(p_rest);
+        }
+
+        public Restaurant DeleteRestaurant(Restaurant p_rest)
+        {
+            if (_repo.GetRestaurant(p_rest) == null)
+            {
+                throw new Exception("Restaurant does not exist");
+            }
+
+            return _repo.DeleteRestaurant(p_rest);
         }
 
         public List<Restaurant> GetAllRestaurant()
@@ -36,7 +47,32 @@ namespace RRBL
 
         public Restaurant GetRestaurant(Restaurant p_rest)
         {
-            return _repo.GetRestaurant(p_rest);
+            Restaurant found = _repo.GetRestaurant(p_rest);
+
+            if (found == null)
+            {
+                throw new Exception("Restaurant is not found");
+            }
+
+            return found;
+        }
+
+        public Restaurant GetRestaurant(int p_id)
+        {
+            Restaurant found = _repo.GetRestaurant(p_id);
+
+            if (found == null)
+            {
+                throw new Exception("Restaurant is not found");
+            }
+
+            return found;
+        }
+
+        public Restaurant UpdateRestaurant(Restaurant p_rest)
+        {
+            _repo.UpdateRestaurant(p_rest);
+            return p_rest;
         }
     }
 }

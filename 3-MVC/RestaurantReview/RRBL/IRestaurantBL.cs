@@ -21,6 +21,12 @@ namespace RRBL
         /// <param name="p_rest">The object that will get compared</param>
         /// <returns>Returns the matching restaurant</returns>
         Restaurant GetRestaurant(Restaurant p_rest);
+        /// <summary>
+        /// It will get a specific restaurant based on id
+        /// </summary>
+        /// <param name="p_id">the id to look for</param>
+        /// <returns></returns>
+        Restaurant GetRestaurant(int p_id);
 
         /// <summary>
         /// Gives a list of restaurants stored in our database
@@ -34,5 +40,17 @@ namespace RRBL
         /// <param name="p_rest">The restaurant object that will get added</param>
         /// <returns>Returns the added restaurant</returns>
         Restaurant AddRestaurant(Restaurant p_rest);
+        /// <summary>
+        /// It will update a restaurant in our database
+        /// </summary>
+        /// <param name="p_rest">Passes the restaurant we will update</param>
+        /// <returns></returns>
+        Restaurant UpdateRestaurant(Restaurant p_rest);
+        /// <summary>
+        /// It will delete a restaurant in our database
+        /// </summary>
+        /// <param name="p_rest">The restaurant it will delete</param>
+        /// <returns></returns>
+        Restaurant DeleteRestaurant(Restaurant p_rest);
     }
 }

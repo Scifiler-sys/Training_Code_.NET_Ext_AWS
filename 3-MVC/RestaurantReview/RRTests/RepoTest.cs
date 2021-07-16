@@ -66,6 +66,22 @@ namespace RRTests
         }
 
         [Fact]
+        public void GetRestaurantByIdShouldReturnRestaurant()
+        {
+            using (var context = new RRDBContext(_options))
+            {
+                //Arrange
+                IRepository repo = new Repository(context);
+
+                //Act
+                Restaurant rest = repo.GetRestaurant(1);
+
+                //Assert
+                Assert.Equal("Kura sushi", rest.Name);
+            }
+        }
+
+        [Fact]
         public void AddRestaurantShouldAddRestaurant()
         {
             using (var context = new RRDBContext(_options))
@@ -94,6 +110,25 @@ namespace RRTests
                 Assert.NotNull(result); //Checks it isn't null
                 Assert.Equal("Whataburger", result.Name); //Checks if Name is Whataburger
                 Assert.Equal("Houston", result.City);
+            }
+        }
+
+        [Fact]
+        public void GetReviewShouldGetallReviewFromRestaurant()
+        {
+            using (var context = new RRDBContext(_options))
+            {
+                IRepository repo = new Repository(context);
+                Restaurant rest = repo.GetRestaurant(new Restaurant
+                {
+                    Name = "Kura sushi",
+                    City = "Dallas",
+                    State = "Texas"
+                });
+
+                List<Review> reviews = repo.GetReviews(rest);
+
+                Assert.Single(reviews);
             }
         }
 
@@ -131,8 +166,43 @@ namespace RRTests
                     State = "Texas"
                 });
 
-                Assert.NotNull(rest);
-                Assert.Equal(2, rest.Reviews.Count);
+                List<Review> reviews = repo.GetReviews(rest);
+
+                Assert.NotNull(reviews);
+                Assert.Equal(2, reviews.Count);
+            }
+        }
+
+        [Fact]
+        public void UpdateRestaurantShouldChangeRestaurantColumnValues()
+        {
+            using (var context = new RRDBContext(_options))
+            {
+                IRepository repo = new Repository(context);
+                Restaurant found = repo.GetRestaurant(1);
+
+                found.Name = "Kura Sushi Even Better";
+                repo.UpdateRestaurant(found);
+
+                found = repo.GetRestaurant(1);
+                Assert.Equal("Kura Sushi Even Better", found.Name);
+            }
+        }
+
+        [Fact]
+        public void DeleteRestaurantShouldDeleteRestaurant()
+        {
+            using (var context = new RRDBContext(_options))
+            {
+                IRepository repo = new Repository(context);
+                Restaurant found = repo.GetRestaurant(1);
+
+                repo.DeleteRestaurant(found);
+
+                found = repo.GetRestaurant(1);
+
+                Assert.Null(found);
+
             }
         }
         

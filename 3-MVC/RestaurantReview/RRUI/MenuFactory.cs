@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using RRBL;
 using RRDL;
+using RRDL.Entities;
 
 namespace RRUI
 {
@@ -20,12 +21,12 @@ namespace RRUI
             string connectionString = configuration.GetConnectionString("Reference2DB");
 
             //We are using DbContext to create the DbContextOptions to be passed on our SPDBContext
-            DbContextOptions<RRDBContext> options = new DbContextOptionsBuilder<RRDBContext>()
+            DbContextOptions<SPDBContext> options = new DbContextOptionsBuilder<SPDBContext>()
                 .UseSqlServer(connectionString)
                 .Options;
 
             //Passing the options we just build 
-            var context = new RRDBContext(options);
+            var context = new SPDBContext(options);
 
             switch (p_menu)
             {
