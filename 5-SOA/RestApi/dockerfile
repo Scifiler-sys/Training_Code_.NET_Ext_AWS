@@ -1,0 +1,31 @@
+# Base image we need to run our application (Docker Hub - .Net SDK)
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+
+# The combination of mkdir and cd
+WORKDIR /app
+
+# COPY [Where the file you want to copy] [Where you want to paste it]
+COPY *.sln ./
+COPY RRBL/*.csproj RRBL/
+COPY RRDL/*.csproj RRDL/
+COPY RRModels/*.csproj RRModels/
+COPY RRWebUI/*.csproj RRWebUI/
+COPY RRTests/*.csproj RRTests/
+
+# Restores any dependencies we need and go to our RRWebUI folder
+RUN cd RRWebUI && dotnet restore
+
+# COPY our source code
+COPY . ./
+# CMD /bin/bash
+
+# publish our application and its dependencies to a folder for deployment to a hosting system
+RUN dotnet publish RRWebUI -c Release -o publish --no-restore
+
+#Since we built our project already, we can just use the .Net runtime instead to save space in our image
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 as runtime
+
+WORKDIR /app
+COPY --from=build /app/publish ./
+
+CMD ["dotnet", "RRWebUI.dll"]
