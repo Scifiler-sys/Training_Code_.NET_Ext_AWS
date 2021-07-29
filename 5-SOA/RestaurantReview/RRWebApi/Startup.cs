@@ -2,11 +2,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RRBL;
+using RRDL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +36,10 @@ namespace RRWebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RRWebApi", Version = "v1" });
             });
 
+            services.AddDbContext<RRDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Reference2DB")));
+            services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IRestaurantBL, RestaurantBL>();
+            services.AddScoped<IReviewBL, ReviewBL>();
 
         }
 
