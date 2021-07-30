@@ -12,6 +12,57 @@
 <body>
     <div class="container">
         <h1 class="jumbotron">JS Demo</h1>
+
+        <div class="container">
+            <h2>Functions in JS</h2>
+            <div class="list-group" style = "width: 10%;">
+                <button class="btn btn-primary" onclick="BasicFunction()">
+                    Basic Function
+                </button>
+                <br>
+                <button class="btn btn-primary" onclick="FirstFunction(SecondFunction)">
+                    Callback Function
+                </button>
+                <br>
+                <button class="btn btn-primary" onclick="lambda()">
+                    Arrow Function
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Closures in JS</h2>
+            <h4>Encapsulation with IIFEs</h4>
+            <button class="btn btn-primary" onclick="console.log(Outer())">Click this</button>
+            <button class="btn btn-primary" onclick="console.log(Outer())">Different button</button>
+            <h4>Encapsulation with new closures</h4>
+            <button class="btn btn-primary" onclick="console.log(add())">Click this</button>
+            <button class="btn btn-primary" onclick="console.log(add2())">Different button</button>
+        </div>
     </div>
+
+    <script>
+        function BasicFunction() 
+        {
+            alert("Javascript at work!");
+        }
+
+        function FirstFunction(callback)
+        {
+            console.log("Currently inside the first function");
+            let name = prompt("Please enter your name");
+            callback(name);
+            console.log("Back to the First Function");
+        }
+        function SecondFunction(name)
+        {
+            //example of Template literals
+            alert(`Hello ${name}`);
+            console.log("Currently inside the second function the inner function");
+        }
+
+        let lambda = () => console.log("I'm an arrow function");
+    </script>
+    <script src="encapsulation.js"></script>
 </body>
 </html>
