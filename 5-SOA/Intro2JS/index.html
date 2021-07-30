@@ -39,6 +39,23 @@
             <button class="btn btn-primary" onclick="console.log(add())">Click this</button>
             <button class="btn btn-primary" onclick="console.log(add2())">Different button</button>
         </div>
+
+        <div class="container">
+            <h2>Updating your frontend from http responses</h2>
+            <h4>AJAX</h4>
+            <form>
+                <div class="form-group" style="width: 40%;">
+                    <label>Pokemon Name</label>
+                    <input type="text" class="form-control" id="pokemonName">
+                    <input type="button" class = "btn btn-primary" value="Find Pokemon" onclick="GetPokemon()">
+                </div>
+            </form>
+            <h5>Results</h5>
+            <div class="container foundPokemon">
+                <img src="" />
+            </div>
+            <h4>Fetch API</h4>
+        </div>
     </div>
 
     <script>
@@ -64,5 +81,6 @@
         let lambda = () => console.log("I'm an arrow function");
     </script>
     <script src="encapsulation.js"></script>
+    <script src="networking.js"></script>
 </body>
 </html>
