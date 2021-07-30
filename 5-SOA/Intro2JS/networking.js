@@ -1,4 +1,4 @@
-function GetPokemon() 
+function GetAJAXPokemon() 
 {
     //Object that will send/receive from our pokemon api
     let xhr = new XMLHttpRequest();
@@ -54,4 +54,35 @@ function GetPokemon()
 
     //Sends the request
     xhr.send();
+}
+
+function GetFetchPokemon()
+{
+    let pokemon2Find = document.querySelector("#pokemonName2").value;
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon2Find}`)
+        .then(result => result.json())
+        .then(pokemon => 
+        {
+            //This will change the src attribute of the img tag to have the source of our pokemon
+            document.querySelector(".foundPokemon img").setAttribute("src", pokemon.sprites.front_default);
+            
+            //Sloppy way to remove previous caption
+            document.querySelectorAll(".foundPokemon caption").forEach((element) => element.remove());
+
+            //We create a caption element
+            let caption = document.createElement("caption");
+            
+            //We got the name of the pokemon
+            let pokemonName = document.createTextNode(pokemon.forms[0].name);
+
+            //we append the caption element to have the pokemon name
+            //<caption> pokemonName </caption>
+            caption.appendChild(pokemonName);
+
+            //We select the image and append the caption element to it
+            document.querySelector(".foundPokemon").appendChild(caption);
+            //Sets the input back to not having anything
+            document.querySelector("#pokemonName").value = "";
+        })
 }

@@ -47,14 +47,22 @@
                 <div class="form-group" style="width: 40%;">
                     <label>Pokemon Name</label>
                     <input type="text" class="form-control" id="pokemonName">
-                    <input type="button" class = "btn btn-primary" value="Find Pokemon" onclick="GetPokemon()">
+                    <input type="button" class = "btn btn-primary" value="Find Pokemon" onclick="GetAJAXPokemon()">
                 </div>
             </form>
             <h5>Results</h5>
             <div class="container foundPokemon">
                 <img src="" />
             </div>
+
             <h4>Fetch API</h4>
+            <form>
+                <div class="form-group" style="width: 40%;">
+                    <label>Pokemon Name</label>
+                    <input type="text" class="form-control" id="pokemonName2">
+                    <input type="button" class="btn btn-primary" value="Find Pokemon" onclick="GetFetchPokemon()">
+                </div>
+            </form>
         </div>
     </div>
 
