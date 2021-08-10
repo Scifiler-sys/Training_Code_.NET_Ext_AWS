@@ -8,10 +8,11 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" routerLink = "/superheroes">Home</a>
-              <a class="nav-link" routerLink = "/welcome">Welcome</a>
+              <a class="nav-link" routerLink = "/welcome"  *ngIf="auth.isAuthenticated$ | async" >Welcome</a>
               <!--<a class="nav-link" routerLink = "/profile">Profile</a>-->
               <a class = "nav-link" routerLink = "/login">Login</a>
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <app-auth-login></app-auth-login>
             </div>
           </div>
         </div>

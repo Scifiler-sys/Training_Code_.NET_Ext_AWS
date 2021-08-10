@@ -12,6 +12,9 @@ import { RouterModule } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './login/login.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { AuthGuard, AuthModule } from '@auth0/auth0-angular';
+import { environment } from 'src/environments/environment';
+import { AuthLoginComponent } from './auth-login/auth-login.component';
 
 @NgModule({ 
   declarations: [ //This will hold our references to our componenets
@@ -21,7 +24,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     PrependPipe,
     WelcomeComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    AuthLoginComponent
   ],
   imports: [ //This is where we reference the node_modules
     BrowserModule,
@@ -29,11 +33,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule, //Whenever you do a reactive form you have to import this
+    AuthModule.forRoot({
+      domain: environment.domain,
+      clientId: environment.clientId
+    }),
 
 
     RouterModule.forRoot([
       {path: "superheroes", component: HeroListComponent},
-      {path: "welcome", component: WelcomeComponent},
+      {path: "welcome", component: WelcomeComponent, canActivate: [AuthGuard]},
       {path: "profile/:heroname", component: ProfileComponent},
       {path: "login", component:LoginComponent},
       {path: "**", redirectTo: "superheroes"}//The two ** indicates a wild card so any other path you go to in your web application will default to a component you specify
