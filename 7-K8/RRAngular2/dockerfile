@@ -1,0 +1,14 @@
+#Declaring the runtime environment
+from node:16-alpine3.11 as build
+
+#Getting our dependencies
+workdir /usr/src/app
+copy package.json package-lock.json ./
+run npm install
+copy . .
+run npm run build
+
+#Running the image
+from nginx:1.21.1
+copy nginx.conf /etc/nginx/nginx.conf
+copy --from=build /usr/src/app/dist/
