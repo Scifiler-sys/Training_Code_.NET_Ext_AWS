@@ -47,7 +47,7 @@ namespace RRWebAPI
                 (builder) => {
                     builder.AddDefaultPolicy((policy) =>
                     {
-                        policy.WithOrigins("http://127.0.0.1:4200", "https://rrangular.azurewebsites.net") //This is where you state the address that you want to trust
+                        policy.WithOrigins("http://127.0.0.1:4200", "https://rrangular.azurewebsites.net", "https://20.84.10.156/") //This is where you state the address that you want to trust
                             .AllowAnyHeader() //Allows any header
                             .AllowAnyMethod(); //Allows any http verb method
                     });

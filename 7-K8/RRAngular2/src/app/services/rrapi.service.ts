@@ -8,7 +8,7 @@ import { IRestaurant } from "./restaurant";
 })
 export class RrapiService {
 
-  private url: string = "https://stephenrestaurantreview.azurewebsites.net/api/";
+  private url: string = "https://20.84.10.156/api/api/";
 
   constructor(private http: HttpClient) { }
 
