@@ -23,7 +23,8 @@
                     <!-- *ngIf is an Angular Structural Directive that removes or show the element in the DOM -->
                     <img *ngIf = "isVisible" [src] = "superhero.image" width = "500"> <!-- This is an example of Property Binding (One-way Data binding)-->
                 </td>
-                <td [ngClass] = "['red', 'bold']" [routerLink] = "['/profile', superhero.name]">{{superhero.name}}</td> <!-- This is an example of passing information using routing-->
+                <td 
+                 [routerLink] = "['/profile', superhero.name]">{{superhero.name}}</td> <!-- This is an example of passing information using routing-->
                 <td>
                     <app-star [rank] = "superhero.rank" (starClick) = "starEventWasTriggered($event)"></app-star>
                 </td>

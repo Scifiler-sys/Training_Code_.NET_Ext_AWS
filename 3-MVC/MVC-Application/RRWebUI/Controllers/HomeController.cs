@@ -18,8 +18,11 @@ namespace RRWebUI.Controllers
             _logger = logger;
         }
 
+        //This is a controller's action
         public IActionResult Index()
         {
+            //Whenever a user tries to access [website].com/Home/Index it will locate this controller action
+            //and perform its implemenetation details
             return View();
         }
 

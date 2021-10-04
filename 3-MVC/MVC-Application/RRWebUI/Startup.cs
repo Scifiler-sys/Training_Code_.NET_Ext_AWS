@@ -24,7 +24,7 @@ namespace RRWebUI
         public IConfiguration Configuration { get; }
 
         /* 
-            -This method gets called by the runtime. Use this method to add services to the container.
+            -This method gets called by runtime. Use this method to add services to the container.
             -Services are the things that your application is dependent on
             -They have different lifetime depending on when instancs are created for that particular depen.
         */ 

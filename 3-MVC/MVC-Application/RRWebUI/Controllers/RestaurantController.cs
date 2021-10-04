@@ -14,19 +14,11 @@ namespace RRWebUI.Controllers
 {
     public class RestaurantController : Controller
     {
-        //Remove these
-        // private readonly ILogger<HomeController> _logger; 
-
         private IRestaurant _restBL;
         public RestaurantController(IRestaurant p_restBL)
         {
             _restBL = p_restBL;
         }
-
-        // public RestaurantController(IRestaurant p_restBL, ILogger<HomeController> logger) : this(p_restBL)
-        // {
-        //     _logger = logger;
-        // }
 
         public IActionResult Index()
         {
