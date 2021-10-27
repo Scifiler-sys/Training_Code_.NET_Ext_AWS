@@ -47,6 +47,8 @@ public class Collections
         arrayLists.Add(2);
         arrayLists.Add(3.5);
 
+        // arrayLists[0].Equals(); Every thing you put in a non-generic list will be treated as an object
+        //Since that is the most generic thing you can have in C#
         foreach (var element in arrayLists)
         {
             Console.WriteLine(element);

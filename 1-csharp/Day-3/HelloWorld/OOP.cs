@@ -6,12 +6,15 @@ namespace HelloWorld
     {
         public Animal()
         { }
+
         public Animal(string p_name, string p_color)
         {
             Name = p_name;
             Color = p_color;
         }
+
         public string Name { get; set; }
+        
         public string Color { get; set; }
 
         //Must state virtual (non-access modifier) that this method will be overriden

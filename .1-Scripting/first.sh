@@ -30,5 +30,6 @@ do
    echo "Do you want to repeat? (true or false)"
    read condition
    echo "You typed: $condition"
+   if [ $condition == ]
 done
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using HouseFunction;
 /*
     Naming Conventions in C#:
@@ -52,6 +53,18 @@ namespace HelloWorld
 
             //Testing Serialization
             Serialization.SerialMain();
+
+            List<int> numbers = new List<int>();
+            numbers.Add(5);
+            numbers.Add(4);
+            numbers.Add(3);
+            numbers.Add(2);
+
+            SumCalculator sumCal = new SumCalculator();
+            Console.WriteLine(sumCal.Calculate(numbers));
+
+            SumCalculator evenSumCal = new EvenSumCalculator();
+            Console.WriteLine(evenSumCal.Calculate(numbers));
         }
 
         static string Hello() //Method we will use

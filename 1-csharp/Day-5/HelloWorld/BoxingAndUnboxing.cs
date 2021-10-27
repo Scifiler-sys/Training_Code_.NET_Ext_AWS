@@ -27,6 +27,14 @@ namespace HelloWorld
             //It is explicit converion
             int num2 = (int)obj;
             Console.WriteLine(num2);
+
+            //Implicit Casting
+            int num3 = 123;
+            double dec = num3; //No special syntax needed
+
+            //Explicity Casting
+            double dec2 = 123.0;
+            int num4 = (int)dec2; //Must add syntax and you have a potential lost of memory/information
         }
 
         //Documentation
