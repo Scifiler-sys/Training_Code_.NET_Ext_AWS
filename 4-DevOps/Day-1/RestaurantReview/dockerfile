@@ -22,3 +22,14 @@ run cd RRWebUI && dotnet restore
 #Copy the source code
 copy . ./
 
+# We need to publish the application and its dependencies to a folder for deployment
+run dotnet publish RRWebUI -c Release -o publish --no-restore
+
+from mcr.microsoft.com/dotnet/aspnet:5.0 as runtime
+
+workdir /app
+copy --from=build /app/publish ./
+
+cmd ["dotnet", "RRWebUI.dll"]
+
+
