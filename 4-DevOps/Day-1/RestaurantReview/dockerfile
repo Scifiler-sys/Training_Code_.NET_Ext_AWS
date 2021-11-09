@@ -1,0 +1,24 @@
+# First our virtual OS will need the .NET 5.0 SDK
+# We shall utilize docker hub since microsoft uploaded their SDK in an image
+# Make sure we are using .NET 5.0 and not 6.0
+from mcr.microsoft.com/dotnet/sdk:5.0
+
+#Setting our working directory
+workdir /app
+
+# Time to copy our projects and paste it to the working directory
+# * is a wild card meaning it'll grab any file as long as its extension is .sln
+copy *.sln ./ 
+copy RRBL/*.csproj RRBL/
+copy RRDL/*.csproj RRDL/
+copy RRModels/*.csproj RRModels/
+copy RRTests/*.csproj RRTests/
+copy RRWebUI/*.csproj RRWebUI/
+
+# Now that we copied our files, remember how we don't have the bin and obj folders
+# Since we ignored them so how do we get them back?
+run cd RRWebUI && dotnet restore
+
+#Copy the source code
+copy . ./
+
