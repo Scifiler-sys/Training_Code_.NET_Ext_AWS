@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="container">
+
         <h1 class="jumbotron">JS Demo</h1>
 
         <div class="container">
@@ -29,6 +30,11 @@
                     Arrow Function
                 </button>
             </div>
+        </div>
+
+        <div class="container">
+            <h2>Hard way to make a class like thing in JS</h2>
+            <button class="btn btn-primary" onclick="makeBankAccount()">Make Account</button>
         </div>
 
         <div class="container">
@@ -88,6 +94,14 @@
         }
 
         let lambda = () => console.log("I'm an arrow function");
+
+        function makeBankAccount()
+        {
+            let stephenAccount = bankAccount(100);
+            console.log(stephenAccount.balance);
+            console.log(stephenAccount.withdraw(20));
+            console.log(stephenAccount.withdraw(20));
+        }
     </script>
     <script src="encapsulation.js"></script>
     <script src="networking.js"></script>

@@ -35,14 +35,15 @@ function GetAJAXPokemon()
             let caption = document.createElement("caption");
             
             //We got the name of the pokemon
-            let pokemonName = document.createTextNode(pokemon.forms[0].name);
+            // let pokemonName = document.createTextNode(pokemon.forms[0].name);
 
-            //we append the caption element to have the pokemon name
+            //we change the caption element inner html to have the pokemon name
             //<caption> pokemonName </caption>
-            caption.appendChild(pokemonName);
+            caption.innerHTML = pokemon.forms[0].name;
 
             //We select the image and append the caption element to it
             document.querySelector(".foundPokemon").appendChild(caption);
+
             //Sets the input back to not having anything
             document.querySelector("#pokemonName").value = "";
         }

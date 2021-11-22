@@ -10,6 +10,22 @@ let Outer =
     }
 )();
 
+let bankAccount = money => (function(copyMoney) {
+    let currentMoney = copyMoney; //Makes this variable essentially private so it cannot be access
+
+    //We can also define a function within this IIFE like a method inside a class in C#
+    return {
+        withdraw: function(amount) {
+            if (currentMoney >= amount) {
+                currentMoney -= amount;
+                return currentMoney;
+            } else {
+                return "Insufficient money";
+            }
+        }
+    }
+})(money);
+
 //Encapsulation with regular functions
 let Count = (
     () => 
