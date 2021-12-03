@@ -6,6 +6,7 @@ import { ISuperhero } from "./hero";
     /*
         The selector property tells Angular to create and insert an instance of this component to whatever it finds the corresponding tag in template HTML
     */
+   
     selector: 'app-hero-list',
     /*
         It links this TS file with the HTML file in the same folder

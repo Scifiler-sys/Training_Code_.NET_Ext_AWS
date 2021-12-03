@@ -15,19 +15,27 @@
             <th>Rank</th>
             <th>Ability</th>
             <th>Organization</th>
+
         </thead>
         <tbody>
+            
             <tr *ngFor = "let superhero of filteredSuperheroes">
+
                 <td>
                     <!-- *ngIf is an Angular Structural Directive that removes or show the element in the DOM -->
                     <img *ngIf = "isVisible" [src] = "superhero.image" width = "500"> <!-- This is an example of Property Binding (One-way Data binding)-->
                 </td>
+
                 <td [ngClass] = "['red', 'bold']">{{superhero.name}}</td>
+
                 <td>
                     <app-star [rank] = "superhero.rank" (starClick) = "starEventWasTriggered($event)"></app-star>
                 </td>
+
                 <td>{{superhero.ability | prepend: "Utility" | uppercase}}</td>
+
                 <td [ngStyle] = "{'color': isVisible ? 'green' : 'red'}">{{superhero.organization}}</td>
+
             </tr>
         </tbody>
     </table>

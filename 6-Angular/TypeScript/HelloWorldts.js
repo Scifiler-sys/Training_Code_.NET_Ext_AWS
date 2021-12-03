@@ -1,4 +1,4 @@
-import { Quiz } from "./Quiz";
+// import {Quiz} from "./Quiz";
 /*
     command tsc [filename] will transpile the TS file into JS
     command tsc [filename] -w will tranpile the TS file and set into watch mode that any saved changes
@@ -41,7 +41,7 @@ let m1;
 m1 = "hello";
 m1 = 6;
 //DO NOT use void or never as datatypes for variables, void is for function return types
-//Never is for  error handling 
+//Never is for error handling 
 //NULL and UNDEFINED
 let nul1; //undefined because you didn't assign it with anything
 let un1 = null;
@@ -57,11 +57,14 @@ arr2 = [3, true, false, 5];
 let arr3;
 arr3 = 3;
 arr3 = [true, false, true, true];
-//TUPLE - it is an array that can contain only two values of fixed type
+//TUPLE - it is an array but has a fixed position of datatypes
 let tul;
-tul = [5, ""];
+tul = [5, "", false];
+console.log(tul);
+tul.push(3, "", true); //You can add more elements as long as they also follow the datatype positions
+console.log(tul);
 //ENUMs, enumeration, specified set of named constants. Easier to document intent (Only in TS)
-let engine;
+let engine = 0;
 if (engine == 0) //Not as clear seeing how 0 means engine is off without looking at code 
  {
     console.log("The engine is off");
@@ -100,11 +103,24 @@ class SuperVillain {
         console.log("in object method");
         console.log(`${this.superpower} is unleashed`);
     }
+    //Produces a compiler error since typescript doesn't support method overloading
+    // useAbility(p_broadcast:string)
+    // {
+    //     console.log(p_broadcast);
+    //     console.log(`${this.superpower} is unleashed`);
+    // }
+    //A way to do method overloading
+    //You need to give default value to the parameter or else it will be undefined
+    aWayToDoOverloading(p_test = "") {
+        console.log("Overloading...kind off" + p_test);
+    }
 }
 let vill;
 vill = new SuperVillain("Jacob", "Projects enforcer", 5);
 console.log(vill);
 vill.useAbility();
+vill.aWayToDoOverloading();
+vill.aWayToDoOverloading("Yay Overloading");
 class VillainOrg extends SuperVillain {
     constructor(name, superpower, bounty, title) {
         super(name, superpower, bounty);
@@ -155,6 +171,16 @@ ani =
         }
     };
 class Dog {
+    /**
+     *
+     */
+    constructor() {
+        this.numOfLegs = 0;
+        this.isAlive = true;
+    }
+    speak() {
+        return "Bark";
+    }
 }
 //ARROW NOTATION
 console.log("==== ARROW NOTATION ====");
@@ -178,9 +204,10 @@ arrEx2();
     
     Will not work without using Angular
 */
-function printQuize(q1) {
-    console.log(`The quiz name is ${q1.name}\n Grade: ${q1.grade}`);
-}
-let quiz1;
-quiz1 = new Quiz("Math", 89);
-printQuize(quiz1);
+// function printQuize(q1:Quiz)
+// {
+//     console.log(`The quiz name is ${q1.name}\n Grade: ${q1.grade}`);
+// }
+// let quiz1:Quiz;
+// quiz1 = new Quiz("Math", 89);
+// printQuize(quiz1);

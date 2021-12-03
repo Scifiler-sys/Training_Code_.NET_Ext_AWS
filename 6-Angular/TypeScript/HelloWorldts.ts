@@ -1,4 +1,4 @@
-import {Quiz} from "./Quiz";
+// import {Quiz} from "./Quiz";
 
 /*
     command tsc [filename] will transpile the TS file into JS
@@ -54,7 +54,7 @@ m1 = "hello";
 m1 = 6;
 
 //DO NOT use void or never as datatypes for variables, void is for function return types
-//Never is for  error handling 
+//Never is for error handling 
 
 //NULL and UNDEFINED
 let nul1:null; //undefined because you didn't assign it with anything
@@ -75,12 +75,15 @@ let arr3: number | boolean[];
 arr3 = 3;
 arr3 = [true, false, true, true];
 
-//TUPLE - it is an array that can contain only two values of fixed type
-let tul: [number, string];
-tul = [5, ""];
+//TUPLE - it is an array but has a fixed position of datatypes
+let tul: [number, string, boolean];
+tul = [5, "", false];
+console.log(tul);
+tul.push(3,"", true); //You can add more elements as long as they also follow the datatype positions
+console.log(tul);
 
 //ENUMs, enumeration, specified set of named constants. Easier to document intent (Only in TS)
-let engine: number;
+let engine: number = 0;
 
 if(engine == 0) //Not as clear seeing how 0 means engine is off without looking at code 
 {
@@ -118,6 +121,7 @@ console.log(myFunc2("MF"));
 
 //=================================== CLASSES AND OBJECTS ===================================
 console.log("==== CLASSES AND OBJECTS ====");
+
 class SuperVillain {
     name:string;
     superpower:string;
@@ -134,6 +138,20 @@ class SuperVillain {
         console.log("in object method");
         console.log(`${this.superpower} is unleashed`);
     }
+
+    //Produces a compiler error since typescript doesn't support method overloading
+    // useAbility(p_broadcast:string)
+    // {
+    //     console.log(p_broadcast);
+    //     console.log(`${this.superpower} is unleashed`);
+    // }
+
+    //A way to do method overloading
+    //You need to give default value to the parameter or else it will be undefined
+    aWayToDoOverloading(p_test:string = "")
+    {
+        console.log("Overloading...kind off" + p_test);
+    }
 }
 
 let vill:SuperVillain;
@@ -141,6 +159,8 @@ let vill:SuperVillain;
 vill = new SuperVillain("Jacob", "Projects enforcer", 5);
 console.log(vill);
 vill.useAbility();
+vill.aWayToDoOverloading();
+vill.aWayToDoOverloading("Yay Overloading");
 
 class VillainOrg extends SuperVillain
 {
@@ -224,8 +244,18 @@ class Dog implements Animal
     numOfLegs: number;
     isAlive: boolean;
 
-    speak: () => string;
+    /*
+        
+     */
+    constructor() {
+        this.numOfLegs = 0;
+        this.isAlive = true;
+    }
 
+    speak() : string
+    {
+        return "Bark";
+    }
 }
 
 //ARROW NOTATION
@@ -254,11 +284,11 @@ arrEx2();
     Will not work without using Angular
 */
 
-function printQuize(q1:Quiz)
-{
-    console.log(`The quiz name is ${q1.name}\n Grade: ${q1.grade}`);
-}
+// function printQuize(q1:Quiz)
+// {
+//     console.log(`The quiz name is ${q1.name}\n Grade: ${q1.grade}`);
+// }
 
-let quiz1:Quiz;
-quiz1 = new Quiz("Math", 89);
-printQuize(quiz1);
+// let quiz1:Quiz;
+// quiz1 = new Quiz("Math", 89);
+// printQuize(quiz1);
