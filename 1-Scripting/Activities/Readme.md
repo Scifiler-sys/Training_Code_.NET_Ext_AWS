@@ -1,7 +1,7 @@
 # Group Activity
 
 ## First Phase
-**Use only the terminal to do the following operations**
+**Use only the terminal to do the following operations**:exclamation:
 1. Change directory to your document folder
 2. Create a folder and name it 'Revature'
 3. Change directory to Revature (that will be our working directory)
