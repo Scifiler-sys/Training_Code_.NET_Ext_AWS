@@ -20,7 +20,7 @@
 6. Push to the remote repository
     * Check if your remote repository has the readme file inside of it
 
-# Third Phase
+## Third Phase
 :exclamation:**Use only the terminal to do the following operations**:exclamation:
 1. Create a new folder in the working directory named Shell
 2. Create a shell file inside of the folder
