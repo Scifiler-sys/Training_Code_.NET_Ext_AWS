@@ -42,3 +42,16 @@
 * Just imagine 5 people trying to access the same computer just to work on the same project. That would be a nightmare!
 * Instead, we use Github to create a remote repository that we can share with everyone else and they can work on their **own** copy of the project in their **own** computer (in a more technical term is they will create a local repository that is similar to the remote repository). Once they finish, they can **push** (Just means upload) their version of local repository to the remote repository to update the remote repository to look like the local repository.
 
+### Pros
+* Allows you to keep track of all the changes to each file to help you debug potential issues
+* Allows you to backtrack to previous version of your code if your current version is too unstable
+* If local files gets corrupted, you can get the files stored in Github to restore it
+
+### Cons
+* You might have merge conflicts
+    * Just imagine one peson worked on the same file as another person and Git doesn't know which modified version to use
+* Quite confusing when working with it the first time
+
+### Useful link to understand all the commands you can use with Git
+* [A nice game that visalizes what Git does](https://learngitbranching.js.org/?locale=en_US)
+* [Git Documentation](https://git-scm.com/doc)
