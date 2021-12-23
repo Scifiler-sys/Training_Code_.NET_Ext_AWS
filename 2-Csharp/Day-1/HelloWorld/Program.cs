@@ -1,48 +1,9 @@
-﻿using System;
-using HouseFunction;
-/*
-    Naming Conventions in C#:
-    - We use PascalCase for the most part and that means naming artifacts as EveryFirstLetterIsCapitalized.
-    - We use camelCase for naming fields and that means naming artifacts as onlyTheFirstWordIsNotCapitalized.
-    - As you can see, the auto-generated class has PascalCase for most things.
-*/
+﻿// See https://aka.ms/new-console-template for more information
 
-namespace HelloWorld
-{
-    class Program
-    {
-        //We can use underscores for private fields to reference them easier.
-        private static string _first = "Hello ";
-        private string _last = "World!"; //Make this static first
+//Program.cs is the implicity generated main method that will become the entry point of the program
+//As of C# 9.0, they decided to make top-level statements which basically mean you can write less code to do the same operation
+//Since they decided to hide things from you by implicitly doing it itself, it gets a bit confusing what's really happening at the back
 
-        /*
-            - Main method is the first method that will be called/run. (The compiler will look for this method)
-            - The static means, I don't have to instantiate the program class to use that method
-            - Void, the method will not return anything.
-            - string[] args, method uses 
-        */
-        static void Main(string[] args)
-        {
-            Console.WriteLine("====Hello World====");
-            // Console.WriteLine(Program._first + Program._last); //When both fields are static
+//One important thing you just need to know is that the main method is the entry point of your program
+Console.WriteLine("Hello, World!");
 
-            //This is how you instantiate an object from a class
-            Program prgm = new Program();
-
-            //since _last field is no longer static, we need to instantiate an object to get that field's value
-            Console.WriteLine(Program._first + prgm._last); 
-            //if we write a data type instead of void on a method, the method returns that data type
-            Console.WriteLine(Program.Hello());
-
-            //string[] args is a way for you to pass data when running your console
-            // Console.WriteLine(args[0] + args[1]); //To test string[] args parameter
-            
-            House.HouseMain();
-        }
-
-        static string Hello() //Method we will use
-        {
-            return "Hello World! Method";
-        }
-    }
-}
