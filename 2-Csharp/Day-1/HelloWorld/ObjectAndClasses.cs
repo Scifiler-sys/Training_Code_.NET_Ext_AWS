@@ -10,42 +10,84 @@ namespace CarFunction
         //Each class has multiple class memebers you can place inside a class that does something specific
 
         //This is a field
-        //It is used to store information
-        public string _color = "Red";
+        //It is used to store information or define the current state of the object when you first make it
+        //It is a good practice to keep every field you make in a class private
+        //private means that only the class itself can use it
+        //string means that the variable will only hold sentences or words
+        private string _color;
+        private string _owner;
+
+        //int means that the variable will only hold whole numbers
+        private int _fuel;
+        private int _gallonPerMile;
 
         //This is a constructor
-        //It is a method that will execute whenever you create 
-        public House()
-        { }
+        //It is a method that will execute whenever you create an object from this class
+        public Car()
+        {
+            Console.WriteLine("Creating a Car!");
 
-        //This is a Property, a class member that allows flexibility on reading, writing, or computing a field
+            //It is good practice to set the current value of fields inside a constructor
+            //So we essentially made a way that every Car we make will start as Red
+            _color = "Red";
+            _owner = "No Owner";
+            _fuel = 100;
+            _gallonPerMile = 1;
+         }
+
+        //This is a Property
+        //Allows flexibility on reading, writing, or computing a field
+        //They are essentially used to edit fields
+        //This is a basic property that will write and read a field
         public string Color
         {
-            get{return _color;}
-            set{_color = value;}
+            get { return _color; }
+            set { _color = value; }
         }
 
-        public int Price { get; set; }
+        //This is a property that will only read a field anywhere but will only write a field only in the class itself
+        public string Owner
+        {
+            get{ return _owner; }
+
+            //private can also be used to make it only available to the class itself
+            private set { _owner = value; }
+        }
+        
+        public int Fuel
+        {
+            //Will make it write only field
+            private get { return _fuel; }
+            set {_fuel = value; }
+        }
+
+        public int GallonPerMile
+        {
+            get {return _gallonPerMile; }
+            set {_gallonPerMile = value; }
+        }
+
+        //A method will run multiple lines of code to do some sort of a function/behavior
+        //void means the method will return nothing
+        //We can change that to any datatype or class 
+        public double TotalDistancePerFullFuel()
+        {
+            //Displays the current state of Car object
+            Console.WriteLine("Current Fuel:" + Fuel);
+            Console.WriteLine($"GallonPerMile: {_gallonPerMile}");
+            
+            //Return keyword is what the method will return
+            return (double)Fuel/GallonPerMile;
+        }
 
         //A special type of method that you inherit from the System.Object
         //This method is invoked whenever you need a string representation of the object
         //By default, it just gives the current namespace of the object
-        public override string ToString()
-        {
-            return $"Color: {Color}\nPrice: {Price}";
-        }
-        public static void HouseMain()
-        {
-            Console.WriteLine("====Classes and Objects====");
-            House house1 = new House(); //The new keyword tells the compiler to make a new object
-            Console.WriteLine(house1.Color);
-            House house2 = new House();
-            house2.Color = "Blue";
-            Console.WriteLine(house2.Color);
-            house2.Price = 5000;
-            Console.WriteLine(house2.Price);
-            Console.WriteLine(house2);
-        }
+        // public override string ToString()
+        // {
+        //     return $"Color: {Color}\nPrice: {Price}";
+        // }
+        
     }
 
     //Documentation
