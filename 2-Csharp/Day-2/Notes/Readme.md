@@ -50,4 +50,4 @@
 * Ex: classes, arrays, interfaces, strings, etc.
 
 # What happens when you run your code?
-* Well the computer doesn't understand english language and the keywords we have written in our source code (source codes are just )
+* Well the computer doesn't understand english language and the keywords we have written in our source code (source codes are just)

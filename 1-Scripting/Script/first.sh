@@ -103,7 +103,7 @@ echo Hi $name, I hope you are ready to learn a lot!
 # We can combine Input and Output with While loops to create a menu like interface
 clear #shell command that clears the screen
 repeat="true" #Variable we will use to keep repeating the while loop if needed
-
+ 
 while [ "$repeat" == "true" ] 
 do
  echo "Welcome to shell scripting!"
