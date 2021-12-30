@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 public class Collections
 {
-    //Array
-    
-
     //Generic collection
     List<string> strings = new List<string>();
 
