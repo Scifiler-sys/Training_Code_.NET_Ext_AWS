@@ -41,9 +41,11 @@ Console.WriteLine(car3.Color);
 
 //===Menu Demo===
 Menu m1 = new Menu();
-m1.Start();
+// m1.Start();
 
 //Testing static method
 Menu.Sum(5, 10);
 
 //===Collection Demo===
+Collections col = new Collections();
+col.CollectionsMain();
