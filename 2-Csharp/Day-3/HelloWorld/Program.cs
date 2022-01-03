@@ -1,4 +1,5 @@
 ﻿using CarFunction; //We need to import the namespace of that class to even start using it anywhere else
+using ConversionFunction;
 using MenuFunction;
 
 // See https://aka.ms/new-console-template for more information
@@ -49,3 +50,6 @@ Menu.Sum(5, 10);
 //===Collection Demo===
 Collections col = new Collections();
 col.CollectionsMain();
+
+//===Conversion Demo===
+Conversions.ConversionsMain();

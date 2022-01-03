@@ -6,6 +6,7 @@ namespace MenuFunction
         { 
             this.Name = "Default";
             this.Repeat = true;
+            this.Answer = "0";
         }
 
         public string Name { get; set; }
