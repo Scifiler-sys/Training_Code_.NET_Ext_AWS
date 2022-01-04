@@ -1,6 +1,7 @@
 ﻿using CarFunction; //We need to import the namespace of that class to even start using it anywhere else
 using ConversionFunction;
 using MenuFunction;
+using SerializationFunction;
 
 // See https://aka.ms/new-console-template for more information
 
@@ -53,3 +54,6 @@ col.CollectionsMain();
 
 //===Conversion Demo===
 Conversions.ConversionsMain();
+
+//===Serialization Demo===
+Serialization.SerialMain();
