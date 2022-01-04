@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using System.Text.Json;
-using CarFunction;
+using HouseFunction;
 
 namespace HelloWorld
 {
@@ -10,17 +10,16 @@ namespace HelloWorld
         private const string _filePath = "./StoredFile/House.json";
         public static void SerialMain() 
         {
-            //Created car object to be serialized
-            Car car1 = new Car()
+            //Created house object to be serialized
+            House house1 = new House()
             {
-                Color = "Blue",
-                Fuel = 10000,
-                GallonPerMile = 10
+                Color = "red",
+                Price = 100000
             };
 
             //declared a string var and point it to the serialized version of the house1
             //We added JsonSerializerOptions to format it better for us (it uses more memory though thats why by default it is a single line to save space)
-            string jsonString = JsonSerializer.Serialize(car1, new JsonSerializerOptions {WriteIndented = true});
+            string jsonString = JsonSerializer.Serialize(house1, new JsonSerializerOptions {WriteIndented = true});
 
             //Seeing the string
             Console.WriteLine(jsonString);
@@ -34,8 +33,8 @@ namespace HelloWorld
                 //ReadAllText method might throw an error if it isn't able to find the filepath
                 //We will handle it 
                 jsonString = File.ReadAllText(_filePath);//+"askljhfe");
-                Car car2 = JsonSerializer.Deserialize<Car>(jsonString);
-                Console.WriteLine(car2);
+                House house2 = JsonSerializer.Deserialize<House>(jsonString);
+                Console.WriteLine(house2);
                 // throw new Exception("unknown error");
             }
             catch (FileNotFoundException)
