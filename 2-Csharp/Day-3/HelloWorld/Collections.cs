@@ -9,7 +9,7 @@ public class Collections
     //Syntax: (datatype)[] (name of variable) = new (datatype)[(size of array)];
     private int[] nums = new int[5];
 
-    //Generic collection
+    //Generic collection##
     //They are collection that store specific datatypes
     //Anything inside <(datatype)> is how we define what it will store
 
@@ -82,6 +82,19 @@ public class Collections
         {
             Console.WriteLine(element);
         }
+
+        HashSet<int> numSet2 = new HashSet<int>();
+        numSet2.Add(32);
+        numSet2.Add(60);
+
+        numSet.UnionWith(numSet2);
+        // numSet.ExceptWith(numSet2);
+
+        Console.WriteLine("After UnionWith");
+        foreach (int element in numSet)
+        {
+            Console.WriteLine(element);
+        }
         
         Console.WriteLine("=Dictionary Demo=");
         dict.Add("Stephen", true);
@@ -112,6 +125,13 @@ public class Collections
         {
             Console.WriteLine(element);
         }
+
+        //Stuff we can't do since it treats every element as an object
+        //We can't add two element even if they are numbers
+        // int test = arrayLists[1] + 5;
+        //We can't use string datatype specific methods and that applies to anything else that have specific methods
+        // strings[0].ToUpper(); //Possible to do
+        // arrayLists[0].ToUpper(); //Impossible to do
     }
 
     //Documentation
