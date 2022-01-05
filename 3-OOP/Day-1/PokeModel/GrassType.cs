@@ -28,7 +28,6 @@ namespace PokeModel
         //Example of Method Overloading
         //Same name but different paremeter method that have a slightly different implementation detail
         //In this way even the method have multiple forms of functionality (like the general definition of what polymorphism is)
-        //Note: parameters are a great way (if not the best way) to pass additional data to a method that it needs to use
         public int DefendMove(int p_increase)
         {
             return this.Defense + this._rand.Next(5,10) + p_increase;
