@@ -5,6 +5,7 @@
         public Pokemon()
         {
             this.Name = "Ditto";
+            this.Level = 1;
             this.Attack = 55;
             this.Health = 55;
             this.Defense = 55;
@@ -12,6 +13,7 @@
         }
 
         public string Name { get; set; }
+        public int Level { get; set; }
         public int Health { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
@@ -38,7 +40,7 @@
 
         public override string ToString()
         {
-            return $"===Pokemon Info===\nName: {Name}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}";
+            return $"===Pokemon Info===\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}";
         }
     }
 }
