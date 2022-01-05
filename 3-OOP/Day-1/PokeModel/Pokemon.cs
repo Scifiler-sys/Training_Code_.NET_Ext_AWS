@@ -2,6 +2,7 @@
 {
     public class Pokemon
     {
+        protected Random _rand = new Random();
         public Pokemon()
         {
             this.Name = "Ditto";
@@ -36,6 +37,12 @@
                     throw new Exception("A pokemon can only have 4 abilities");
                 }
             }
+        }
+
+        //You must use virtual keyword for it to be overriden
+        public virtual int DefendMove()
+        {
+            return this.Defense + _rand.Next(-5,5);
         }
 
         public override string ToString()
