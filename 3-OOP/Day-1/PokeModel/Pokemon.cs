@@ -2,6 +2,8 @@
 {
     public class Pokemon
     {
+        //Random class is made for us to get a randomly generated number
+        //.Next() method is how it gets a random number
         protected Random _rand = new Random();
         public Pokemon()
         {
