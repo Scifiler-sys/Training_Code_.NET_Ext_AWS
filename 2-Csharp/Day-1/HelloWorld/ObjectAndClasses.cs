@@ -80,6 +80,16 @@ namespace CarFunction
             return (double)Fuel/GallonPerMile;
         }
 
+        //Methods can also have parameters
+        //They are implemented by adding in datatypes inside of the parenthesis
+        //The comma is used if a method needs more than 1 parameter
+        //In this case we have a method with two parameters that take in integers (so numbers)
+        //Note: parameters are a great way (if not the best way) to pass additional data to a method that it needs to use
+        public void ParameterDemo(int x, int y)
+        {
+            Console.WriteLine($"The sum: {x+y}"); 
+        }
+
         //A special type of method that you inherit from the System.Object
         //This method is invoked whenever you need a string representation of the object
         //By default, it just gives the current namespace of the object

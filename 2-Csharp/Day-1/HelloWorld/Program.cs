@@ -31,6 +31,8 @@ car1.GallonPerMile = 3;
 
 Console.WriteLine(car1.TotalDistancePerFullFuel() + " Miles");
 
+car1.ParameterDemo(10,15);
+
 //Like with blueprints, you can create more objects from a class
 Car car2 = new Car();
 Car car3 = new Car();
