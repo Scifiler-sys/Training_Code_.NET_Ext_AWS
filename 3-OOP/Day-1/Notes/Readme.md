@@ -54,20 +54,6 @@
 * They **prevent unauthorize access** to your object's properties and setting vlaues that shouldn't be there
 * **Key note:** this is only possible if you make your fields private so nothing can access it but the class itself
 
-## Abstraction
-* The process of hiding the implementation details and only showing the functionality to the user
-* A way to simplify complex application and not worry about the implementation details and just really focuse on the functionality of something.
-* Ex: You know how to send a text with your phone but you don't know the process on how that text gets send over to the other person
-* The way we implement abstraction is through the use of interfaces and abstract classes
-### Interface
-* It contains nothing but abstract methods and properties
-    * That just means you don't have to write implementation details when you create an interface
-* You can "inherit" multiple interfaces
-### Abstract class
-* May contain some methods and properties with implementation
-* May also contain abstract methods and properties
-* You cannot inherit multiple abstract classes
-
 ## Inheritance
 * It is the mechanism in which a class can acquire all the properties and behavior of a parent class
 * It allows us to create classes that are build upon existing classes
@@ -97,3 +83,17 @@
 * When a derived class changes the implementation details of a method from the base class
 ### Method Overloading
 * When there are multiple method but with different parameters and most of the time, different implementation details
+
+## Abstraction
+* The process of hiding the implementation details and only showing the functionality to the user
+* A way to simplify complex application and not worry about the implementation details and just really focuse on the functionality of something.
+* Ex: You know how to send a text with your phone but you don't know the process on how that text gets send over to the other person
+* The way we implement abstraction is through the use of interfaces and abstract classes
+### Interface
+* It contains nothing but abstract methods and properties
+    * That just means you don't have to write implementation details when you create an interface
+* You can "inherit" multiple interfaces
+### Abstract class
+* May contain some methods and properties with implementation
+* May also contain abstract methods and properties
+* You cannot inherit multiple abstract classes
