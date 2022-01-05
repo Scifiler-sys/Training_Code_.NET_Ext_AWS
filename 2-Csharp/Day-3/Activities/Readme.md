@@ -3,7 +3,7 @@
 ## Add more function to your Menu console app
 1. Create a new C# file inside your menu project called Data
 2. Create a Data class that will hold a collection of something for your menu
-3. Add any class members (methods, constructors, properties, fields, etc.) to Data class that you think will be useful to accomplish the following functions. 
+3. Add any class members (methods, constructors, properties, fields, etc.) to Data class that you think will be useful to accomplish the following functions 
 3. Add function to Menu to add elements to a collection
     * This function might look different depending on what theme you created for your menu app
     * Ex: If it is a shopping app then maybe a cart system would make the most sense
