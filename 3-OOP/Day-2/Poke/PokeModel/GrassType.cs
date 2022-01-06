@@ -32,5 +32,18 @@ namespace PokeModel
         {
             return this.Defense + this._rand.Next(5,10) + p_increase;
         }
+
+        //Example of User-defined conversion
+        //Allows us to create a class to be able to convert from some other datatype
+        public static implicit operator GrassType(string p_name)
+        {
+            return new GrassType(){Name = p_name};
+        }
+
+        //This is for explicit conversion
+        public static explicit operator GrassType(int p_attack)
+        {
+            return new GrassType(){Attack = p_attack};
+        }
     }
 }
