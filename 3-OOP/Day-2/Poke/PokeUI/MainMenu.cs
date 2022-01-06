@@ -19,7 +19,7 @@ namespace PokeUI
             
         }
 
-        public string UserChoice()
+        public MenuType UserChoice()
         {
             string userInput = Console.ReadLine();
             //Switch is just a more optimized version of if and elseifs and else
@@ -27,15 +27,15 @@ namespace PokeUI
             {
                 //Cases are the same as else ifs
                 case "0":
-                    return "Exit";
+                    return MenuType.Exit;
                 case "1":
-                    return "AddPokemon";
+                    return MenuType.AddPokemon;
                 //Default is the same as an else
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return "MainMenu";
+                    return MenuType.MainMenu;
             }
         }
     }

@@ -20,6 +20,13 @@
 // Console.WriteLine("Defend value: " + bulbasaur.DefendMove()); //Grasstype overrides the defendmove from pokemon class
 // Console.WriteLine("Defend value: " + bulbasaur.DefendMove(300)); //Grasstype overloads the defendmove to also take in a integer parameter
 
+// //Checking if User-defined conversion works
+// string name = "Bayleef";
+// int attack = 70;
+// GrassType Bayleef = name;
+// GrassType Bayleef2 = (GrassType)attack;
+
+
 using PokeUI;
 
 bool repeat = true;
@@ -31,18 +38,18 @@ while (repeat)
 
     Console.Clear(); //Clears terminals
     menu.Display(); //Displays menu
-    string ans = menu.UserChoice(); //Ask for user choice
+    MenuType ans = menu.UserChoice(); //Ask for user choice
 
     //Main place where we change our pages
     switch (ans)
     {
-        case "Exit":
+        case MenuType.Exit:
             repeat = false;
             break;
-        case "AddPokemon":
+        case MenuType.AddPokemon:
             menu = new AddPokemon();
             break;
-        case "MainMenu":
+        case MenuType.MainMenu:
             menu = new MainMenu();
             break;
         default:

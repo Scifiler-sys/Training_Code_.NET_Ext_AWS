@@ -1,5 +1,12 @@
 namespace PokeUI
 {
+    //Enums is useful to give more meaning to your code and also have the compiler help you out in filling out things
+    public enum MenuType
+    {
+        Exit,
+        MainMenu,
+        AddPokemon
+    }
     /*
         Interfaces are one of the best way to implement abstraction
         Every method is implicitly abstract meaning you do not have to write any implementation details for it
@@ -16,6 +23,6 @@ namespace PokeUI
         /// Will record the user's choice and change/route your menu based on the choice
         /// </summary>
         /// <returns>Returns the menu that will be changed into</returns>
-        string UserChoice();
+        MenuType UserChoice();
     }
 }

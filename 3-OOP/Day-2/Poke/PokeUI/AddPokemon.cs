@@ -17,28 +17,28 @@ namespace PokeUI
             Console.WriteLine("[1] Save");
             Console.WriteLine("[0] Go Back");
         }
-       public string UserChoice()
+       public MenuType UserChoice()
         {
             string userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "0":
-                    return "MainMenu";
+                    return MenuType.MainMenu;
                 case "1":
-                    return "AddPokemon";
+                    return MenuType.AddPokemon;
                 case "2":
                     Console.WriteLine("Enter Level");
                     newPoke.Level = Convert.ToInt32(Console.ReadLine());
-                    return "AddPokemon";
+                    return MenuType.AddPokemon;
                 case "3":
                     Console.WriteLine("Enter Name");
                     newPoke.Name = Console.ReadLine();
-                    return "AddPokemon";
+                    return MenuType.AddPokemon;
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return "AddPokemon";
+                    return MenuType.AddPokemon;
             }
         }
     }
