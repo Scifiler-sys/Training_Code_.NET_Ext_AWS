@@ -73,7 +73,19 @@
 * :exclamation:**Multiple inheritance does not exist**:exclamation:
 ### Access Modifiers
 * They restrict the scope of classes, methods, fields, etc. to only be accessible in certain areas
-* 
+* Public
+    * Everything has access to it
+* Internal
+    * Access within the class
+    * Access within the derived class
+    * Access within the same project
+    * Default access modifier for classes
+* Protected
+    * Access within the class
+    * Access within the derived class
+* Private
+    * Access only within the class
+    * This is the default access modifiers for class members
 
 ## Polymorphism
 * The ability of an object to take on many forms
