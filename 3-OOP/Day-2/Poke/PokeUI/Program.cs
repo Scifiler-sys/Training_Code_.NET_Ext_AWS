@@ -25,8 +25,8 @@
 // int attack = 70;
 // GrassType Bayleef = name;
 // GrassType Bayleef2 = (GrassType)attack;
-
-
+using PokeBL;
+using PokeDL;
 using PokeUI;
 
 bool repeat = true;
@@ -47,7 +47,7 @@ while (repeat)
             repeat = false;
             break;
         case MenuType.AddPokemon:
-            menu = new AddPokemon();
+            menu = new AddPokemon(new PokemonBL(new Repository()));
             break;
         case MenuType.MainMenu:
             menu = new MainMenu();
