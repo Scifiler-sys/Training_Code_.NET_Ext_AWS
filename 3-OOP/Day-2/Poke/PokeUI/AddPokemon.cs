@@ -29,7 +29,17 @@ namespace PokeUI
                 case "0":
                     return MenuType.MainMenu;
                 case "1":
-                    this._pokeBL.AddPokemon(_newPoke);
+                    try
+                    {
+                        this._pokeBL.AddPokemon(_newPoke);
+                    }
+                    catch (System.Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Please press Enter to continue");
+                        Console.ReadLine();
+                    }
+                    
                     return MenuType.MainMenu;
                 case "2":
                     Console.WriteLine("Enter Level");

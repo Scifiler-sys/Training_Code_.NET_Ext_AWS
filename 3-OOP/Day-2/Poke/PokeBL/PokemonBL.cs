@@ -14,7 +14,14 @@ namespace PokeBL
         }
         public Pokemon AddPokemon(Pokemon p_poke)
         {
-            return _repo.AddPokemon(p_poke);
+            if (this.GetAllPokemon().Count < 4)
+            {
+                return _repo.AddPokemon(p_poke);
+            }
+            else
+            {
+                throw new Exception("You can no longer add anymore pokemon to your team!");
+            }
         }
 
         public List<Pokemon> GetAllPokemon()

@@ -1,5 +1,10 @@
 global using PokeModel;
 
+/*
+    Business layer project is responsible for further processing the data we acquire from the database
+
+    This further processing will really depend on what the functionality you are trying to add
+*/
 namespace PokeBL
 {
     public interface IPokemonBL

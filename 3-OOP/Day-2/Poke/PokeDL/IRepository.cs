@@ -1,6 +1,16 @@
 //Global using so that any c# classes we make inside this project will implicitly start using PokeModel
 global using PokeModel;
 
+
+/*
+    Data Layer project is responsible for directly accessing our database and doing any CRUD operations we want to it
+
+    CRUD?
+    Create resources
+    Delete resources
+    Read resources
+    Update resources
+*/
 namespace PokeDL
 {
     /*
