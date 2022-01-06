@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeModel", "PokeModel\Poke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeUI", "PokeUI\PokeUI.csproj", "{A3889DC4-BF3C-49F0-B3DC-10CBDEAB630E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeDL", "PokeDL\PokeDL.csproj", "{ADCB56D9-2745-4D3D-AB9E-48660898E17F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeBL", "PokeBL\PokeBL.csproj", "{AD57F272-E8FF-49A9-BC59-D84A4F2F45F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{A3889DC4-BF3C-49F0-B3DC-10CBDEAB630E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3889DC4-BF3C-49F0-B3DC-10CBDEAB630E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3889DC4-BF3C-49F0-B3DC-10CBDEAB630E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADCB56D9-2745-4D3D-AB9E-48660898E17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADCB56D9-2745-4D3D-AB9E-48660898E17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADCB56D9-2745-4D3D-AB9E-48660898E17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADCB56D9-2745-4D3D-AB9E-48660898E17F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD57F272-E8FF-49A9-BC59-D84A4F2F45F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD57F272-E8FF-49A9-BC59-D84A4F2F45F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD57F272-E8FF-49A9-BC59-D84A4F2F45F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD57F272-E8FF-49A9-BC59-D84A4F2F45F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
