@@ -55,3 +55,17 @@
     * Can't add numerical datatypes anymore
     * Can't use specific methods from a class
     * etc.
+
+# Conversion
+* C# is statically typed at compiled time. Meaning after a variable is declared, it cannot be declared again.
+* However, it is possible to change the variable type
+## Implicit Conversion
+* Generally, it is when you can convert the type without any data loss
+* Mostly used with numerical datatypes
+* No special syntax needed to write and compiler will do it for you
+* Ex: converting an int into a double
+## Explicit Conversion
+* If there is a risk of losing information, you must perform a **Cast**
+* Special syntax is needed to write to tell the compiler to do it anyway
+* Casting is denoted with (datatype)
+* Convert class is useful for converting a string datatype into another datatype

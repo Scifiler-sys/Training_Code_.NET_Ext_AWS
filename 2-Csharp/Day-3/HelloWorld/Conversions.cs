@@ -16,10 +16,15 @@ namespace ConversionFunction
             double y = 73.748;
             string i = "19.6";
 
+            //Some implicit conversion can be done with certain datatypes
+            //The general rule is if you are going from a datatype to another datatype without losing information
+            //then the compiler can do it for you
             Console.WriteLine("=Implicit=");
             double doubleNum = x;
             Console.WriteLine(doubleNum);
 
+            //The general rule is if you are going to lose some sort of information then the compiler won't do it for you
+            //for obvious reasons
             Console.WriteLine("=Explicit=");
             int intNum = (int)y; //Notice we have to write (datatype)
             Console.WriteLine(intNum);

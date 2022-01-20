@@ -59,6 +59,14 @@
     * Just imagine one peson worked on the same file as another person and Git doesn't know which modified version to use
 * Quite confusing when working with it the first time
 
+## Useful Git commands to know
+* git init - creates an empty local git repository
+* git status - check which files are in staging and which aren't in staging
+* git add . - Will add every file to staging (except for ignored files)
+* git commit - Will record the changes to the local repository
+    * Adding -m will let us attach a message to that commit
+* git branch - will create, delete, or list branches for us
+
 ### Useful link to understand all the commands you can use with Git
 * [A nice game that visalizes what Git does](https://learngitbranching.js.org/?locale=en_US)
 * [Git Documentation](https://git-scm.com/doc)
