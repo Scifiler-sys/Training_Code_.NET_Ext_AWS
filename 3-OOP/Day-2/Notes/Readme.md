@@ -28,6 +28,7 @@
 ## Abstract
 * Enables you to create incomplete implementation of whatever you applied it to and it must be implemented in a derived class
 * Implicitly used by interfaces
+* Explicitly used by abstra
 
 ## Static
 * Static classes cannot be instantiated or inherited, its members must also be static
@@ -64,11 +65,11 @@ string? i
 ```
 ## Struct
 * Unlike classes, struct gets stored in the stack memory so they are more optimized and efficient
-* But since they are stored in the stack memory, they are only used for encapsulating simple data and have little to no behavior (so no methods)
+* But since they are stored in the stack memory, they are only used for encapsulating simple data and have little to no behavior (so generally have simple datatype for properties and very simple functions of methods)
 
 ## Conversion
 ### User-defined conversion
-* Gives you the capabilities to convert other datatypes into the class you are making
+* Gives you the capabilities to convert other datatypes into a class either implicitly or explicitly
 * You must use the **operator** keyword followed by either **implicit** or **explicit** keyword
 
 ### Boxing and Unboxing
@@ -79,25 +80,3 @@ string? i
 * Unboxing
     * When you extract the value from an object and convert it into a value type instead
     * It is explicit conversion
-```
-Console.WriteLine("==== Boxing and Unboxing ====");
-            
-            //Value type
-            //You get the value directly
-            int num = 123;
-
-            //Boxing example
-            //When a value type gets casted into an object
-            //What happens is that the value is wrapped to give it a reference type behavior
-            //No other syntax is needed
-            //It is implicit conversion
-            object obj = num;
-            Console.WriteLine(obj);
-
-            //Unboxing example
-            //When you extract the value type from the object and just get the value directly instead
-            //A syntax is needed (dataType)Object
-            //It is explicit converion
-            int num2 = (int)obj;
-            Console.WriteLine(num2);
-```
