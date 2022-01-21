@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using PokeBL;
+using PokeDL;
 using PokeUI;
 
 bool repeat = true;
@@ -20,7 +22,7 @@ while (repeat)
             repeat = false;
             break;
         case MenuType.AddPokemon:
-            menu = new AddPokemon();
+            menu = new AddPokemon(new PokemonBL(new Repository()));
             break;
         case MenuType.MainMenu:
             menu = new MainMenu();

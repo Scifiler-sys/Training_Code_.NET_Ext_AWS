@@ -19,6 +19,7 @@
 8. Go to the UI project
 9. Add dependency injection on the C# file responsible for displaying the add customer UI
 10. Update the UI to now store the customer information to the database
+11. Run application and check JSON file if it successfully saved their information
 
 ### Things to consider
 * Data layer should be the only project that can exclusively manipulate our database
@@ -26,5 +27,7 @@
 * Be sure to implement Dependency Injection right
     * Will be extremely useful when we go around and updating our projects further
 * Don't forget that to reference other C# files from a different project you need to use a CLI command
-``dotnet add reference (filepath)``
+```
+dotnet add reference (project filepath)
+```
 * Proper documentation with XML comments
