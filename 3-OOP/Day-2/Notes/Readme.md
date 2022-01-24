@@ -10,7 +10,7 @@
 * They are the blueprints to creating objects that you process in your program
 ## Namespace
 * Logical grouping of classes that follow a certain theme of functionality
-* To utilize the classes locaed in a different namespace, you must use the 'using' keyword
+* To utilize the classes located in a different namespace, you must use the 'using' keyword
 ## Project
 * They contain all the files that are compiled into an executable, library, website, etc.
 * There are different types of projects that are responsible at creating one thing like how a console project is a great starting point of your application while class library projects are great at adding more customize functionalities you want in your application
