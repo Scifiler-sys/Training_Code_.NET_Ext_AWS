@@ -28,6 +28,12 @@
 using PokeBL;
 using PokeDL;
 using PokeUI;
+using Serilog;
+
+//Creating and configuring our logger
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File("./logs/user.txt") //Where we are saving our logs to
+    .CreateLogger(); //Just a method that will create the logger for us after we have configured it
 
 bool repeat = true;
 IMenu menu = new MainMenu();
@@ -44,15 +50,20 @@ while (repeat)
     switch (ans)
     {
         case MenuType.Exit:
+            Log.Information("Exiting Application");
+            Log.CloseAndFlush(); //To close our logger resource
             repeat = false;
             break;
         case MenuType.AddPokemon:
+            Log.Information("Diplaying AddPokemon menu");
             menu = new AddPokemon(new PokemonBL(new Repository()));
             break;
         case MenuType.MainMenu:
+            Log.Information("Displaying MainMenu");
             menu = new MainMenu();
             break;
         default:
+            Log.Information("Rerouted to page that doesn't exist");
             Console.WriteLine("Page does not exist");
             Console.WriteLine("Please press Enter to continue");
             Console.ReadLine();

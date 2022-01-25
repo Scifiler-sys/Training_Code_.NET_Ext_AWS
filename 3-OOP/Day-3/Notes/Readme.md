@@ -32,6 +32,7 @@
 1. Make sure you add the package from Nuget
 ```
 dotnet add package Serilog
+dotnet add package Serilog.Sinks.File
 ```
 2. create a Logger using LoggerConfiguration class provided by Serilog
 3. Start logging!

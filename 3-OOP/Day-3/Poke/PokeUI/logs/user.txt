@@ -1,0 +1,10 @@
+2022-01-25 15:13:54.125 -05:00 [INF] Diplaying AddPokemon menu
+2022-01-25 15:13:55.162 -05:00 [INF] Adding Pokemon
+ ===Pokemon Info===
+Name: Ditto Lv: 1
+Health: 55
+Attack: 55
+Defense: 55
+2022-01-25 15:13:55.184 -05:00 [WRN] Failed to add Pokemon. 4 limit reached
+2022-01-25 15:13:56.220 -05:00 [INF] Displaying MainMenu
+2022-01-25 15:13:57.247 -05:00 [INF] Exiting Application
