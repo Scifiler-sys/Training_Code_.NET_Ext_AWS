@@ -26,4 +26,12 @@
 * Asking for feedback from a user as to what they did is incredibly unreliable so we have a robot to essentially record everything they do
 * OF COURSE, that is only limited to what are they doing in the application and highly unethical (maybe illegal I'm not a lawyer) to record everything they do beyond that
 ## Serilog
-* 
+* A library we will utilize to add logging functionality with our application
+* There are more libraries out there that can accomplish the same task such as NLog but we will stick with Serilog
+### Steps to start Serilog
+1. Make sure you add the package from Nuget
+```
+dotnet add package Serilog
+```
+2. create a Logger using LoggerConfiguration class provided by Serilog
+3. Start logging!
