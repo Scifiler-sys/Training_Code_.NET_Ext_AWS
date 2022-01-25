@@ -26,3 +26,13 @@ Defense: 55
 2022-01-25 16:13:54.741 -05:00 [INF] Displaying SearchPokemon menu
 2022-01-25 16:13:55.917 -05:00 [INF] Displaying MainMenu
 2022-01-25 16:13:56.778 -05:00 [INF] Exiting Application
+2022-01-25 16:36:38.692 -05:00 [INF] Diplaying AddPokemon menu
+2022-01-25 16:36:39.789 -05:00 [INF] Adding Pokemon
+ ===Pokemon Info===
+Name: Ditto Lv: 1
+Health: 55
+Attack: 55
+Defense: 55
+2022-01-25 16:36:39.814 -05:00 [WRN] Failed to add Pokemon. 4 limit reached
+2022-01-25 16:36:42.836 -05:00 [INF] Displaying MainMenu
+2022-01-25 16:36:44.179 -05:00 [INF] Exiting Application

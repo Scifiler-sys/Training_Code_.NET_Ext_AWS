@@ -10,7 +10,7 @@ namespace PokeUI
         //Dependency Injection
         //==========================
         private IPokemonBL _pokeBL;
-        public AddPokeMenu(IPokemonBL p_pokeBL)
+        public AddPokemon(IPokemonBL p_pokeBL)
         {
             _pokeBL = p_pokeBL;
         }
