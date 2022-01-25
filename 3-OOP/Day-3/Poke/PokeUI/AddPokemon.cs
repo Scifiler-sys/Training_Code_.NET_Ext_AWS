@@ -1,6 +1,4 @@
 using PokeBL;
-using PokeModel;
-using Serilog;
 
 namespace PokeUI
 {

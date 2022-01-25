@@ -21,5 +21,12 @@ namespace PokeBL
         /// </summary>
         /// <returns>List of pokemons</returns>
         List<Pokemon> GetAllPokemon();
+
+        /// <summary>
+        /// Will give a list of pokemon that is found in the database
+        /// </summary>
+        /// <param name="p_name">Uses the name of the pokemon to filter the database</param>
+        /// <returns>Return list collection with pokemon founded</returns>
+        List<Pokemon> SearchPokemon(string p_name);
     }
 }

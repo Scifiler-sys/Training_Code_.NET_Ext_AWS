@@ -5,7 +5,8 @@ namespace PokeUI
     {
         Exit,
         MainMenu,
-        AddPokemon
+        AddPokemon,
+        SearchPokemon
     }
     /*
         Interfaces are one of the best way to implement abstraction

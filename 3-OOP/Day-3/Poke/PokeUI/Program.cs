@@ -25,10 +25,11 @@
 // int attack = 70;
 // GrassType Bayleef = name;
 // GrassType Bayleef2 = (GrassType)attack;
+global using PokeModel; //global using tells the compiler to implicitly use that namespace for all C# file inside of this project
+global using Serilog;
 using PokeBL;
 using PokeDL;
 using PokeUI;
-using Serilog;
 
 //Creating and configuring our logger
 Log.Logger = new LoggerConfiguration()
@@ -61,6 +62,10 @@ while (repeat)
         case MenuType.MainMenu:
             Log.Information("Displaying MainMenu");
             menu = new MainMenu();
+            break;
+        case MenuType.SearchPokemon:
+            Log.Information("Displaying SearchPokemon menu");
+            menu = new SearchPokemon(new PokemonBL(new Repository()));
             break;
         default:
             Log.Information("Rerouted to page that doesn't exist");
