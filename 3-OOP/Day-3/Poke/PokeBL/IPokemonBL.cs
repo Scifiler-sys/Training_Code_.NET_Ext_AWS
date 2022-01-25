@@ -1,9 +1,10 @@
 global using PokeModel;
 
-/// <summary>
-/// Business Layer is responsible for further validation or processing of data obtained from either the database or the user
-/// What kind of processing? That all depends on the type of functionality you will be doing
-/// </summary>
+/*
+    Business layer project is responsible for further processing the data we acquire from the database
+
+    This further processing will really depend on what the functionality you are trying to add
+*/
 namespace PokeBL
 {
     public interface IPokemonBL
@@ -20,5 +21,12 @@ namespace PokeBL
         /// </summary>
         /// <returns>List of pokemons</returns>
         List<Pokemon> GetAllPokemon();
+
+        /// <summary>
+        /// Will give a list of pokemon that is found in the database
+        /// </summary>
+        /// <param name="p_name">Uses the name of the pokemon to filter the database</param>
+        /// <returns>Return list collection with pokemon founded</returns>
+        List<Pokemon> SearchPokemon(string p_name);
     }
 }

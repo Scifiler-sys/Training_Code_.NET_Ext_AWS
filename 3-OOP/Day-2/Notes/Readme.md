@@ -10,7 +10,7 @@
 * They are the blueprints to creating objects that you process in your program
 ## Namespace
 * Logical grouping of classes that follow a certain theme of functionality
-* To utilize the classes locaed in a different namespace, you must use the 'using' keyword
+* To utilize the classes located in a different namespace, you must use the 'using' keyword
 ## Project
 * They contain all the files that are compiled into an executable, library, website, etc.
 * There are different types of projects that are responsible at creating one thing like how a console project is a great starting point of your application while class library projects are great at adding more customize functionalities you want in your application
@@ -80,3 +80,25 @@ string? i
 * Unboxing
     * When you extract the value from an object and convert it into a value type instead
     * It is explicit conversion
+```
+Console.WriteLine("==== Boxing and Unboxing ====");
+            
+            //Value type
+            //You get the value directly
+            int num = 123;
+
+            //Boxing example
+            //When a value type gets casted into an object
+            //What happens is that the value is wrapped to give it a reference type behavior
+            //No other syntax is needed
+            //It is implicit conversion
+            object obj = num;
+            Console.WriteLine(obj);
+
+            //Unboxing example
+            //When you extract the value type from the object and just get the value directly instead
+            //A syntax is needed (dataType)Object
+            //It is explicit converion
+            int num2 = (int)obj;
+            Console.WriteLine(num2);
+```

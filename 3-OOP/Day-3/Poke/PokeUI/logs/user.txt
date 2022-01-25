@@ -1,0 +1,28 @@
+2022-01-25 15:13:54.125 -05:00 [INF] Diplaying AddPokemon menu
+2022-01-25 15:13:55.162 -05:00 [INF] Adding Pokemon
+ ===Pokemon Info===
+Name: Ditto Lv: 1
+Health: 55
+Attack: 55
+Defense: 55
+2022-01-25 15:13:55.184 -05:00 [WRN] Failed to add Pokemon. 4 limit reached
+2022-01-25 15:13:56.220 -05:00 [INF] Displaying MainMenu
+2022-01-25 15:13:57.247 -05:00 [INF] Exiting Application
+2022-01-25 16:01:30.406 -05:00 [INF] Rerouted to page that doesn't exist
+2022-01-25 16:02:43.477 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:02:46.319 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:02:46.832 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:02:47.589 -05:00 [INF] Displaying MainMenu
+2022-01-25 16:02:50.769 -05:00 [INF] Exiting Application
+2022-01-25 16:10:51.773 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:10:53.766 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:11:18.765 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:11:59.130 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:12:51.046 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:13:07.568 -05:00 [INF] Displaying MainMenu
+2022-01-25 16:13:08.760 -05:00 [INF] Exiting Application
+2022-01-25 16:13:50.300 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:13:53.664 -05:00 [INF] Founded 4 Pokemon(s)
+2022-01-25 16:13:54.741 -05:00 [INF] Displaying SearchPokemon menu
+2022-01-25 16:13:55.917 -05:00 [INF] Displaying MainMenu
+2022-01-25 16:13:56.778 -05:00 [INF] Exiting Application

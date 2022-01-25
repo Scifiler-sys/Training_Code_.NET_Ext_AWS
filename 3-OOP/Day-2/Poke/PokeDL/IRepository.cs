@@ -1,5 +1,5 @@
-﻿
-using PokeModel;
+//Global using so that any c# classes we make inside this project will implicitly start using PokeModel
+global using PokeModel;
 
 namespace PokeDL
 {

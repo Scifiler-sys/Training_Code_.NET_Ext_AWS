@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PokeModel\PokeModel.csproj" />
+    <ProjectReference Include="..\PokeDL\PokeDL.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

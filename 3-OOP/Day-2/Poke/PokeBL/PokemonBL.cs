@@ -1,22 +1,21 @@
 using PokeDL;
-using PokeModel;
-
 
 namespace PokeBL
 {
     public class PokemonBL : IPokemonBL
     {
-        //We created dependency injection to essentially specify to whoever use this class
-        //It will depend on another class to achieve its functionalities
-        //We exclusively used interfaces to abstract the implementation details
-        //It will also immensely make it easy to update other projects without affecting another project
+         //Dependency Injection Pattern
+        //- This is the main reason why we created interface first before the class
+        //- This will save you time on re-writting code that breaks if you updated a completely separate class
+        //- Main reason is to prevent us from re-writting code that already existed on (potentailly) 50 files or more without
+        //the compiler helping us
+        //===========================
         private IRepository _repo;
         public PokemonBL(IRepository p_repo)
         {
             _repo = p_repo;
         }
-
-
+        //===========================
 
         public Pokemon AddPokemon(Pokemon p_poke)
         {
@@ -39,8 +38,13 @@ namespace PokeBL
             }
             else
             {
-                throw new Exception("Cannot have more than 4 pokemon!");
+                throw new Exception("You can no longer add anymore pokemon to your team!");
             }
+        }
+
+        public List<Pokemon> GetAllPokemon()
+        {
+            return _repo.GetAllPokemon();
         }
     }
 }
