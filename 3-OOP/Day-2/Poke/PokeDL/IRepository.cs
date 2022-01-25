@@ -1,35 +1,28 @@
 //Global using so that any c# classes we make inside this project will implicitly start using PokeModel
 global using PokeModel;
 
-
-/*
-    Data Layer project is responsible for directly accessing our database and doing any CRUD operations we want to it
-
-    CRUD?
-    Create resources
-    Delete resources
-    Read resources
-    Update resources
-*/
 namespace PokeDL
 {
-    /*
-        We create an interface first to follow abstraction
-        More importantly, it is also to follow dependency injection design pattern (which we will cover later)
-    */
+    /// <summary>
+    /// Data layer project is solely responsible for interacting with our database and doing CRUD operations to it
+    /// C - Create, U - Update, R - Read, D - Delete
+    /// It must not have logical operation that will also manipulate the data it is grabbing
+    /// Just think of Data layer as the delivery man of your uber eats. You definitely do not want your delivery man to mess
+    /// with the food they are deliverying and just give it to you to do whatever you want afterwards.
+    /// </summary>
     public interface IRepository
     {
         /// <summary>
-        /// Will add a restaurant in the database 
+        /// Will grab all pokemon data stored in the database
         /// </summary>
-        /// <param name="p_poke">The pokemon that will be added</param>
-        /// <returns>Will return the saved pokemon</returns>
-        Pokemon AddPokemon(Pokemon p_poke);
+        /// <returns>Gives a list collection of pokemon objects</returns>
+        List<Pokemon> GetAllPokemon();
 
         /// <summary>
-        /// Will get all the pokemon in the database
+        /// Will add one pokemon data to the database
         /// </summary>
-        /// <returns>List of pokemons</returns>
-        List<Pokemon> GetAllPokemon();
+        /// <param name="p_poke">The pokemon data being added</param>
+        /// <returns>Gives the pokemon data that was added</returns>
+        Pokemon AddPokemon(Pokemon p_poke);
     }
 }

@@ -6,13 +6,16 @@ namespace PokeUI
     public class AddPokemon : IMenu
     {
         private static Pokemon _newPoke = new Pokemon();
-        //Another dependency injection because AddPokemon depends on PokemonBL to run
-        private readonly IPokemonBL _pokeBL;
-        public AddPokemon(IPokemonBL p_pokeBL)
+        
+        //Dependency Injection
+        //==========================
+        private IPokemonBL _pokeBL;
+        public AddPokeMenu(IPokemonBL p_pokeBL)
         {
-            this._pokeBL = p_pokeBL;
-        } 
-
+            _pokeBL = p_pokeBL;
+        }
+        //==========================
+        
         public void Display()
         {
             Console.WriteLine("Enter Pokemon information");
@@ -31,7 +34,7 @@ namespace PokeUI
                 case "1":
                     try
                     {
-                        this._pokeBL.AddPokemon(_newPoke);
+                        _pokeBL.AddPokemon(_newPoke);
                     }
                     catch (System.Exception exc)
                     {

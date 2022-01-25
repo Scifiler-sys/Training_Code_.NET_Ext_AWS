@@ -31,7 +31,6 @@ namespace PokeModel
              }
         }
         
-        
         public int Power { get; set; }
         public int Accuracy { get; set; }
 

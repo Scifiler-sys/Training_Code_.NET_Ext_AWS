@@ -1,46 +1,34 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
 namespace PokeDL
 {
     public class Repository : IRepository
     {
-        private readonly string _filePath = "../PokeDL/Data/pokemon.json";
-        private string? _jsonString;
+        //The relative filepath is based on the starting point of your application
+        //Since our main entry point is our console app which is our UI then our relative filepath will be the PokeUI project
+        private readonly string _filepath = "../PokeDL/Database/Pokemon.json";
+        private string _jsonString = "";
         public Pokemon AddPokemon(Pokemon p_poke)
         {
-            List<Pokemon> listOfPoke = this.GetAllPokemon();
-            listOfPoke.Add(p_poke);
+            //This is to initialize and create our Pokemon.json file first
+            //We will remove this lines of code and replace it with reading our existing JSON file once it has been created
+            // List<Pokemon> firstAddition = new List<Pokemon>();
+            // firstAddition.Add(p_poke);
 
-            this._jsonString = JsonSerializer.Serialize(listOfPoke, new JsonSerializerOptions(){WriteIndented = true});
-            File.WriteAllText(_filePath, _jsonString);
-            
+            List<Pokemon> listOfPokemon = GetAllPokemon();
+            listOfPokemon.Add(p_poke);
+
+            _jsonString = JsonSerializer.Serialize(listOfPokemon, new JsonSerializerOptions{WriteIndented = true});
+            File.WriteAllText(_filepath,_jsonString);
+
             return p_poke;
         }
 
         public List<Pokemon> GetAllPokemon()
         {
-            try
-            {
-                this._jsonString = File.ReadAllText(_filePath);
-            }
-            catch (FileNotFoundException exc)
-            {
-                Console.WriteLine("File was not found. Please check file path is correct");
-                throw exc;
-            }
+            _jsonString = File.ReadAllText(_filepath);
 
-            //There is a possibility it might return a null
-            List<Pokemon>? listOfPoke = JsonSerializer.Deserialize<List<Pokemon>>(_jsonString);
-
-            //If statement takes that into account
-            if (listOfPoke == null)
-            {
-                throw new Exception("List of Pokemon is null");
-            }
-            else
-            {
-                return listOfPoke;
-            }
+            return JsonSerializer.Deserialize<List<Pokemon>>(_jsonString);
         }
     }
 }
