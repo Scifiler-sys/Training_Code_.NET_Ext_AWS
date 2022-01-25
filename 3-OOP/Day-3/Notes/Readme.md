@@ -19,6 +19,10 @@
 * Assert
     * Verifies that the action of the method under the tests behaves as expected
 
+## Code Coverage
+* It is the percentage given to you on how much lines of your code is actually covered by unit testing
+* Ex: Lets say you have a total of 200 lines of code and your unit testins only covers 70 lines of code. That means you have 35% code coverage (Fancy math - 70/200*100 = 35%)
+
 # Logging
 * The systematically way to record a series of events depending on what exactly you are trying to capture
 * Ex: Logging user events - you will record every single page they went through, every single customer they have added, every single orders they have made
