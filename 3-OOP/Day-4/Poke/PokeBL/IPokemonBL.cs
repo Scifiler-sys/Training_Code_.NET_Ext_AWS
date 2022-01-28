@@ -10,10 +10,12 @@ namespace PokeBL
     public interface IPokemonBL
     {
         /// <summary>
-        /// Will add a restaurant in the database 
+        /// Will add a pokemon data to the database
+        /// Initial addition of a pokemon will give it some sort of a randomize stats
+        /// Can only have the total of 4 pokemons in the database
         /// </summary>
-        /// <param name="p_poke">The pokemon that will be added</param>
-        /// <returns>Will return the saved pokemon</returns>
+        /// <param name="p_poke">Pokemon that is added</param>
+        /// <returns>Returns the added pokemon</returns>
         Pokemon AddPokemon(Pokemon p_poke);
 
         /// <summary>
