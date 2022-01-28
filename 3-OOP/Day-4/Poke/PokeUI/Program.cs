@@ -57,7 +57,7 @@ while (repeat)
             break;
         case MenuType.AddPokemon:
             Log.Information("Diplaying AddPokemon menu");
-            menu = new AddPokemon(new PokemonBL(new Repository()));
+            menu = new AddPokemon(new PokemonBL(new Repository(), new Random()));
             break;
         case MenuType.MainMenu:
             Log.Information("Displaying MainMenu");
@@ -65,7 +65,7 @@ while (repeat)
             break;
         case MenuType.SearchPokemon:
             Log.Information("Displaying SearchPokemon menu");
-            menu = new SearchPokemon(new PokemonBL(new Repository()));
+            menu = new SearchPokemon(new PokemonBL(new Repository(), new Random()));
             break;
         default:
             Log.Information("Rerouted to page that doesn't exist");

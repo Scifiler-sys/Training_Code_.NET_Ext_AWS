@@ -8,19 +8,29 @@ namespace PokeBL
         //Why? because PokemonBL depends on Repository to be able to do its functionality
         //Why interfaces? It will make more sense once we start changing our files around
         private readonly IRepository _repo;
-        public PokemonBL(IRepository p_repo)
+        private readonly Random _rand;
+        public PokemonBL(IRepository p_repo, Random p_rand)
         {
             this._repo = p_repo;
+            this._rand = p_rand;
         }
         public Pokemon AddPokemon(Pokemon p_poke)
         {
-            if (this.GetAllPokemon().Count < 4)
+            //Processing data to meet conditions
+            //It will either substract or add a range from -5 to 5
+            p_poke.Attack += _rand.Next(-5,5);
+            p_poke.Defense += _rand.Next(-5,5);
+            p_poke.Health += _rand.Next(-5,5);
+
+            //Validation process
+            List<Pokemon> listOfPoke = _repo.GetAllPokemon();
+            if (listOfPoke.Count < 4)
             {
                 return _repo.AddPokemon(p_poke);
             }
             else
             {
-                throw new Exception("You can no longer add anymore pokemon to your team!");
+                throw new Exception("You cannot have more than 4 pokemons!");
             }
         }
 
