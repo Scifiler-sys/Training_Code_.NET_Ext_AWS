@@ -36,3 +36,41 @@ Defense: 55
 2022-01-25 16:36:39.814 -05:00 [WRN] Failed to add Pokemon. 4 limit reached
 2022-01-25 16:36:42.836 -05:00 [INF] Displaying MainMenu
 2022-01-25 16:36:44.179 -05:00 [INF] Exiting Application
+2022-01-31 12:50:57.636 -05:00 [INF] Diplaying AddPokemon menu
+2022-01-31 12:51:02.512 -05:00 [INF] Adding Pokemon
+ ===Pokemon Info===
+Name: Ditto Lv: 1
+Health: 55
+Attack: 55
+Defense: 55
+2022-01-31 12:51:02.516 -05:00 [WRN] Failed to add Pokemon. 4 limit reached
+2022-01-31 12:51:04.116 -05:00 [INF] Displaying MainMenu
+2022-01-31 12:51:05.583 -05:00 [INF] Diplaying AddPokemon menu
+2022-01-31 13:02:28.848 -05:00 [INF] Diplaying AddPokemon menu
+2022-01-31 13:02:29.738 -05:00 [INF] Adding Pokemon
+ ===Pokemon Info===
+Name: Ditto Lv: 1
+Health: 55
+Attack: 55
+Defense: 55
+2022-01-31 13:02:30.123 -05:00 [INF] Successful adding Pokemon
+2022-01-31 13:02:30.123 -05:00 [INF] Displaying MainMenu
+2022-01-31 13:02:46.419 -05:00 [INF] Diplaying AddPokemon menu
+2022-01-31 13:02:47.157 -05:00 [INF] Adding Pokemon
+ ===Pokemon Info===
+Name: Ditto Lv: 1
+Health: 55
+Attack: 55
+Defense: 55
+2022-01-31 13:02:47.181 -05:00 [WRN] Failed to add Pokemon. 4 limit reached
+2022-01-31 13:02:58.158 -05:00 [INF] Displaying MainMenu
+2022-01-31 13:03:12.331 -05:00 [INF] Exiting Application
+2022-01-31 13:03:16.137 -05:00 [INF] Diplaying AddPokemon menu
+2022-01-31 13:03:19.231 -05:00 [INF] Adding Pokemon
+ ===Pokemon Info===
+Name: Ditto Lv: 1
+Health: 55
+Attack: 55
+Defense: 55
+2022-01-31 13:03:19.518 -05:00 [INF] Successful adding Pokemon
+2022-01-31 13:03:19.518 -05:00 [INF] Displaying MainMenu
