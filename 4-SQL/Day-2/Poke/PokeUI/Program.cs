@@ -57,7 +57,7 @@ while (repeat)
             break;
         case MenuType.AddPokemon:
             Log.Information("Diplaying AddPokemon menu");
-            menu = new AddPokemon(new PokemonBL(new Repository()));
+            menu = new AddPokemon(new PokemonBL(new SQLRepository("Server=tcp:testpokedemodb.database.windows.net,1433;Initial Catalog=TestingDemoDB;Persist Security Info=False;User ID=pokeAdmin;Password=pokeSQL123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")));
             break;
         case MenuType.MainMenu:
             Log.Information("Displaying MainMenu");
