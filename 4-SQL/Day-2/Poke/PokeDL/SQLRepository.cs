@@ -65,6 +65,7 @@ namespace PokeDL
                     //will add a new pokemon object to our list that has the same data in our database
                     listOfPoke.Add(new Pokemon()
                     {
+                        //Note: the starting index for columns is 1 and not 0
                         Name = reader.GetString(1), //the number we specify is the column of the table, so in this case it will be name column
                         Level = reader.GetInt32(2), //column 2 is our level in the poke database
                         Attack = reader.GetInt32(3),
