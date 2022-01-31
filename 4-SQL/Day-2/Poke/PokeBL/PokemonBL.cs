@@ -1,4 +1,5 @@
 ﻿using PokeDL;
+using PokeModel;
 
 namespace PokeBL
 {

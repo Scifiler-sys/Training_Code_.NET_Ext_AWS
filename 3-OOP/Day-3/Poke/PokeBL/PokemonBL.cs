@@ -4,17 +4,35 @@ namespace PokeBL
 {
     public class PokemonBL : IPokemonBL
     {
-        //Dependency injection
-        //Why? because PokemonBL depends on Repository to be able to do its functionality
-        //Why interfaces? It will make more sense once we start changing our files around
-        private readonly IRepository _repo;
+         //Dependency Injection Pattern
+        //- This is the main reason why we created interface first before the class
+        //- This will save you time on re-writting code that breaks if you updated a completely separate class
+        //- Main reason is to prevent us from re-writting code that already existed on (potentailly) 50 files or more without
+        //the compiler helping us
+        //===========================
+        private IRepository _repo;
         public PokemonBL(IRepository p_repo)
         {
-            this._repo = p_repo;
+            _repo = p_repo;
         }
+        //===========================
+
         public Pokemon AddPokemon(Pokemon p_poke)
         {
-            if (this.GetAllPokemon().Count < 4)
+            //Processing data
+            //We randomize the potential stats we get when we add a pokemon to the database
+            //This is an example of a further processing of data that should only belong in BL project
+            //Don't put it on the UI (as tempting as it might be) or the DL
+            Random rand = new Random();
+            p_poke.Attack += rand.Next(-5,5);
+            p_poke.Defense += rand.Next(-5,5);
+            p_poke.Health += rand.Next(-5,5);
+
+            //Validation of data
+            //Making sure you can only add up to 4 pokemon
+            List<Pokemon> listOfCurrentPokemon = _repo.GetAllPokemon();
+
+            if (listOfCurrentPokemon.Count < 4)
             {
                 return _repo.AddPokemon(p_poke);
             }
@@ -27,18 +45,6 @@ namespace PokeBL
         public List<Pokemon> GetAllPokemon()
         {
             return _repo.GetAllPokemon();
-        }
-
-        public List<Pokemon> SearchPokemon(string p_name)
-        {
-            List<Pokemon> listOfPokemon = GetAllPokemon();
-            
-            //Fancy way of doing it using LINQ library
-            //I do not expect you to know this but if you are curious this is another way
-            //LINQ is just a very fancy library that is incredibly useful for querying information
-            return listOfPokemon.Where(poke => poke.Name.Contains(p_name)).ToList();
-
-            //Another perfectly fine logic is to use a normal for loop and go through the collection to find the right pokemon
         }
     }
 }
