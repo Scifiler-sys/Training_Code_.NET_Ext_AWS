@@ -1,32 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-// using PokeModel;
-
-// Console.Clear();
-// //Checking if creating out models is working
-// Pokemon poke1 = new Pokemon();
-// Console.WriteLine(poke1);
-// Console.WriteLine(poke1.Abilities[0]);
-// // List<Ability> abilityList = new List<Ability>();
-// // poke1.Abilities = abilityList; //Our validation is working
-// Console.WriteLine("Defend value: " + poke1.DefendMove());
-
-// Ability ability1 = new Ability();
-// // ability1.PP = 0; //Our validation is working
-// Console.WriteLine(ability1);
-
-// //Checking if inheritance works
-// GrassType bulbasaur = new GrassType();
-// Console.WriteLine(bulbasaur); //GrassType class has everything from Pokemon class
-// Console.WriteLine("Defend value: " + bulbasaur.DefendMove()); //Grasstype overrides the defendmove from pokemon class
-// Console.WriteLine("Defend value: " + bulbasaur.DefendMove(300)); //Grasstype overloads the defendmove to also take in a integer parameter
-
-// //Checking if User-defined conversion works
-// string name = "Bayleef";
-// int attack = 70;
-// GrassType Bayleef = name;
-// GrassType Bayleef2 = (GrassType)attack;
 global using PokeModel; //global using tells the compiler to implicitly use that namespace for all C# file inside of this project
 global using Serilog;
+using Microsoft.Extensions.Configuration;
 using PokeBL;
 using PokeDL;
 using PokeUI;
@@ -35,6 +10,18 @@ using PokeUI;
 Log.Logger = new LoggerConfiguration()
     .WriteTo.File("./logs/user.txt") //Where we are saving our logs to
     .CreateLogger(); //Just a method that will create the logger for us after we have configured it
+
+//Grabbing our safely stored connection string from a JSON file
+//Using Configuration package to manage it (why the complexity and not just use File.ReadAllText?)
+//Later down the line, more complex projects using a configuration object to manage grabbing sensitive/configuration information
+//So good to understand what it is doing here
+var configuration = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory()) //Sets the current path relative to where PokeUI folder is
+        .AddJsonFile("appsettings.json") //Grabs our JSON file
+        .Build(); //Builds the configuration object
+
+//Storing the connection string to a string variable
+string _connection = configuration.GetConnectionString("Reference2DB");
 
 bool repeat = true;
 IMenu menu = new MainMenu();
@@ -57,7 +44,7 @@ while (repeat)
             break;
         case MenuType.AddPokemon:
             Log.Information("Diplaying AddPokemon menu");
-            menu = new AddPokemon(new PokemonBL(new SQLRepository("Server=tcp:testpokedemodb.database.windows.net,1433;Initial Catalog=TestingDemoDB;Persist Security Info=False;User ID=pokeAdmin;Password=pokeSQL123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")));
+            menu = new AddPokemon(new PokemonBL(new SQLRepository(_connection)));
             break;
         case MenuType.MainMenu:
             Log.Information("Displaying MainMenu");
