@@ -92,3 +92,20 @@
     * Ex: customerId should have columns that is related to customer, adding managerName or storeName as a column will break 3NF
     * Just put it on a different table instead if you see unrelated data together so it should be Customer Table, Manager Table, and Store Table
 
+# Joins
+* Allows us to bring together data from multiple tables
+* Mostly used for tables that have existing relationships
+    * But it is entirely possible to join two tables that doesn't have a primary or foreign key
+## Inner join
+* Return rows with matching values
+## Left join
+* Returns all rows from the left table and returns only matching values from the right table
+## Right join
+* Returns only matching values from the left table and returns all rows from the right table
+## Full join
+* Returns all rows from both tables but still matches rows that match
+
+# Subquery
+* When one sql statement is not enough
+* It allows you to add a query statement upon a query statement and so on and on...
+
