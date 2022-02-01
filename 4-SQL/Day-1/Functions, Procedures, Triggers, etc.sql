@@ -1,14 +1,14 @@
 
 -------------------- Our initial setup of Database -------------------- 
 CREATE TABLE role (
-	role_id serial PRIMARY KEY,
+	role_id int identity(1,1) PRIMARY KEY,
 	role_title varchar(50),
 	role_salary integer
 );
 
 
 CREATE TABLE employee (
-	employee_id serial PRIMARY KEY,
+	employee_id int identity(1,1) PRIMARY KEY,
 	first_name varchar(30),
 	last_name varchar(30),
 	role_id integer REFERENCES roles(roles_id) --FOREIGN KEY REFERENCES TO the roles TABLE specifically the roles_id column

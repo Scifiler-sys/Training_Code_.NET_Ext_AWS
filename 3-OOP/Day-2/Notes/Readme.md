@@ -28,7 +28,7 @@
 ## Abstract
 * Enables you to create incomplete implementation of whatever you applied it to and it must be implemented in a derived class
 * Implicitly used by interfaces
-* Explicitly used by abstra
+* Explicitly used by abstract classes
 
 ## Static
 * Static classes cannot be instantiated or inherited, its members must also be static
