@@ -13,8 +13,8 @@ namespace PokeBL
         /// Initial addition of a pokemon will give it some sort of a randomize stats
         /// Can only have the total of 4 pokemons in the database
         /// </summary>
-        /// <param name="p_poke"></param>
-        /// <returns></returns>
+        /// <param name="p_poke">Pokemon that is added</param>
+        /// <returns>Returns the added pokemon</returns>
         Pokemon AddPokemon(Pokemon p_poke);
 
         /// <summary>

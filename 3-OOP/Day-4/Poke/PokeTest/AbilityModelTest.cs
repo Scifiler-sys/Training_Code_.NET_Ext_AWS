@@ -12,7 +12,7 @@ namespace PokeTest
         //Data annotation that tells the compiler that this method will do something more than what a regular method would do
         //In this case, [Fact] tells that this method is one unit test
         [Fact] 
-        public void PPShouldSetValidData()
+        public void PP_Should_Set_ValidData()
         {
             //Arrange
             Ability abi = new Ability();
@@ -34,7 +34,7 @@ namespace PokeTest
         [InlineData(-10)]
         [InlineData(-100)]
         [InlineData(-19284)]
-        public void PPShouldFailSetInvalidData(int p_PPValue)
+        public void PP_Should_Fail_Set_InvalidData(int p_PPValue)
         {
             //Arrange
             Ability abi = new Ability();
