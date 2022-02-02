@@ -54,6 +54,9 @@ while (repeat)
             Log.Information("Displaying SearchPokemon menu");
             menu = new SearchPokemon(new PokemonBL(new Repository()));
             break;
+        case MenuType.GetPokeAbility:
+            menu = new GetPokeAbility(new PokemonBL(new SQLRepository(_connection)));
+            break;
         default:
             Log.Information("Rerouted to page that doesn't exist");
             Console.WriteLine("Page does not exist");

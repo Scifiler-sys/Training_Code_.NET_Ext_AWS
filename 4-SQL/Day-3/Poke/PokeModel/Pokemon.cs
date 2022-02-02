@@ -15,6 +15,7 @@
             this._abilities = new List<Ability>(){new Ability()};
         }
 
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Level { get; set; }
         public int Health { get; set; }
@@ -49,7 +50,7 @@
 
         public override string ToString()
         {
-            return $"===Pokemon Info===\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}";
+            return $"===Pokemon Info===\nPokeId: {Id}\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}";
         }
     }
 }

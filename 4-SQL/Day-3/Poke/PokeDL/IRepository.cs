@@ -31,5 +31,12 @@ namespace PokeDL
         /// </summary>
         /// <returns>List of pokemons</returns>
         List<Pokemon> GetAllPokemon();
+
+        /// <summary>
+        /// Will get all abilities of a Pokemon by pokemon Id
+        /// </summary>
+        /// <param name="p_pokeId">Pokemon</param>
+        /// <returns>Returns list of ability object from the pokemon</returns>
+        List<Ability> GetAbilityByPokeId(int p_pokeId);
     }
 }

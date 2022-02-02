@@ -17,6 +17,11 @@ namespace PokeDL
             return p_poke;
         }
 
+        public List<Ability> GetAbilityByPokeId(int p_pokeId)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Pokemon> GetAllPokemon()
         {
             try

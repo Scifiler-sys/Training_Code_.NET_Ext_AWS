@@ -151,3 +151,13 @@ Defense: 46
 2022-01-31 13:11:25.106 -05:00 [INF] Displaying MainMenu
 2022-01-31 13:11:50.159 -05:00 [INF] Exiting Application
 2022-01-31 14:37:47.918 -05:00 [INF] Exiting Application
+2022-02-02 15:24:58.313 -05:00 [INF] Exiting Application
+2022-02-02 15:26:56.662 -05:00 [INF] Diplaying AddPokemon menu
+2022-02-02 15:27:00.014 -05:00 [INF] Displaying MainMenu
+2022-02-02 15:27:01.778 -05:00 [INF] Exiting Application
+2022-02-02 15:27:31.815 -05:00 [INF] Displaying MainMenu
+2022-02-02 15:27:33.524 -05:00 [INF] Exiting Application
+2022-02-02 15:28:14.010 -05:00 [INF] Displaying MainMenu
+2022-02-02 15:28:15.309 -05:00 [INF] Exiting Application
+2022-02-02 15:28:48.235 -05:00 [INF] Displaying MainMenu
+2022-02-02 15:28:48.841 -05:00 [INF] Exiting Application

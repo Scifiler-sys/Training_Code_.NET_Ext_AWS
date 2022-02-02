@@ -10,6 +10,7 @@ namespace PokeModel
             this.Accuracy = 100;
         }
 
+        public int Id { get; set; }
         public string Name { get; set; }
         
         private int _PP;
@@ -37,7 +38,7 @@ namespace PokeModel
 
         public override string ToString()
         {
-            return $"===Ability Info===\nName: {Name}\nPP: {PP}\nPower: {Power}\nAccuracy: {Accuracy}";
+            return $"===Ability Info===\nId: {Id}\nName: {Name}\nPP: {PP}\nPower: {Power}\nAccuracy: {Accuracy}";
         }
     }
 }
