@@ -109,3 +109,22 @@
 * When one sql statement is not enough
 * It allows you to add a query statement upon a query statement and so on and on...
 
+# Set Operations
+* Special type of join
+* It doesn't need to specify what the two tables needs to match on
+* It will combine two queries together
+    * They need to have the same # of columns and same datatype
+
+## Union
+* It will show every value from both queries only once
+* Any duplicated values will only display once
+
+## Union All
+* It will display every value from both queries including duplicated values
+
+## Except
+* It will show only unique values from the right query
+* It will not show any duplicated values
+
+## Intersect
+* It will show only duplicated values from both queries
