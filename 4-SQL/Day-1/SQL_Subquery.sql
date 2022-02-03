@@ -41,7 +41,7 @@ values (1,1),
 
 --Count
 --Will count how many rows are in a column
-select Count(e.empName)as 'Total Employees' from Employee e 
+select Count(e.empName) as 'Total Employees' from Employee e 
 
 --Sum
 --Will add all the numbers in a column
@@ -82,3 +82,60 @@ where d.depName = 'Software Engineer' and e.empSalary >
 inner join employees_departments ed on e.empId = ed.empId 
 inner join Department d on d.depId = ed.depId 
 where d.depName = 'Software Engineer');
+
+--- Joins ---
+insert into Employee 
+values ('Azhya Knox', 60000),
+	('Mariya Bukhryakova', 65000);
+
+insert into Department 
+values ('Accounting'),
+	('HR');
+
+--Left join
+--Will show everything from the right table regardless if it found a match or not
+select * from Employee e 
+left join employees_departments ed on e.empId = ed.empId 
+left join Department d on d.depId = ed.depId;
+
+--Right join
+--Will show everything from the left table regardless if it found a match or not
+select * from Employee e 
+right join employees_departments ed on e.empId = ed.empId 
+right join Department d on d.depId = ed.depId;
+
+--Full join
+--Will show everything from the both tables regardless if it found a match or not
+select * from Employee e 
+full join employees_departments ed on e.empId = ed.empId 
+full join Department d on d.depId = ed.depId;
+
+--- Set operations ---
+--Special type of join
+--It doesn't care about matching anything unlike a join where you specify where it needs to match
+--It will combine two queries together (They need to have the same # of columns and same datatype)
+
+--Union
+--It will show only once a duplicate value
+select e.empName from Employee e  
+union
+select d.depName from Department d
+
+--Union all
+--It will display all duplicated values
+select d.depName from Department d 
+union all
+select d.depName from Department d
+
+--Except
+--It will show only unique values from the right query
+--It will not show any duplicated values
+select d.depName from Department d
+except
+select d.depName from Department d
+
+--Intersect
+--It will show only duplicated values
+select d.depName from Department d
+intersect
+select d.depName from Department d
