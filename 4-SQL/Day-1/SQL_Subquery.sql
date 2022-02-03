@@ -22,7 +22,7 @@ values('John Doe', 65000),
 	('Ollie Abbott', 80000),
 	('Emanual Dean', 110000),
 	('Ernest Rowe', 55000),
-	('Janice Oliver', 66000);
+	('Janice Oliver', 65000);
 
 insert into Department
 values ('Software Engineer'),
@@ -34,6 +34,34 @@ values (1,1),
 	(3,2),
 	(4,1),
 	(5,1);
+
+---Aggregation function---
+--They are functions that will use all the data of a column to do some sort of manipulation
+--You can no longer select columns that aren't aggregated unless you use group by
+
+--Count
+--Will count how many rows are in a column
+select Count(e.empName)as 'Total Employees' from Employee e 
+
+--Sum
+--Will add all the numbers in a column
+select Sum(e.empSalary) as 'Summation of all salary' from Employee e 
+
+--Avg
+--Will get the average of a column
+select avg(e.empSalary) as 'Average Salary' from Employee e 
+
+--Min
+--Will get the lowest number in a column
+select min(e.empSalary) as 'Lowest Salary' from Employee e 
+
+--Max
+--Will get the highest number in a column
+select max(e.empSalary) as 'Highest Salary' from Employee e 
+
+--What if I want to show how many employees have 65000 as their salary
+select Count(e.empName) as 'Total Employees', e.empSalary from Employee e 
+group by e.empSalary 
 
 ------ Subquery --------
 
