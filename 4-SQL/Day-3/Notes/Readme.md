@@ -1,8 +1,47 @@
-# Transaction
-
 # ACID
+* A set of properties of database transaction that is intended to guarantee validity even in the event of catostrophic error or system failures
+* Basically, you ensure that your database won't be corrupted if something bad happens
 
-# Isolation levels
+## Transaction
+* Think of a method in C# meaning it can run multiple query statements in a single transaction
+* They will help prevent data inconsistency because they will either execute all sql statement inside the transaction or not
+* Essentially, they will rollback (put everything back the way it was) all the change they did if something bad happens
+
+## Atomicity
+* Either all query statements should execute or none of them will
+* Meaning all sql statements inside some function/stored procedure/trigger (or just use transaction) should execute all its sql statement or none of them
+
+## Consistency
+* There should be a transparent consistency in your database
+* Data should be consistent before and after a transaction
+* Ex: transferring funds from checking to savings should equal to the total value of funds in both accounts
+    * $100 (checking) - $10 (transfer) = $90 (checking) and $10 (savings)
+    * $90 (checking) + $10(savings) = $100
+
+## Isolation
+* The state of a transaction should be invisible to other transaction
+* Can't access the result of other transaction until the transaction completes
+### Degrees of isolation
+* Read uncommitted - does not protect the transaction from any bad phenomenon
+* Read committed (default) - Prevents data from being read by a transaction that is updating it until it finishes committing
+    * Prevents Dirty read
+* Repeatable read - forces the second transaction to wait for the first transaction to update the data
+    * Prevents dirty read and non-repeatable read
+* Serializable - Forces the second transaction to wait for insert, delete, update, etc. to be finished from the first transaction
+    * Highest degree of isolation and prevents all phenomenons
+    * Essentially stops all concurrent transactions from happening
+### Different bad phenomenon that occurs during concurrent transaction
+* Dirty read - reading data that has not been committed
+    * If transaction 1 updated a row followed by transaction 2 reading that updated row and all sudden something went wrong with transaction 1 it will roll back the changes and now transaction 2 had read data that basically never existed
+* Non-repeatable read - when data was read twice but comes out different on each time
+    * If transaction 1 read a row (it has a value of 5) and transaction 2 updates that row (to be 10) and transaction 1 reads that same row (it has a value of 10) and it came out different than the first read. 
+* Phantom read - when data was added or removed by another transaction
+    * If transaction 1 finds the average of a column and transaction 2 comes in and add a new number to that column and transaction 1 finds the average of the column again and it'll changed because of that new row that was added 
+
+## Durability
+* Once a transation is completed, the changes that it made is permanent in the database
+* If there is a system failure, all data is safegaurded (meaning it is still there after the failure)
+
 
 # ADO.NET
 * Another library (that already exists in our .NET 6 framework) that specializes in connecting to different types of databases/data sources to do CRUD operations on
