@@ -42,10 +42,17 @@
 1. Type - Restricts what datatype you can store in a column
 2. Unique - Every data in a column cannot have repeating values
 3. Not null - Ensures every data in a column must have a value
-4. Primary Key
+4. Check - Adds an extra condition on the data
+    * Ex: age column must be above 18
+```SQL
+CREATE TABLE Person (
+    Age int CHECK (Age >= 18)
+)
+```
+5. Primary Key
     * Implicitly Unique and Not null
     * Acts as the unique identifier for the rows in a table
-5. Foreign Key
+6. Foreign Key
     * Data in this column references the primary key of another table
     * Establishes relationships between 2 columns in the same table or different tables
 
@@ -104,27 +111,3 @@
 * Returns only matching values from the left table and returns all rows from the right table
 ## Full join
 * Returns all rows from both tables but still matches rows that match
-
-# Subquery
-* When one sql statement is not enough
-* It allows you to add a query statement upon a query statement and so on and on...
-
-# Set Operations
-* Special type of join
-* It doesn't need to specify what the two tables needs to match on
-* It will combine two queries together
-    * They need to have the same # of columns and same datatype
-
-## Union
-* It will show every value from both queries only once
-* Any duplicated values will only display once
-
-## Union All
-* It will display every value from both queries including duplicated values
-
-## Except
-* It will show only unique values from the right query
-* It will not show any duplicated values
-
-## Intersect
-* It will show only duplicated values from both queries
