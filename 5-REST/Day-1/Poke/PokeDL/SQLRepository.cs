@@ -105,7 +105,8 @@ namespace PokeDL
                         Level = reader.GetInt32(2), //column 2 is our level in the poke database
                         Attack = reader.GetInt32(3),
                         Health = reader.GetInt32(4),
-                        Defense = reader.GetInt32(5)
+                        Defense = reader.GetInt32(5),
+                        Abilities = GetAbilityByPokeId(reader.GetInt32(0))
                     });
                 }
             }
