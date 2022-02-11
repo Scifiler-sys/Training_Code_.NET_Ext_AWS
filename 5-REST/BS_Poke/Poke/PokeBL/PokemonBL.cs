@@ -12,8 +12,8 @@ namespace PokeBL
         //- Main reason is to prevent us from re-writting code that already existed on (potentailly) 50 files or more without
         //the compiler helping us
         //===========================
-        private IRepository _repo;
-        public PokemonBL(IRepository p_repo)
+        private IRepository<Pokemon> _repo;
+        public PokemonBL(IRepository<Pokemon> p_repo)
         {
             _repo = p_repo;
         }
@@ -30,10 +30,10 @@ namespace PokeBL
             p_poke.Health += rand.Next(-5,5);
 
             //Validation process
-            List<Pokemon> listOfPoke = _repo.GetAllPokemon();
+            List<Pokemon> listOfPoke = _repo.GetAll();
             if (listOfPoke.Count < 4)
             {
-                return _repo.AddPokemon(p_poke);
+                return _repo.Add(p_poke);
             }
             else
             {
@@ -41,19 +41,19 @@ namespace PokeBL
             }
         }
 
-        public List<Pokemon> GetAllPokemon()
-        {
-            return _repo.GetAllPokemon();
-        }
-
         public List<Ability> GetAbilityByPokeId(int p_pokeId)
         {
-            return _repo.GetAbilityByPokeId(p_pokeId);
+            throw new NotImplementedException();
+        }
+
+        public List<Pokemon> GetAllPokemon()
+        {
+            return _repo.GetAll();
         }
 
         public List<Pokemon> SearchPokemon(string p_name)
         {
-            List<Pokemon> listOfPokemon = _repo.GetAllPokemon();
+            List<Pokemon> listOfPokemon = _repo.GetAll();
 
 
             // LINQ library
