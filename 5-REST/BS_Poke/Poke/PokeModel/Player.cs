@@ -9,5 +9,7 @@ namespace PokeModel
         /// true for female, false for male
         /// </summary>
         public bool Gender { get; set; }
+
+        public List<Pokemon> Team { get; set; }
     }
 }
