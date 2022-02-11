@@ -10,7 +10,7 @@ namespace PokeUI
     */
     public class MainMenu : IMenu
     {
-        private static readonly Player _player = new Player();
+        internal static Player _player = new Player();
         public void Display()
         {
             Console.WriteLine("Welcome to the world of Pokemon!");
@@ -28,6 +28,7 @@ namespace PokeUI
             }
             else
             {
+                Console.WriteLine($"Trainer info - Name: {_player.Name}");
                 Console.WriteLine
                 (
 @"
@@ -50,7 +51,7 @@ namespace PokeUI
                 case "1":
                     return MenuType.Exit;
                 case "2":
-                    return MenuType.AddPokemon;
+                    return MenuType.RegisterMenu;
                 case "3":
                     return MenuType.SearchPokemon;
                 //Default is the same as an else

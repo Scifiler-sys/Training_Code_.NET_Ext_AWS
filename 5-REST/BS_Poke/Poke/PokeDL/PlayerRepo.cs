@@ -11,7 +11,8 @@ namespace PokeDL
         }
         public Player Add(Player p_resource)
         {
-            string sqlQuery = @"Insert into Player(@name, @gender)";
+            string sqlQuery = @"Insert into Player
+                                values(@name, @gender)";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {

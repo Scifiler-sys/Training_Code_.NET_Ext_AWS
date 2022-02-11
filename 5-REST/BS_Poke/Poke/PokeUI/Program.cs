@@ -44,18 +44,22 @@ while (repeat)
             break;
         case MenuType.AddPokemon:
             Log.Information("Diplaying AddPokemon menu");
-            menu = new AddPokemon(new PokemonBL(new SQLRepository(_connection)));
+            // menu = new AddPokemon(new PokemonBL(new SQLRepository(_connection)));
             break;
         case MenuType.MainMenu:
             Log.Information("Displaying MainMenu");
             menu = new MainMenu();
             break;
+        case MenuType.RegisterMenu:
+            Log.Information("Displaying Register Menu");
+            menu = new RegisterMenu(new PlayerBL(new PlayerRepo(_connection)));
+            break;
         case MenuType.SearchPokemon:
             Log.Information("Displaying SearchPokemon menu");
-            menu = new SearchPokemon(new PokemonBL(new Repository()));
+            // menu = new SearchPokemon(new PokemonBL(new Repository()));
             break;
         case MenuType.GetPokeAbility:
-            menu = new GetPokeAbility(new PokemonBL(new SQLRepository(_connection)));
+            // menu = new GetPokeAbility(new PokemonBL(new SQLRepository(_connection)));
             break;
         default:
             Log.Information("Rerouted to page that doesn't exist");
