@@ -10,5 +10,12 @@ namespace PokeBL
         /// <param name="p_player">player object that is being added</param>
         /// <returns>Player object added</returns>
         Player AddPlayer(Player p_player);
+
+        /// <summary>
+        /// Checks if player exists in database
+        /// </summary>
+        /// <param name="p_player">Player being checked</param>
+        /// <returns>Found player</returns>
+        Player Login(Player p_player);
     }
 }

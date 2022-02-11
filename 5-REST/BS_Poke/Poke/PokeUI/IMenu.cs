@@ -6,6 +6,7 @@ namespace PokeUI
         Exit,
         MainMenu,
         RegisterMenu,
+        LoginMenu,
         AddPokemon,
         SearchPokemon,
         GetPokeAbility

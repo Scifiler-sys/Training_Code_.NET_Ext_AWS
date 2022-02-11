@@ -54,6 +54,10 @@ while (repeat)
             Log.Information("Displaying Register Menu");
             menu = new RegisterMenu(new PlayerBL(new PlayerRepo(_connection)));
             break;
+        case MenuType.LoginMenu:
+            Log.Information("Displaying Login Menu");
+            menu = new LoginMenu(new PlayerBL(new PlayerRepo(_connection)));
+            break;
         case MenuType.SearchPokemon:
             Log.Information("Displaying SearchPokemon menu");
             // menu = new SearchPokemon(new PokemonBL(new Repository()));

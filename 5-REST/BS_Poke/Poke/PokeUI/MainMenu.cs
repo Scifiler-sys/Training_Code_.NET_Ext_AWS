@@ -53,7 +53,7 @@ namespace PokeUI
                 case "2":
                     return MenuType.RegisterMenu;
                 case "3":
-                    return MenuType.SearchPokemon;
+                    return MenuType.LoginMenu;
                 //Default is the same as an else
                 case "4":
                     return MenuType.GetPokeAbility;
