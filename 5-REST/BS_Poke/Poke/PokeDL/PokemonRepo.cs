@@ -21,10 +21,10 @@ namespace PokeDL
                 
                 //Setting parameters
                 com.Parameters.AddWithValue("@name", p_resource.Name);
-                com.Parameters.AddWithValue("@level", p_resource.Name);
-                com.Parameters.AddWithValue("@attack", p_resource.Name);
-                com.Parameters.AddWithValue("@defense", p_resource.Name);
-                com.Parameters.AddWithValue("@health", p_resource.Name);
+                com.Parameters.AddWithValue("@level", p_resource.Level);
+                com.Parameters.AddWithValue("@attack", p_resource.Attack);
+                com.Parameters.AddWithValue("@defense", p_resource.Defense);
+                com.Parameters.AddWithValue("@health", p_resource.Health);
 
                 com.ExecuteNonQuery();
             }
