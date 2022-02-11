@@ -42,12 +42,6 @@
             }
         }
 
-        //You must use virtual keyword for it to be overriden
-        public virtual int DefendMove()
-        {
-            return this.Defense + _rand.Next(-5,5);
-        }
-
         public override string ToString()
         {
             return $"===Pokemon Info===\nPokeId: {Id}\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}";
