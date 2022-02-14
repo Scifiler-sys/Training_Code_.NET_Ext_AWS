@@ -6,9 +6,13 @@ namespace PokeBL
     public class PlayerBL :  IPlayerBL
     {
         private readonly IRepository<Player> _playerRepo;
-        public PlayerBL(IRepository<Player> p_playerRepo)
+        private readonly IRepository<Pokemon> _pokeRepo;
+        private readonly IRepository<Team> _teamRepo;
+        public PlayerBL(IRepository<Player> p_playerRepo, IRepository<Team> p_teamRepo, IRepository<Pokemon> p_pokeRepo)
         {
             _playerRepo = p_playerRepo;
+            _teamRepo = p_teamRepo;
+            _pokeRepo = p_pokeRepo;
         }
         public Player AddPlayer(Player p_player)
         {
@@ -29,9 +33,55 @@ namespace PokeBL
             }
         }
 
-        public bool CaptureAttempt()
+        public bool CaptureAttempt(Pokemon p_poke, Player p_player)
         {
-            throw new NotImplementedException();
+            Random rand = new Random();
+
+            //Algorithm to compute your chances
+            int successChance = (int)Math.Max(0,rand.Next(0,100) - (Math.Pow(p_poke.Level,2)/100));
+
+            //Must be above 30 to have a chance of capturing
+            if (successChance > 30)
+            {
+                _teamRepo.Add(new Team{
+                    playerId = p_player.Id,
+                    pokeId = p_poke.Id,
+                    pokeLevel = p_poke.Level
+                });
+                
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public List<Pokemon> GetYourPokemon(Player p_player)
+        {
+            List<Pokemon> yourPokeList = (from pokemon in _pokeRepo.GetAll()
+                                join team in _teamRepo.GetAll() on pokemon.Id equals team.pokeId
+                                join player in _playerRepo.GetAll() on team.playerId equals player.Id
+                                select new Pokemon {
+                                    Id = team.teamId,
+                                    Attack = PokeRealStatCalculator(pokemon.Attack, team.pokeLevel),
+                                    Defense = PokeRealStatCalculator(pokemon.Defense, team.pokeLevel),
+                                    Health = PokeRealStatCalculator(pokemon.Health, team.pokeLevel),
+                                    Speed = PokeRealStatCalculator(pokemon.Speed, team.pokeLevel),
+                                    Level = team.pokeLevel,
+                                    Name = pokemon.Name
+                                }).ToList();
+
+
+            return yourPokeList;
+        }
+
+        //Calculates pokemon real stat based on their level
+        //Base stats is their scaling (higher the base stat, the better the scaling)
+        //For math nerds: pokemon's level*base_stat/50 + current base state
+        private int PokeRealStatCalculator(int p_stat, int p_level)
+        {
+            return (int)Math.Round(p_stat + p_level*((double)p_stat/50));
         }
 
         public Player Login(Player p_player)

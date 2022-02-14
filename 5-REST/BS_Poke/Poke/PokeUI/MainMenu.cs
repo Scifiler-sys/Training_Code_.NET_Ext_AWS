@@ -34,7 +34,7 @@ namespace PokeUI
 @"
 [6] Capture a pokemon!
 [5] Check your team
-[4] Go to Pokemon Center
+[4] Battle
 [1] Exit
 "
                 );
@@ -54,6 +54,8 @@ namespace PokeUI
                     return MenuType.RegisterMenu;
                 case "3":
                     return MenuType.LoginMenu;
+                case "5":
+                    return MenuType.YourPokemonMenu;
                 //Default is the same as an else
                 case "6":
                     return MenuType.CapturePokemonMenu;

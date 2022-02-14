@@ -11,7 +11,7 @@ namespace PokeDL
         }
         public Pokemon Add(Pokemon p_resource)
         {
-            string sqlQuery = @"Insert into Pokemon(@name, @level, @attack, @defense, @health)";
+            string sqlQuery = @"Insert into Pokemon values(@name, @attack, @defense, @health)";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -21,7 +21,6 @@ namespace PokeDL
                 
                 //Setting parameters
                 com.Parameters.AddWithValue("@name", p_resource.Name);
-                com.Parameters.AddWithValue("@level", p_resource.Level);
                 com.Parameters.AddWithValue("@attack", p_resource.Attack);
                 com.Parameters.AddWithValue("@defense", p_resource.Defense);
                 com.Parameters.AddWithValue("@health", p_resource.Health);
@@ -70,10 +69,10 @@ namespace PokeDL
                     listOfPoke.Add(new Pokemon(){
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        Level = reader.GetInt32(2),
-                        Attack = reader.GetInt32(3),
-                        Defense = reader.GetInt32(4),
-                        Health = reader.GetInt32(5)
+                        Attack = reader.GetInt32(2),
+                        Defense = reader.GetInt32(3),
+                        Health = reader.GetInt32(4),
+                        Speed = reader.GetInt32(5)
                     });
                 }
             }
@@ -94,7 +93,6 @@ namespace PokeDL
                 SqlCommand com = new SqlCommand(sqlQuery, con);
 
                 com.Parameters.AddWithValue("@name", p_resource.Name);
-                com.Parameters.AddWithValue("@level", p_resource.Level);
                 com.Parameters.AddWithValue("@attack", p_resource.Attack);
                 com.Parameters.AddWithValue("@defense", p_resource.Defense);
                 com.Parameters.AddWithValue("@Id", p_resource.Id);

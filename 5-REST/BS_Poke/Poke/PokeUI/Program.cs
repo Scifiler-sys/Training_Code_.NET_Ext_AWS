@@ -48,26 +48,19 @@ while (repeat)
             break;
         case MenuType.RegisterMenu:
             Log.Information("Displaying Register Menu");
-            menu = new RegisterMenu(new PlayerBL(new PlayerRepo(_connection)));
+            menu = new RegisterMenu(new PlayerBL(new PlayerRepo(_connection), new TeamRepo(_connection), new PokemonRepo(_connection)));
             break;
         case MenuType.LoginMenu:
             Log.Information("Displaying Login Menu");
-            menu = new LoginMenu(new PlayerBL(new PlayerRepo(_connection)));
+            menu = new LoginMenu(new PlayerBL(new PlayerRepo(_connection), new TeamRepo(_connection), new PokemonRepo(_connection)));
             break;
         case MenuType.CapturePokemonMenu:
             Log.Information("Displaying Capture Menu");
-            menu = new CapturePokemonMenu();
+            menu = new CapturePokemonMenu(new PokemonBL(new PokemonRepo(_connection)), new PlayerBL(new PlayerRepo(_connection), new TeamRepo(_connection), new PokemonRepo(_connection)));
             break;
-        case MenuType.AddPokemon:
-            Log.Information("Diplaying AddPokemon menu");
-            // menu = new AddPokemon(new PokemonBL(new SQLRepository(_connection)));
-            break;
-        case MenuType.SearchPokemon:
-            Log.Information("Displaying SearchPokemon menu");
-            // menu = new SearchPokemon(new PokemonBL(new Repository()));
-            break;
-        case MenuType.GetPokeAbility:
-            // menu = new GetPokeAbility(new PokemonBL(new SQLRepository(_connection)));
+        case MenuType.YourPokemonMenu:
+            Log.Information("Displaying User's Pokemon");
+            menu = new YourPokemonMenu(new PlayerBL(new PlayerRepo(_connection), new TeamRepo(_connection), new PokemonRepo(_connection)));
             break;
         default:
             Log.Information("Rerouted to page that doesn't exist");

@@ -21,6 +21,7 @@
         public int Health { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
+        public int Speed { get; set; }
         private List<Ability> _abilities;
         public List<Ability> Abilities
         {
@@ -44,7 +45,7 @@
 
         public override string ToString()
         {
-            return $"===Pokemon Info===\nPokeId: {Id}\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}";
+            return $"===Pokemon Info===\nPokeId: {Id}\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}\nSpeed: {Speed}";
         }
     }
 }

@@ -2,16 +2,16 @@ using System.Data.SqlClient;
 
 namespace PokeDL
 {
-    public class AbilityRepo : IRepository<Ability>
+    public class ArsenalRepo : IRepository<Arsenal>
     {
         private readonly string _connectionString;
-        public AbilityRepo(string p_connectionString)
+        public ArsenalRepo(string p_connectionString)
         {
             _connectionString = p_connectionString;
         }
-        public Ability Add(Ability p_resource)
+        public Arsenal Add(Arsenal p_resource)
         {
-            string sqlQuery = @"Insert into Ability values(@name, @PP, @power, @accuracy)";
+            string sqlQuery = @"Insert into Arsenal values (@pokeId, @abId, @PP)";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -20,10 +20,9 @@ namespace PokeDL
                 SqlCommand com = new SqlCommand(sqlQuery, con);
                 
                 //Setting parameters
-                com.Parameters.AddWithValue("@name", p_resource.Name);
+                com.Parameters.AddWithValue("@pokeId", p_resource.PokeId);
+                com.Parameters.AddWithValue("@abId", p_resource.AbId);
                 com.Parameters.AddWithValue("@PP", p_resource.PP);
-                com.Parameters.AddWithValue("@power", p_resource.Power);
-                com.Parameters.AddWithValue("@accuracy", p_resource.Accuracy);
 
                 com.ExecuteNonQuery();
             }
@@ -31,10 +30,10 @@ namespace PokeDL
             return p_resource;
         }
 
-        public Ability Delete(Ability p_resource)
+        public Arsenal Delete(Arsenal p_resource)
         {
-            string sqlQuery = @"delete from Pokemon
-                                where abId = @Id";
+            string sqlQuery = @"delete from Arsenal
+                                where abId = @abId and pokeId = @pokeId";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -43,7 +42,8 @@ namespace PokeDL
                 SqlCommand com = new SqlCommand(sqlQuery, con);
 
                 //Setting Parameters
-                com.Parameters.AddWithValue("@Id", p_resource.Id);
+                com.Parameters.AddWithValue("@abId", p_resource.AbId);
+                com.Parameters.AddWithValue("@pokeId", p_resource.PokeId);
 
                 com.ExecuteNonQuery();
             }
@@ -51,10 +51,10 @@ namespace PokeDL
             return p_resource;
         }
 
-        public List<Ability> GetAll()
+        public List<Arsenal> GetAll()
         {
-            string sqlQuery = @"select * from Ability";
-            List<Ability> listOfAbility = new List<Ability>();
+            string sqlQuery = @"select * from Arsenal";
+            List<Arsenal> listOfAbility = new List<Arsenal>();
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -66,12 +66,10 @@ namespace PokeDL
 
                 while (reader.Read())
                 {
-                    listOfAbility.Add(new Ability(){
-                        Id = reader.GetInt32(0),
-                        Name = reader.GetString(1),
-                        PP = reader.GetInt32(2),
-                        Power = reader.GetInt32(3),
-                        Accuracy = reader.GetInt32(4)
+                    listOfAbility.Add(new Arsenal(){
+                        PokeId = reader.GetInt32(0),
+                        AbId = reader.GetInt32(1),
+                        PP = reader.GetInt32(2)
                     });
                 }
             }
@@ -79,11 +77,11 @@ namespace PokeDL
             return listOfAbility;
         }
 
-        public Ability Update(Ability p_resource)
+        public Arsenal Update(Arsenal p_resource)
         {
             string sqlQuery = @"update Ability
-                                set abName = @name, abPP = @PP, abPower = @power, abAccuracy = @accuracy
-                                where abId = @Id";
+                                set PP = @PP
+                                where abId = @abId and pokeId = @pokeId";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -91,16 +89,14 @@ namespace PokeDL
 
                 SqlCommand com = new SqlCommand(sqlQuery, con);
 
-                com.Parameters.AddWithValue("@name", p_resource.Name);
+                com.Parameters.AddWithValue("@abId", p_resource.AbId);
+                com.Parameters.AddWithValue("@pokeId", p_resource.PokeId);
                 com.Parameters.AddWithValue("@PP", p_resource.PP);
-                com.Parameters.AddWithValue("@power", p_resource.Power);
-                com.Parameters.AddWithValue("@accuracy", p_resource.Accuracy);
-                com.Parameters.AddWithValue("@Id", p_resource.Id);
 
                 com.ExecuteNonQuery();
             }
             
             return p_resource;
-        }
+        }   
     }
 }
