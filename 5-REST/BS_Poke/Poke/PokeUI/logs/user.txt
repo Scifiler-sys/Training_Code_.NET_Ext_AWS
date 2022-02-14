@@ -225,3 +225,12 @@ Defense: 46
 2022-02-11 13:48:10.442 -05:00 [INF] Displaying Login Menu
 2022-02-11 13:48:12.742 -05:00 [INF] Displaying MainMenu
 2022-02-11 13:48:14.976 -05:00 [INF] Exiting Application
+2022-02-11 14:00:41.176 -05:00 [INF] Displaying Login Menu
+2022-02-11 14:00:42.994 -05:00 [INF] Displaying Login Menu
+2022-02-11 14:00:44.653 -05:00 [INF] Displaying MainMenu
+2022-02-11 14:00:46.859 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:51.847 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:52.228 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:52.806 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:53.181 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:53.595 -05:00 [INF] Exiting Application

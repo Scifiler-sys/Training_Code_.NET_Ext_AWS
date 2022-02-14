@@ -41,8 +41,8 @@ namespace PokeApi.Controllers
 
 
         // GET: api/Pokemon
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("GetAllPokemon")]
+        public IActionResult GetAllPokemon()
         {
             try
             {
@@ -60,8 +60,8 @@ namespace PokeApi.Controllers
         }
 
         // GET: api/Pokemon/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}", Name = "GetPokemonAbilities")]
+        public string GetPokemonAbilities(int p_pokeId)
         {
             return "value";
         }
@@ -70,6 +70,7 @@ namespace PokeApi.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+
         }
 
         // PUT: api/Pokemon/5

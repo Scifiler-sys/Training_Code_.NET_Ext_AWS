@@ -42,10 +42,6 @@ while (repeat)
             Log.CloseAndFlush(); //To close our logger resource
             repeat = false;
             break;
-        case MenuType.AddPokemon:
-            Log.Information("Diplaying AddPokemon menu");
-            // menu = new AddPokemon(new PokemonBL(new SQLRepository(_connection)));
-            break;
         case MenuType.MainMenu:
             Log.Information("Displaying MainMenu");
             menu = new MainMenu();
@@ -57,6 +53,14 @@ while (repeat)
         case MenuType.LoginMenu:
             Log.Information("Displaying Login Menu");
             menu = new LoginMenu(new PlayerBL(new PlayerRepo(_connection)));
+            break;
+        case MenuType.CapturePokemonMenu:
+            Log.Information("Displaying Capture Menu");
+            menu = new CapturePokemonMenu();
+            break;
+        case MenuType.AddPokemon:
+            Log.Information("Diplaying AddPokemon menu");
+            // menu = new AddPokemon(new PokemonBL(new SQLRepository(_connection)));
             break;
         case MenuType.SearchPokemon:
             Log.Information("Displaying SearchPokemon menu");

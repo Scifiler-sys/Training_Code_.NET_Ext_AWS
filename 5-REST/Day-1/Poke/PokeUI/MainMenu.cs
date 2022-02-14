@@ -10,15 +10,35 @@ namespace PokeUI
     */
     public class MainMenu : IMenu
     {
+        internal static Player _player = new Player();
         public void Display()
         {
-            Console.WriteLine("Welcome to Pokemon!");
+            Console.WriteLine("Welcome to the world of Pokemon!");
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("[3] Get Ability by PokeId");
-            Console.WriteLine("[2] Search Pokemon");
-            Console.WriteLine("[1] Add Pokemon to your team");
-            Console.WriteLine("[0] Exit");
-            
+            if (_player.Name == null)
+            {
+                Console.WriteLine
+(
+@"
+[3] Login
+[2] Register
+[1] Exit
+"
+);
+            }
+            else
+            {
+                Console.WriteLine($"Trainer info - Name: {_player.Name}");
+                Console.WriteLine
+                (
+@"
+[6] Capture a pokemon!
+[5] Check your team
+[4] Go to Pokemon Center
+[1] Exit
+"
+                );
+            }
         }
 
         public MenuType UserChoice()
@@ -28,15 +48,15 @@ namespace PokeUI
             switch (userInput)
             {
                 //Cases are the same as else ifs
-                case "0":
-                    return MenuType.Exit;
                 case "1":
-                    return MenuType.AddPokemon;
+                    return MenuType.Exit;
                 case "2":
-                    return MenuType.SearchPokemon;
-                //Default is the same as an else
+                    return MenuType.RegisterMenu;
                 case "3":
-                    return MenuType.GetPokeAbility;
+                    return MenuType.LoginMenu;
+                //Default is the same as an else
+                case "6":
+                    return MenuType.CapturePokemonMenu;
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");

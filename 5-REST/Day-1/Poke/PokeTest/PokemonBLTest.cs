@@ -25,11 +25,11 @@ namespace PokeTest
             expectedListOfPoke.Add(poke);
 
             //We are mocking one of the required dependencies of PokemonBL which is IRepository
-            Mock<IRepository> mockRepo = new Mock<IRepository>();
+            Mock<IRepository<Pokemon>> mockRepo = new Mock<IRepository<Pokemon>>();
 
             //We change that if our IRepository.GetAllPokemon() is called, it will always return our expectedListOfPoke
             //In this way, we guaranteed that our dependency will always work so if something goes wrong it is the business layer's fault
-            mockRepo.Setup(repo => repo.GetAllPokemon()).Returns(expectedListOfPoke);
+            mockRepo.Setup(repo => repo.GetAll()).Returns(expectedListOfPoke);
 
             //We passed in the mock version of IRepository
             IPokemonBL pokeBL = new PokemonBL(mockRepo.Object);

@@ -161,3 +161,76 @@ Defense: 46
 2022-02-02 15:28:15.309 -05:00 [INF] Exiting Application
 2022-02-02 15:28:48.235 -05:00 [INF] Displaying MainMenu
 2022-02-02 15:28:48.841 -05:00 [INF] Exiting Application
+2022-02-11 12:32:23.145 -05:00 [INF] Diplaying AddPokemon menu
+2022-02-11 12:46:44.275 -05:00 [INF] Diplaying AddPokemon menu
+2022-02-11 12:46:46.635 -05:00 [INF] Exiting Application
+2022-02-11 12:47:35.492 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:49:14.848 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:49:15.850 -05:00 [INF] Exiting Application
+2022-02-11 12:49:20.193 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:49:20.961 -05:00 [INF] Displaying SearchPokemon menu
+2022-02-11 12:49:23.509 -05:00 [INF] Displaying SearchPokemon menu
+2022-02-11 12:49:24.118 -05:00 [INF] Displaying SearchPokemon menu
+2022-02-11 12:49:43.247 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:49:45.770 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:49:53.674 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:49:55.569 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:49:56.234 -05:00 [INF] Exiting Application
+2022-02-11 12:50:07.986 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:50:10.679 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:50:11.473 -05:00 [INF] Displaying MainMenu
+2022-02-11 12:50:14.750 -05:00 [INF] Exiting Application
+2022-02-11 12:52:51.421 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:52:54.262 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:52:56.075 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:55:01.591 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:55:04.928 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:55:08.061 -05:00 [INF] Displaying Register Menu
+2022-02-11 12:55:09.971 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:15:12.216 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:16:11.424 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:16:13.451 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:16:15.901 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:16:18.768 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:16:53.445 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:16:57.106 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:17:02.420 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:17:03.350 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:17:37.018 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:17:39.507 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:18:47.000 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:18:49.058 -05:00 [INF] Exiting Application
+2022-02-11 13:19:14.820 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:19:18.280 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:20:40.546 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:20:42.663 -05:00 [INF] Exiting Application
+2022-02-11 13:20:54.127 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:20:56.786 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:20:59.277 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:45:49.024 -05:00 [INF] Displaying SearchPokemon menu
+2022-02-11 13:45:50.054 -05:00 [INF] Displaying SearchPokemon menu
+2022-02-11 13:45:50.425 -05:00 [INF] Displaying SearchPokemon menu
+2022-02-11 13:47:05.984 -05:00 [INF] Displaying Login Menu
+2022-02-11 13:47:07.733 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:47:08.867 -05:00 [INF] Displaying Login Menu
+2022-02-11 13:47:12.194 -05:00 [INF] Displaying Register Menu
+2022-02-11 13:47:28.134 -05:00 [INF] Displaying Login Menu
+2022-02-11 13:47:30.910 -05:00 [INF] Displaying Login Menu
+2022-02-11 13:47:32.645 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:47:38.834 -05:00 [INF] Exiting Application
+2022-02-11 13:47:41.782 -05:00 [INF] Displaying Login Menu
+2022-02-11 13:47:45.534 -05:00 [INF] Displaying Login Menu
+2022-02-11 13:47:47.914 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:48:07.629 -05:00 [INF] Displaying Login Menu
+2022-02-11 13:48:10.442 -05:00 [INF] Displaying Login Menu
+2022-02-11 13:48:12.742 -05:00 [INF] Displaying MainMenu
+2022-02-11 13:48:14.976 -05:00 [INF] Exiting Application
+2022-02-11 14:00:41.176 -05:00 [INF] Displaying Login Menu
+2022-02-11 14:00:42.994 -05:00 [INF] Displaying Login Menu
+2022-02-11 14:00:44.653 -05:00 [INF] Displaying MainMenu
+2022-02-11 14:00:46.859 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:51.847 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:52.228 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:52.806 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:53.181 -05:00 [INF] Displaying Capture Menu
+2022-02-11 14:00:53.595 -05:00 [INF] Exiting Application

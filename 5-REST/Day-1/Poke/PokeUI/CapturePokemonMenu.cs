@@ -8,37 +8,20 @@ namespace PokeUI
         and force it to also give those two methods some implementation
         but why?
     */
-    public class MainMenu : IMenu
+    public class CapturePokemonMenu : IMenu
     {
-        internal static Player _player = new Player();
         public void Display()
         {
-            Console.WriteLine("Welcome to the world of Pokemon!");
-            Console.WriteLine("What would you like to do?");
-            if (_player.Name == null)
-            {
-                Console.WriteLine
+            Console.WriteLine
 (
 @"
-[3] Login
-[2] Register
-[1] Exit
+You have encountered a Pokemon!
+What would you like to do?
+[3] Try to catch
+[2] Flee
+[1] Go back
 "
 );
-            }
-            else
-            {
-                Console.WriteLine($"Trainer info - Name: {_player.Name}");
-                Console.WriteLine
-                (
-@"
-[6] Capture a pokemon!
-[5] Check your team
-[4] Go to Pokemon Center
-[1] Exit
-"
-                );
-            }
         }
 
         public MenuType UserChoice()
@@ -49,14 +32,14 @@ namespace PokeUI
             {
                 //Cases are the same as else ifs
                 case "1":
-                    return MenuType.Exit;
+                    return MenuType.MainMenu;
                 case "2":
-                    return MenuType.RegisterMenu;
-                case "3":
-                    return MenuType.LoginMenu;
-                //Default is the same as an else
-                case "6":
                     return MenuType.CapturePokemonMenu;
+                case "3":
+                    return MenuType.CapturePokemonMenu;
+                //Default is the same as an else
+                case "4":
+                    return MenuType.GetPokeAbility;
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
