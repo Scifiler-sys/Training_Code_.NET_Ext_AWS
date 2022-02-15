@@ -2,8 +2,8 @@ namespace PokeModel
 {
     public class Arsenal
     {
-        public int PokeId { get; set; }
+        public int TeamId { get; set; }
         public int AbId { get; set; }
-        public int PP { get; set; }
+        public int CurrentPP { get; set; }
     }
 }

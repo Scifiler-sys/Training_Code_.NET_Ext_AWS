@@ -20,9 +20,9 @@ namespace PokeDL
                 SqlCommand com = new SqlCommand(sqlQuery, con);
                 
                 //Setting parameters
-                com.Parameters.AddWithValue("@pokeId", p_resource.PokeId);
+                com.Parameters.AddWithValue("@pokeId", p_resource.TeamId);
                 com.Parameters.AddWithValue("@abId", p_resource.AbId);
-                com.Parameters.AddWithValue("@PP", p_resource.PP);
+                com.Parameters.AddWithValue("@PP", p_resource.CurrentPP);
 
                 com.ExecuteNonQuery();
             }
@@ -43,7 +43,7 @@ namespace PokeDL
 
                 //Setting Parameters
                 com.Parameters.AddWithValue("@abId", p_resource.AbId);
-                com.Parameters.AddWithValue("@pokeId", p_resource.PokeId);
+                com.Parameters.AddWithValue("@pokeId", p_resource.TeamId);
 
                 com.ExecuteNonQuery();
             }
@@ -67,9 +67,9 @@ namespace PokeDL
                 while (reader.Read())
                 {
                     listOfAbility.Add(new Arsenal(){
-                        PokeId = reader.GetInt32(0),
+                        TeamId = reader.GetInt32(0),
                         AbId = reader.GetInt32(1),
-                        PP = reader.GetInt32(2)
+                        CurrentPP = reader.GetInt32(2)
                     });
                 }
             }
@@ -90,8 +90,8 @@ namespace PokeDL
                 SqlCommand com = new SqlCommand(sqlQuery, con);
 
                 com.Parameters.AddWithValue("@abId", p_resource.AbId);
-                com.Parameters.AddWithValue("@pokeId", p_resource.PokeId);
-                com.Parameters.AddWithValue("@PP", p_resource.PP);
+                com.Parameters.AddWithValue("@pokeId", p_resource.TeamId);
+                com.Parameters.AddWithValue("@PP", p_resource.CurrentPP);
 
                 com.ExecuteNonQuery();
             }

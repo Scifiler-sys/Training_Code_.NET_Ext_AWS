@@ -71,7 +71,8 @@ namespace PokeDL
                         Name = reader.GetString(1),
                         PP = reader.GetInt32(2),
                         Power = reader.GetInt32(3),
-                        Accuracy = reader.GetInt32(4)
+                        Accuracy = reader.GetInt32(4),
+                        Type = reader.GetString(5)
                     });
                 }
             }

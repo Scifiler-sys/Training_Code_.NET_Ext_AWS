@@ -13,11 +13,64 @@ namespace PokeBL
         //the compiler helping us
         //===========================
         private IRepository<Pokemon> _pokeRepo;
-        public PokemonBL(IRepository<Pokemon> p_pokeRepo)
+        private IRepository<Ability> _abRepo;
+        private IRepository<Arsenal> _arRepo;
+        private IRepository<Team> _teamRepo;
+        public PokemonBL(IRepository<Pokemon> p_pokeRepo, IRepository<Ability> p_abRepo, IRepository<Arsenal> p_arRepo, IRepository<Team> p_teamRepo)
         {
             _pokeRepo = p_pokeRepo;
+            _abRepo = p_abRepo;
+            _arRepo = p_arRepo;
+            _teamRepo = p_teamRepo;
         }
-        //============================
+
+        public Ability AddAbilityToPokemon(Pokemon p_poke, Ability p_ab)
+        {
+            List<Ability> currentAbilities = GetAbilityFromPokemon(p_poke);
+
+            if (currentAbilities.Where(ab => ab.Id == p_ab.Id).Count() > 0)
+            {
+                throw new Exception("This pokemon already has that ability!");
+            }
+            else
+            {
+                _arRepo.Add(new Arsenal{
+                    AbId = p_ab.Id,
+                    TeamId = p_poke.TeamId,
+                    CurrentPP = p_ab.PP
+                });
+                return p_ab;
+            }
+        }
+
+        public List<Ability> GetAbilityFromPokemon(Pokemon p_poke)
+        {
+            List<Ability> yourAbility = (from team in _teamRepo.GetAll()
+                                        join arsenal in _arRepo.GetAll() on team.TeamId equals arsenal.TeamId
+                                        join ability in _abRepo.GetAll() on arsenal.AbId equals ability.Id
+                                        where team.TeamId == p_poke.TeamId
+                                        select new Ability {
+                                            Id = ability.Id,
+                                            Accuracy = ability.Accuracy,
+                                            Name = ability.Name,
+                                            Power = ability.Power,
+                                            PP = arsenal.CurrentPP,
+                                            Type = ability.Type
+                                        }
+                                        )
+                                        .ToList();
+            
+            return yourAbility;
+        }
+
+        public List<Ability> GetAllAbilities(Pokemon p_poke)
+        {
+            List<Ability> listOfAbility = _abRepo.GetAll();
+
+            return listOfAbility.Where(ability => ability.Type == p_poke.Type 
+                                || ability.Type == "Neutral")
+                                .ToList();
+        }
 
         public Pokemon GetRandomPokemon()
         {

@@ -16,12 +16,14 @@
         }
 
         public int Id { get; set; }
+        public int TeamId { get; set; }
         public string Name { get; set; }
         public int Level { get; set; }
         public int Health { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
         public int Speed { get; set; }
+        public string Type { get; set; }
         private List<Ability> _abilities;
         public List<Ability> Abilities
         {
@@ -45,7 +47,7 @@
 
         public override string ToString()
         {
-            return $"===Pokemon Info===\nPokeId: {Id}\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}\nSpeed: {Speed}";
+            return $"===Pokemon Info===\nTeamId: {Id}\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}\nSpeed: {Speed}\nType: {Type}";
         }
     }
 }

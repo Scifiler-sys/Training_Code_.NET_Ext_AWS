@@ -72,7 +72,8 @@ namespace PokeDL
                         Attack = reader.GetInt32(2),
                         Defense = reader.GetInt32(3),
                         Health = reader.GetInt32(4),
-                        Speed = reader.GetInt32(5)
+                        Speed = reader.GetInt32(5),
+                        Type = reader.GetString(6)
                     });
                 }
             }

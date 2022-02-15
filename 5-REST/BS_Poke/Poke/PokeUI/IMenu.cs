@@ -8,7 +8,8 @@ namespace PokeUI
         RegisterMenu,
         LoginMenu,
         CapturePokemonMenu,
-        YourPokemonMenu
+        YourPokemonMenu,
+        LearnAbilityMenu
     }
     /*
         Interfaces are one of the best way to implement abstraction

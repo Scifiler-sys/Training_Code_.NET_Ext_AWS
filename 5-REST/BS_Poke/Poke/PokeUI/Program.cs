@@ -56,11 +56,15 @@ while (repeat)
             break;
         case MenuType.CapturePokemonMenu:
             Log.Information("Displaying Capture Menu");
-            menu = new CapturePokemonMenu(new PokemonBL(new PokemonRepo(_connection)), new PlayerBL(new PlayerRepo(_connection), new TeamRepo(_connection), new PokemonRepo(_connection)));
+            menu = new CapturePokemonMenu(new PokemonBL(new PokemonRepo(_connection), new AbilityRepo(_connection), new ArsenalRepo(_connection), new TeamRepo(_connection)), new PlayerBL(new PlayerRepo(_connection), new TeamRepo(_connection), new PokemonRepo(_connection)));
             break;
         case MenuType.YourPokemonMenu:
             Log.Information("Displaying User's Pokemon");
             menu = new YourPokemonMenu(new PlayerBL(new PlayerRepo(_connection), new TeamRepo(_connection), new PokemonRepo(_connection)));
+            break;
+        case MenuType.LearnAbilityMenu:
+            Log.Information("Displaying Learn Ability Menu");
+            menu = new LearnAbilityMenu(new PokemonBL(new PokemonRepo(_connection),new AbilityRepo(_connection), new ArsenalRepo(_connection), new TeamRepo(_connection)));
             break;
         default:
             Log.Information("Rerouted to page that doesn't exist");

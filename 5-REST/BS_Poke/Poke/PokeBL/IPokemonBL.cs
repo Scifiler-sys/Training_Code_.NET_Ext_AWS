@@ -14,6 +14,27 @@ namespace PokeBL
         /// </summary>
         /// <returns>Pokemon object</returns>
         Pokemon GetRandomPokemon();
+
+        /// <summary>
+        /// Will return available abilities for the pokemon based on type from the database
+        /// </summary>
+        /// <returns>Ability list collection</returns>
+        List<Ability> GetAllAbilities(Pokemon p_poke);
+
+        /// <summary>
+        /// Gets current ability from Pokemon
+        /// </summary>
+        /// <param name="p_poke">The pokemon to get the current ability</param>
+        /// <returns>Ability list collection</returns>
+        List<Ability> GetAbilityFromPokemon(Pokemon p_poke);
+        
+        /// <summary>
+        /// Adds an ability for a pokemon
+        /// </summary>
+        /// <param name="p_poke">The pokemon that will be added to an ability</param>
+        /// <param name="p_ab">The ability that will be added to</param>
+        /// <returns>Ability object being added</returns>
+        Ability AddAbilityToPokemon(Pokemon p_poke, Ability p_ab);
     }
 }
 

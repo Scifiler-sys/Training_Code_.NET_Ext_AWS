@@ -20,9 +20,9 @@ namespace PokeDL
                 SqlCommand com = new SqlCommand(sqlQuery, con);
                 
                 //Setting parameters
-                com.Parameters.AddWithValue("@level", p_resource.pokeLevel);
-                com.Parameters.AddWithValue("@playerId", p_resource.playerId);
-                com.Parameters.AddWithValue("@pokeId", p_resource.pokeId);
+                com.Parameters.AddWithValue("@level", p_resource.PokeLevel);
+                com.Parameters.AddWithValue("@playerId", p_resource.PlayerId);
+                com.Parameters.AddWithValue("@pokeId", p_resource.PokeId);
 
                 com.ExecuteNonQuery();
             }
@@ -51,10 +51,10 @@ namespace PokeDL
                 while (reader.Read())
                 {
                     listOfTeam.Add(new Team(){
-                        teamId = reader.GetInt32(0),
-                        pokeLevel = reader.GetInt32(1),
-                        playerId = reader.GetInt32(2),
-                        pokeId = reader.GetInt32(3),
+                        TeamId = reader.GetInt32(0),
+                        PokeLevel = reader.GetInt32(1),
+                        PlayerId = reader.GetInt32(2),
+                        PokeId = reader.GetInt32(3),
                     });
                 }
             }

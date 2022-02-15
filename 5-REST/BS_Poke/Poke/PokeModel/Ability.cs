@@ -12,6 +12,7 @@ namespace PokeModel
 
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Type { get; set; }
         
         private int _PP;
         //In pokemon, this just means how many times you can use the ability during a battle
@@ -38,7 +39,7 @@ namespace PokeModel
 
         public override string ToString()
         {
-            return $"===Ability Info===\nId: {Id}\nName: {Name}\nPP: {PP}\nPower: {Power}\nAccuracy: {Accuracy}";
+            return $"===Ability Info===\nId: {Id}\nName: {Name}\nPP: {PP}\nPower: {Power}\nAccuracy: {Accuracy}\nType: {Type}";
         }
     }
 }

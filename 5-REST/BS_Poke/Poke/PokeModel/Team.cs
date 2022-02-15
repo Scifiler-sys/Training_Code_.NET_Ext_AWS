@@ -2,9 +2,9 @@ namespace PokeModel
 {
     public class Team
     {
-        public int teamId { get; set; }
-        public int pokeLevel { get; set; }
-        public int playerId { get; set; }
-        public int pokeId { get; set; }
+        public int TeamId { get; set; }
+        public int PokeLevel { get; set; }
+        public int PlayerId { get; set; }
+        public int PokeId { get; set; }
     }
 }

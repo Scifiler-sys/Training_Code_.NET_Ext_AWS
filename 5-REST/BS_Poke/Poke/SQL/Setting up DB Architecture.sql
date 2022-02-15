@@ -17,8 +17,10 @@ create table Pokemon (
 CREATE TABLE Ability (
 	abId int IDENTITY(1,1) primary key,
 	abName varchar(50),
+	PP int,
 	abPower int,
-	abAccuracy int
+	abAccuracy int,
+	abType varchar(20)
 );
 
 --Creating relationships
@@ -30,10 +32,11 @@ create table Team(
 );
 
 create table Arsenal(
-	pokeId int foreign key references Pokemon(pokeId),
+	teamId int foreign key references Team(teamId),
 	abId int foreign key references Ability(abId),
 	currentPP int
 );
+
 
 --Inserting data
 update Pokemon
@@ -41,6 +44,9 @@ set pokeName = '', pokeLevel = 1, pokeAttack = 1, pokeDefense = 1, pokeHealth = 
 where pokeId = 1
 
 INSERT INTO Ability
-(abName, abPower, abAccuracy)
-VALUES('Tackle', 40, 100),
-	('Vine Whip', 45, 100);
+VALUES('Tackle',35, 40, 100),
+	('Vine Whip',40, 45, 100),
+	('Scratch',35, 40, 100),
+	('Ember', 25, 40, 100),
+	('Water Gun', 25, 40, 100),
+	('Thunder Shock', 30, 40, 100);
