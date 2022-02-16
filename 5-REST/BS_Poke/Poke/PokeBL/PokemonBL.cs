@@ -72,6 +72,14 @@ namespace PokeBL
                                 .ToList();
         }
 
+        public Ability GetRandomAbility(Pokemon p_poke)
+        {
+            Random rand = new Random();
+            List<Ability> listOfAbility = GetAllAbilities(p_poke);
+
+            return listOfAbility[rand.Next(0,listOfAbility.Count)];
+        }
+
         public Pokemon GetRandomPokemon()
         {
             Random rand = new Random();

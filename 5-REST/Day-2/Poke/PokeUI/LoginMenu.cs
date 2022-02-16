@@ -2,28 +2,16 @@ using PokeBL;
 
 namespace PokeUI
 {
-    public class YourPokemonMenu : IMenu
+    public class LoginMenu : IMenu
     {
         private readonly IPlayerBL _playerBL;
-        internal static Pokemon _poke;
-        private List<Pokemon> _listOfPoke;
-
-        public YourPokemonMenu(IPlayerBL p_playerBL)
+        public LoginMenu(IPlayerBL p_playerBL)
         {
             _playerBL = p_playerBL;
-            _listOfPoke = _playerBL.GetYourPokemon(MainMenu._player);
         }
-
         public void Display()
         {
-            foreach (Pokemon pokemon in _listOfPoke)
-            {
-                Console.WriteLine(pokemon);
-            }
-            Console.WriteLine(@"
-[2] Learn an Ability!
-[1] Go Back
-            ");
+            Console.WriteLine($"[3] Name - {MainMenu._player.Name}\n[2] Login\n[1] Go Back");
         }
 
         public MenuType UserChoice()
@@ -34,27 +22,31 @@ namespace PokeUI
             {
                 //Cases are the same as else ifs
                 case "1":
+                    MainMenu._player.Name = null;
+                    MainMenu._player.Gender = false;
                     return MenuType.MainMenu;
                 case "2":
-                    Console.WriteLine("Enter Team Id of the pokemon you want to learn an ability");
                     try
                     {
-                        int pokeId = Convert.ToInt32(Console.ReadLine());
-                        _poke = _listOfPoke.Find(poke => poke.Id == pokeId);
+                        MainMenu._player = _playerBL.Login(MainMenu._player);
                     }
-                    catch (System.FormatException)
+                    catch (System.Exception exc)
                     {
-                        Console.WriteLine("Please input a valid response");
+                        MainMenu._player.Name = null;
+                        Console.WriteLine(exc.Message);
                         Console.WriteLine("Please press Enter to continue");
                         Console.ReadLine();
-                        return MenuType.YourPokemonMenu;
                     }
-                    return MenuType.LearnAbilityMenu; 
+                    return MenuType.MainMenu;
+                case "3":
+                    Console.WriteLine("Please enter a name");
+                    MainMenu._player.Name = Console.ReadLine();
+                    return MenuType.LoginMenu;
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
                     Console.ReadLine();
-                    return MenuType.YourPokemonMenu;
+                    return MenuType.MainMenu;
             }
         }
     }

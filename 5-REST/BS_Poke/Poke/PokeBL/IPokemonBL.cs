@@ -35,6 +35,13 @@ namespace PokeBL
         /// <param name="p_ab">The ability that will be added to</param>
         /// <returns>Ability object being added</returns>
         Ability AddAbilityToPokemon(Pokemon p_poke, Ability p_ab);
+        
+        /// <summary>
+        /// Will randomly give ability to a pokemon based on its type
+        /// </summary>
+        /// <param name="p_poke">The pokemon being given an ability to</param>
+        /// <returns>list of ability given</returns>
+        Ability GetRandomAbility(Pokemon p_poke);
     }
 }
 
