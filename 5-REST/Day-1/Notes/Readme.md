@@ -72,6 +72,8 @@
     * Get - Used to retrieve data from the server
     * Post - Used to submit data to the server
     * Put - Used to update/replace data on the server
+    * Delete - Used to delete existing data on the server
+    * Head - It is like the get method but it will only give you the header (metadata so no response body)
 
 ## HTTP status code
 * Gives the result of the HTTP request
