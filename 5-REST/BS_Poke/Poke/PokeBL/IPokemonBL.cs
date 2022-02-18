@@ -10,13 +10,15 @@ namespace PokeBL
     {
         /// <summary>
         /// Will return a randomize pokemon from a list of pokemon from the database
-        /// Also randomize the level up to 3
+        /// Also randomize the level up to 100
+        /// Will also randomize the abilities they have
         /// </summary>
         /// <returns>Pokemon object</returns>
         Pokemon GetRandomPokemon();
 
         /// <summary>
         /// Will return available abilities for the pokemon based on type from the database
+        /// Also checks if Pokemon already has the ability
         /// </summary>
         /// <returns>Ability list collection</returns>
         List<Ability> GetAllAbilities(Pokemon p_poke);

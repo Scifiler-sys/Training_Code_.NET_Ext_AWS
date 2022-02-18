@@ -39,8 +39,8 @@ namespace PokeUI
                     Console.WriteLine("Enter Team Id of the pokemon you want to learn an ability");
                     try
                     {
-                        int pokeId = Convert.ToInt32(Console.ReadLine());
-                        _poke = _listOfPoke.Find(poke => poke.Id == pokeId);
+                        int pokeTeamId = Convert.ToInt32(Console.ReadLine());
+                        _poke = _listOfPoke.Find(poke => poke.TeamId == pokeTeamId);
                     }
                     catch (System.FormatException)
                     {

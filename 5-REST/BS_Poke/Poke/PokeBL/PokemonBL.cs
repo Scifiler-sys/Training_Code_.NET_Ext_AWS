@@ -65,11 +65,25 @@ namespace PokeBL
 
         public List<Ability> GetAllAbilities(Pokemon p_poke)
         {
-            List<Ability> listOfAbility = _abRepo.GetAll();
-
-            return listOfAbility.Where(ability => ability.Type == p_poke.Type 
+            List<Ability> currentAbilty = GetAbilityFromPokemon(p_poke);
+            List<Ability> listOfAbility = _abRepo.GetAll().Where(ability => ability.Type == p_poke.Type 
                                 || ability.Type == "Neutral")
                                 .ToList();
+
+            if (p_poke.Abilities == null)
+            {
+                p_poke.Abilities = new List<Ability>();
+            }
+
+            for (int i = 0; i < listOfAbility.Count; i++)
+            {
+                if (currentAbilty.Where(cAb => cAb.Id == listOfAbility[i].Id).Count() > 0)
+                {
+                    listOfAbility.Remove(listOfAbility[i]);
+                }
+            }
+
+            return listOfAbility;
         }
 
         public Ability GetRandomAbility(Pokemon p_poke)
@@ -87,6 +101,15 @@ namespace PokeBL
 
             Pokemon randPoke = listOfPokemon[rand.Next(0, listOfPokemon.Count)];
             randPoke.Level = rand.Next(1,100);
+            randPoke.Health = PlayerBL.PokeRealStatCalculator(randPoke.Health, randPoke.Level);
+            randPoke.Defense = PlayerBL.PokeRealStatCalculator(randPoke.Defense, randPoke.Level);
+            randPoke.Attack = PlayerBL.PokeRealStatCalculator(randPoke.Attack, randPoke.Level);
+            randPoke.Speed = PlayerBL.PokeRealStatCalculator(randPoke.Speed, randPoke.Level);
+
+            for (int i = 0; i < rand.Next(1,3); i++)
+            {
+                randPoke.Abilities = new List<Ability> {GetRandomAbility(randPoke)};
+            }
 
             return randPoke;
         }

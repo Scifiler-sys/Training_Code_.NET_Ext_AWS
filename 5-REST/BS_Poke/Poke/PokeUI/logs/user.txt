@@ -706,3 +706,178 @@ Defense: 46
 2022-02-18 12:33:04.405 -05:00 [INF] Displaying Login Menu
 2022-02-18 12:33:05.129 -05:00 [INF] Displaying MainMenu
 2022-02-18 12:33:06.223 -05:00 [INF] Displaying Battle Menu
+2022-02-18 12:42:44.036 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:42:45.300 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:42:46.353 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:42:47.985 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:42:52.045 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:42:57.906 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:43:11.566 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:44:50.431 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:44:51.961 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:44:52.616 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:44:55.854 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:45:01.034 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:45:20.232 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:45:23.045 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:45:23.752 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:45:25.009 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:45:29.738 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:46:44.000 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:46:46.849 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:46:47.517 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:46:51.295 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:46:54.720 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:47:36.443 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:47:37.930 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:47:38.611 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:47:40.374 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:47:43.968 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:48:09.547 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:48:12.135 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:48:25.856 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:48:27.444 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:48:28.280 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:48:29.975 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:48:34.368 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:48:40.129 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:48:42.719 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:54:37.976 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:54:42.637 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:54:46.018 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:54:46.757 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:54:49.131 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:54:51.823 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 12:56:12.736 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:56:13.178 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:56:15.128 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:56:15.846 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:56:17.810 -05:00 [INF] Displaying Battle Menu
+2022-02-18 12:56:24.101 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:56:25.271 -05:00 [INF] Displaying Login Menu
+2022-02-18 12:56:26.698 -05:00 [INF] Displaying MainMenu
+2022-02-18 12:56:29.696 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 12:56:33.036 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 13:02:21.805 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:02:23.145 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:02:23.780 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:02:25.372 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 13:02:27.028 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 13:04:26.013 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:04:28.424 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:04:29.189 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:04:30.588 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:00.477 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:12:02.070 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:12:02.856 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:12:04.405 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:09.421 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:13.214 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:13.902 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:14.196 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:14.410 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:14.829 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:32.637 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:12:34.260 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:12:35.022 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:12:36.277 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:12:49.481 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:14:36.670 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:14:37.991 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:14:38.734 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:14:40.861 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:17:22.124 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:17:27.160 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:17:27.905 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:17:29.314 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:19:02.111 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:19:08.719 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:19:22.594 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:19:39.233 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:19:41.029 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:19:42.148 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:19:43.492 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:20:32.307 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:20:34.303 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:20:34.987 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:20:36.682 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:20:54.493 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:26:09.082 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:26:10.530 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:26:11.374 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:26:12.683 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:30:54.890 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:30:58.218 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:30:59.392 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:31:03.146 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:33:00.122 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:33:01.477 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:33:02.311 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:33:03.633 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:34:33.807 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:34:35.350 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:34:36.197 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:34:41.528 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:35:24.626 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:35:25.877 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:35:26.597 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:35:27.758 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:41:03.813 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:41:05.572 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:41:06.258 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:41:09.395 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:42:07.765 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:42:09.809 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:42:10.571 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:42:12.209 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:44:26.556 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:44:28.560 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:44:29.537 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:44:31.224 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:48:39.508 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:48:40.861 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:48:41.646 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:48:42.171 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:48:56.692 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:49:23.632 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:49:24.941 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:49:25.572 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:49:26.796 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:50:21.613 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:50:22.818 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:50:23.443 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:50:25.078 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:50:38.491 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:52:13.782 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:52:15.435 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:52:16.059 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:52:17.581 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:52:28.517 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:53:10.278 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:53:11.811 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:54:03.790 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:54:05.543 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:54:06.139 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:54:07.686 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:54:19.395 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:55:18.774 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:55:20.383 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:55:20.997 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:55:21.977 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:55:33.074 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:56:02.058 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:56:03.372 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:56:04.010 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:56:05.081 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:56:16.126 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:56:27.474 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:56:29.015 -05:00 [INF] Displaying User's Pokemon
+2022-02-18 13:56:32.582 -05:00 [INF] Displaying Learn Ability Menu
+2022-02-18 13:56:38.080 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:56:53.111 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:57:06.811 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:58:22.295 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:58:25.301 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:58:26.044 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:58:27.778 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:58:40.673 -05:00 [INF] Displaying Battle Menu

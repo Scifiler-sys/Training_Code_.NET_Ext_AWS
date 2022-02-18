@@ -83,7 +83,7 @@ namespace PokeBL
         //Calculates pokemon real stat based on their level
         //Base stats is their scaling (higher the base stat, the better the scaling)
         //For math nerds: pokemon's level*base_stat/50 + current base state
-        private int PokeRealStatCalculator(int p_stat, int p_level)
+        internal static int PokeRealStatCalculator(int p_stat, int p_level)
         {
             return (int)Math.Round(p_stat + p_level*((double)p_stat/50));
         }
