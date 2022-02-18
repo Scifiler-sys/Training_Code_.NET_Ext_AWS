@@ -47,7 +47,7 @@
 
         public override string ToString()
         {
-            return $"===Pokemon Info===\nTeamId: {Id}\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}\nSpeed: {Speed}\nType: {Type}";
+            return $"===Pokemon Info===\nTeamId: {TeamId}\nName: {Name} Lv: {Level}\nHealth: {Health}\nAttack: {Attack}\nDefense: {Defense}\nSpeed: {Speed}\nType: {Type}";
         }
     }
 }

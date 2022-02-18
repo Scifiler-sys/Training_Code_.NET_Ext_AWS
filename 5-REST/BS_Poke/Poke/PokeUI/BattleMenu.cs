@@ -26,12 +26,8 @@ namespace PokeUI
                 List<Pokemon> yourPoke = _playerBL.GetYourPokemon(MainMenu._player);
                 _selectedPoke = PickPokemon();
             }
-            else
-            {
-            Console.WriteLine($"{_opponentPoke.Name} Lv. {_opponentPoke.Level}");
-            Console.WriteLine($"Current HP: {_opponentPoke.Health}");
-            Console.WriteLine($"{_selectedPoke.Name} Lv. {_selectedPoke.Level}");
-            Console.WriteLine($"Current HP: {_selectedPoke.Health}");
+            Console.WriteLine($"{_opponentPoke.Name} Lv. {_opponentPoke.Level} HP: {_opponentPoke.Health}");
+            Console.WriteLine($"{_selectedPoke.Name} Lv. {_selectedPoke.Level} HP: {_selectedPoke.Health}");
             Console.WriteLine(
                 @"
 What do you want to do?
@@ -39,12 +35,12 @@ What do you want to do?
 [2] Swap Pokemon
 [1] Flee
                 ");
-            }
 
         }
 
         private Pokemon PickPokemon()
         {
+            _currentTeam = _playerBL.GetYourPokemon(MainMenu._player);
             Console.WriteLine("Choose your pokemon!");
             
             foreach (var item in _currentTeam)
@@ -81,16 +77,11 @@ What do you want to do?
             {
                 //Cases are the same as else ifs
                 case "1":
-                    return MenuType.Exit;
+                    return MenuType.MainMenu;
                 case "2":
-                    return MenuType.RegisterMenu;
+                    return MenuType.BattleMenu;
                 case "3":
-                    return MenuType.LoginMenu;
-                case "5":
-                    return MenuType.YourPokemonMenu;
-                //Default is the same as an else
-                case "6":
-                    return MenuType.CapturePokemonMenu;
+                    return MenuType.BattleMenu;
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
