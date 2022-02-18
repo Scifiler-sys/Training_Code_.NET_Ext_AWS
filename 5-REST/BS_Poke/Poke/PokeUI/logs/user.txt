@@ -881,3 +881,9 @@ Defense: 46
 2022-02-18 13:58:26.044 -05:00 [INF] Displaying MainMenu
 2022-02-18 13:58:27.778 -05:00 [INF] Displaying Battle Menu
 2022-02-18 13:58:40.673 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:58:59.762 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:59:01.102 -05:00 [INF] Displaying Login Menu
+2022-02-18 13:59:01.783 -05:00 [INF] Displaying MainMenu
+2022-02-18 13:59:02.964 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:59:13.911 -05:00 [INF] Displaying Battle Menu
+2022-02-18 13:59:25.439 -05:00 [INF] Displaying MainMenu

@@ -1,3 +1,5 @@
-# Improvement of Poke app to have a battle system
-* To make rest api and frontend more interesting
-* Change DB architecture and BL for battle system
+# P0 version of Poke app
+* Have your own pokemon team!
+* You can battle randomize pokemon
+* You can teach your pokemona abilities!
+* These are all over exaggeration and the app is very simple.
