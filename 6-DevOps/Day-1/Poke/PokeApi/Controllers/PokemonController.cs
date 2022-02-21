@@ -66,8 +66,8 @@ namespace PokeApi.Controllers
             You have to use "{nameOfParameter}" to specify what you need
             Don't forget to put it as a parameter on the action with the appropriate datatype
         */
-        [HttpGet("{pokeName}")]
-        public IActionResult GetPokemonByName(string pokeName)
+        [HttpGet]
+        public IActionResult GetPokemonByName([FromQuery] string pokeName)
         {
             try
             {
@@ -99,20 +99,20 @@ namespace PokeApi.Controllers
         }
 
         // PUT: api/Pokemon/5
-        [HttpPut("Update/{id}")]
-        public IActionResult Put(int id, [FromBody] Pokemon p_poke)
-        {
-            p_poke.PokeId = id;
+        // [HttpPut("Update/{id}")]
+        // public IActionResult Put(int id, [FromBody] Pokemon p_poke)
+        // {
+        //     p_poke.Id = id;
 
-            try
-            {
-                return Ok(_pokeBL.UpdatePokemon(p_poke));
-            }
-            catch (System.Exception ex)
-            {
-                return Conflict(ex.Message);
-            }
-        }
+        //     try
+        //     {
+        //         return Ok(_pokeBL.UpdatePokemon(p_poke));
+        //     }
+        //     catch (System.Exception ex)
+        //     {
+        //         return Conflict(ex.Message);
+        //     }
+        // }
 
         // DELETE: api/Pokemon/5
         [HttpDelete("{id}")]
