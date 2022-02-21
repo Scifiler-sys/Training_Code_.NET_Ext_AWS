@@ -1,3 +1,6 @@
+# NOTE
+* This continues from last ASP.NET topics
+
 ## Routing
 * Allows ASP.NET to know where to take the user's http request
     * In our case, which controller and which action inside of the controller should the http request go to
@@ -63,3 +66,4 @@
 * We used lambda delegate multiple times (where we put a "=>" syntax) to be able to put a method inside of a parameter
 * So one of the main uses of delegates is being able to pass methods as a parameter of another method for that method to use
     * It is like inception movie... a method within a method within a method...
+
