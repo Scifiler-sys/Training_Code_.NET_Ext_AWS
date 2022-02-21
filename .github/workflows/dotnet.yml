@@ -45,7 +45,7 @@ jobs:
     
     # Creating our publish folder
     - name: Publish
-      run: dotnet publish PokeApi/ -c Release -o publish
+      run: dotnet publish PokeApi/ -c Release -o ./publish
     
     - name: Deploy
       uses: azure/webapps-deploy@v2
