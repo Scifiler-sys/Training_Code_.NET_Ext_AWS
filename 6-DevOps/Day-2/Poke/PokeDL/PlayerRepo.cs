@@ -2,16 +2,17 @@ using System.Data.SqlClient;
 
 namespace PokeDL
 {
-    public class PokemonRepo : IRepository<Pokemon>
+    public class PlayerRepo : IRepository<Player>
     {
         private readonly string _connectionString;
-        public PokemonRepo(string p_connectionString)
+        public PlayerRepo(string p_connectionString)
         {
             _connectionString = p_connectionString;
         }
-        public Pokemon Add(Pokemon p_resource)
+        public Player Add(Player p_resource)
         {
-            string sqlQuery = @"Insert into Pokemon(@name, @level, @attack, @defense, @health, @speed, @type)";
+            string sqlQuery = @"Insert into Player
+                                values(@name, @gender)";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -21,23 +22,17 @@ namespace PokeDL
                 
                 //Setting parameters
                 com.Parameters.AddWithValue("@name", p_resource.Name);
-                com.Parameters.AddWithValue("@level", p_resource.Level);
-                com.Parameters.AddWithValue("@attack", p_resource.Attack);
-                com.Parameters.AddWithValue("@defense", p_resource.Defense);
-                com.Parameters.AddWithValue("@health", p_resource.Health);
-                com.Parameters.AddWithValue("@speed", p_resource.Speed);
-                com.Parameters.AddWithValue("@type", p_resource.Type);
-
+                com.Parameters.AddWithValue("@gender", p_resource.Gender);
                 com.ExecuteNonQuery();
             }
 
             return p_resource;
         }
 
-        public Pokemon Delete(Pokemon p_resource)
+        public Player Delete(Player p_resource)
         {
-            string sqlQuery = @"delete from Pokemon
-                                where pokeId = @Id";
+            string sqlQuery = @"delete from Player
+                                where playerId = @Id";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -54,10 +49,10 @@ namespace PokeDL
             return p_resource;
         }
 
-        public List<Pokemon> GetAll()
+        public List<Player> GetAll()
         {
-            string sqlQuery = @"select * from Pokemon";
-            List<Pokemon> listOfPoke = new List<Pokemon>();
+            string sqlQuery = @"select * from Player";
+            List<Player> listOfPlayer = new List<Player>();
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -69,27 +64,22 @@ namespace PokeDL
 
                 while (reader.Read())
                 {
-                    listOfPoke.Add(new Pokemon(){
+                    listOfPlayer.Add(new Player(){
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        Level = reader.GetInt32(2),
-                        Attack = reader.GetInt32(3),
-                        Defense = reader.GetInt32(4),
-                        Health = reader.GetInt32(5),
-                        Speed = reader.GetInt32(6),
-                        Type = reader.GetString(7)
+                        Gender = reader.GetBoolean(2)
                     });
                 }
             }
 
-            return listOfPoke;
+            return listOfPlayer;
         }
 
-        public Pokemon Update(Pokemon p_resource)
+        public Player Update(Player p_resource)
         {
-            string sqlQuery = @"update Pokemon
-                                set pokeName = @name, pokeLevel = @level, pokeAttack = @attack, pokeDefense = @defense, pokeHealth = @health
-                                where pokeId = @Id";
+            string sqlQuery = @"update Player
+                                set playerName = @name, playerGender = @gender
+                                where playerId = @Id";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -98,11 +88,8 @@ namespace PokeDL
                 SqlCommand com = new SqlCommand(sqlQuery, con);
 
                 com.Parameters.AddWithValue("@name", p_resource.Name);
-                com.Parameters.AddWithValue("@level", p_resource.Level);
-                com.Parameters.AddWithValue("@attack", p_resource.Attack);
-                com.Parameters.AddWithValue("@defense", p_resource.Defense);
+                com.Parameters.AddWithValue("@gender", p_resource.Gender);
                 com.Parameters.AddWithValue("@Id", p_resource.Id);
-
                 com.ExecuteNonQuery();
             }
             

@@ -1,0 +1,41 @@
+# First our virtual OS will need the .NET 6.0 SDK
+# Why? Since the SDK is needed to be able to build our application
+# We shall utilize docker hub since microsoft uploaded their SDK in an image
+# Docker hub is like Git hub but it has a collection of images we can just download/grab from
+from mcr.microsoft.com/dotnet/sdk:6.0 as build
+
+#Setting our working directory
+workdir /app
+
+# Time to copy our projects and paste it to the working directory
+# * is a wild card meaning it'll grab any file as long as its extension is .sln or .csproj
+copy *.sln ./ 
+copy PokeBL/*.csproj PokeBL/
+copy PokeDL/*.csproj PokeDL/
+copy PokeModel/*.csproj PokeModel/
+copy PokeTest/*.csproj PokeTest/
+copy PokeApi/*.csproj PokeApi/
+
+# Now that we copied our files, remember how we don't have the bin and obj folders
+# Since we ignored them so how do we get them back?
+# Why didn't we just copy them? Remember those files differ depending on what OS the person is using so we should just re-generate them
+run cd RRWebUI && dotnet restore
+
+#Copy the source codes of each project
+copy . ./
+
+# We need to publish the application and its dependencies to a folder for deployment
+run dotnet publish RRWebUI -c Release -o publish --no-restore
+
+# Once we finished building and creating a deployment folder, we can switch our SDK into a Runtime to save space
+from mcr.microsoft.com/dotnet/aspnet:6.0 as runtime
+
+# CD into our working directory
+workdir /app
+# Copy the deployment folder
+copy --from=build /app/publish ./
+
+# We specify where exactly is the starting project
+cmd ["dotnet", "RRWebUI.dll"]
+
+
