@@ -1,5 +1,0 @@
-{
-    "ConnectionStrings":{
-        "Reference2DB": "server = stephen-pagdilao-postgresql.cekyyol8wngg.us-east-2.rds.amazonaws.com; database = postgres; User ID = postgres;Password = postgres123"
-    }
-}
