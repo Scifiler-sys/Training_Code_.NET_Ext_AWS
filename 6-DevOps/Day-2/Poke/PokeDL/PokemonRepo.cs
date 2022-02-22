@@ -72,12 +72,11 @@ namespace PokeDL
                     listOfPoke.Add(new Pokemon(){
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        Level = reader.GetInt32(2),
-                        Attack = reader.GetInt32(3),
-                        Defense = reader.GetInt32(4),
-                        Health = reader.GetInt32(5),
-                        Speed = reader.GetInt32(6),
-                        Type = reader.GetString(7)
+                        Attack = reader.GetInt32(2),
+                        Defense = reader.GetInt32(3),
+                        Health = reader.GetInt32(4),
+                        Speed = reader.GetInt32(5),
+                        Type = reader.GetString(6)
                     });
                 }
             }
