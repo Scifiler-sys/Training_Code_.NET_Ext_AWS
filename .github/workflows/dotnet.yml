@@ -11,6 +11,8 @@ on:
   pull_request:
     branches: [ main ]
 
+# Jobs are just multiple workflows you want to run
+# Right now we only have one job which is to deploy but down the line I can add another job to dockerize my app and another job to static analysis the app, so on...
 jobs:
   # This is stating what OS our computer should run on
   # In this case, it is using a linux OS named ubuntu (you can put 'windows-latest' for windows OS)
