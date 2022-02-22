@@ -1,0 +1,57 @@
+# YML is another markup language and like most markup langauge, we are just telling the computer what to do
+# In this case, we are telling what Github server should do to be able to deploy this application
+name: Build, Test, and Deploy API
+
+# We specify when should this action execute depending on what happens in our remote repository
+on:
+  # This is stating it will run this action every time a push was executing on our main branch
+  push:
+    branches: [ main ]
+  # This is stating it will run this action every time a pull request is done on our main branch
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # This is stating what OS our computer should run on
+  # In this case, it is using a linux OS named ubuntu (you can put 'windows-latest' for windows OS)
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 6-DevOps/Day-2/Poke # Sets the working directory to be my Poke folder in 6-DevOps (yours might differ just look at your online repo and see where your parent folder of your project is)
+    
+    # Steps are just the sequence of things we want this computer to do to be able to build, test, and deploy our api
+    steps:
+    
+    # We want this computer to have the .NET 6 SDK to even start (because we need that to autogenerate all the things our SDK does for us i.e. bin, obj, publish folders)
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    
+    # Restore dependencies .NET application
+    # Essentially get all of the external packages we added in this project (ex: System.Data.SqlClient for our ADO.NET for MS SQL)
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    # Essentially get all our bin and obj folders back and build our application
+    - name: Build
+      run: dotnet build --no-restore
+      
+    # Doing our unit test first to see if our new project passes all of it before deploying
+    - name: Test
+      run: dotnet test --no-build
+    
+    # Creating our publish folder
+    - name: Publish
+      run: dotnet publish PokeApi/ -c Release -o ./publish
+    
+    - name: Deploy
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: PokeDemo
+        slot-name: 'Production'
+        publish-profile: $${{secrets.AZURE_WEBAPP_PUBLISH_PROFILE}}
+        package: 6-DevOps/Day-2/Poke/publish
+      
