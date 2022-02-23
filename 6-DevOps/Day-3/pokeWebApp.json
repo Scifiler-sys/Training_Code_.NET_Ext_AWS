@@ -1,5 +1,5 @@
 {
-    "_comment" : "This is just information about the resource group and will tie to it if exist already",
+    "_comment" : "This is just information about the resource group and will tie to it if exist already. This is how IaC is done",
     "id": "/subscriptions/0c61e2ed-4a6a-437f-9a03-1f223527220b/resourceGroups/220118-Reston-.NET/providers/Microsoft.Web/sites/PokeDemo",
     "name": "PokeDemo",
     "type": "Microsoft.Web/sites",
