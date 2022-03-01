@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BasicJS</title>
+</head>
+<body>
+    <h1>Fundamental of JS</h1>
+    <h3>Functions</h3>
+    <p>Using a button is a great simple way to invoke a function in JS but any events (including mouse and keyboard events) you can tie it with JS</p>
+    <button onclick="BasicFunction()">Basic Function</button>
+
+    <h3>Prototype</h3>
+    <p>Like fields in C#, they will hold some value in a form of a key-value pair</p>
+    <button onclick="PropertyFunction()">Property Example</button>
+
+    <h3>Objects</h3>
+    <p>Like objects in C# but it doesn't need to have a class to create one</p>
+    <button onclick="CreatingObjects()">Object Example</button>
+
+    <h3>Classes</h3>
+    <p>Like classes in C# and OOP pillars</p>
+    <button onclick="CreatingClasses()">Class Example</button>
+
+    <h3>DOM Demo</h3>
+    <p>Allowing us to dynamically change our website</p>
+    <button onclick="RevealSpan()">DOM Example</button>
+    <span id="spanValidation" hidden=true style="color: red;">You just clicked the button!</span>
+    <!-- Script tag is used to add JS inside of an HTML doc -->
+    <script>
+        function BasicFunction() {
+            console.log("This is similar to Console.Writeline()");
+        }
+
+        function PropertyFunction() {
+            console.log(PropertyFunction.prototype);
+            PropertyFunction.prototype.anotherProp = "Adding a new prototype in this function";
+            console.log(PropertyFunction.prototype);
+            console.log(PropertyFunction.prototype.anotherProp);
+            console.log("Example of Prototypal Inheritance");
+            let animal = {color: "blue"};
+            let dog = {talk: "bark"};
+            console.log(dog.color);
+            dog.__proto__ = animal;
+            console.log(dog.color);
+        }
+
+        function CreatingObjects() {
+            let dog = {
+                color: "Black",
+                size: 40,
+                speak: function() {
+                    console.log("Bark Bark!");
+                },
+                howBig: function() {
+                    //You must use the "this" keyword to specify you are using the object's own properties
+                    console.log("The dog is "+this.size+"lbs!");
+                }
+            }
+
+            console.log(dog);
+            dog.speak();
+            dog.size = 192;
+            dog.howBig();
+        }
+
+        function CreatingClasses() {
+            class Animal {
+                constructor(name){
+                    this.name = name;
+                }
+                
+                speak(){
+                    console.log("Hello");
+                }
+            }
+
+            class Dog extends Animal {
+                //public field
+                color = "Black";
+
+                //private field
+                //Useful for encapsulation
+                #size = 20;
+                constructor(color, size, name){
+                    super(name);
+                    this.color = color;
+                    this.#size = size;
+                }
+                
+                //This is a method
+                speak() {
+                    super.speak(); //To call on parent's method
+                    console.log("Bark! Bark!");
+                }
+
+                speak(word){
+                    console.log(word);
+                }
+
+                howBig() {
+                    console.log("The dog is "+this.size+"lbs!");
+                }
+
+                get getSize(){
+                    return this.#size + 20;
+                }
+            }
+
+            let dog1 = new Dog("Black", 20, "Minnie");
+            dog1.speak();
+            dog1.howBig();
+            console.log(dog1.color);
+            // console.log(dog1.#size); Cannot access due to it being private
+            console.log(dog1.getSize);
+
+            //Be careful with doing this because it seemed like I set the size variable but not really
+            dog1.size = 200;
+            console.log(dog1.size);
+            console.log(dog1);
+
+            //Inheritance
+            console.log(dog1.name);
+
+            //Method overriding
+            dog1.speak("Doggy is talking");
+        }
+
+        function RevealSpan(params) {
+            let spanElement = document.querySelector("#");
+        }
+    </script>
+</body>
+</html>
