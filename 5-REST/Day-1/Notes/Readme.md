@@ -48,6 +48,8 @@
 * As with adding more teams, communication can become an issue
     * Since frontend and backend are being developed separately they might not have the same idea on doing a functionality (which you might experience once you start working in teams!)
 
+# 
+
 # HTTP/HTTPS
 * Hyper Text Transfer Protocol (Secured)
 * The protocol that both computers have to follow in order to understand/communicate with each other and work together to display a nice looking website in your browser, register an account, login, etc.
