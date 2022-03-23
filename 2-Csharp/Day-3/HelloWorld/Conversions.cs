@@ -29,7 +29,7 @@ namespace ConversionFunction
             int intNum = (int)y; //Notice we have to write (datatype)
             Console.WriteLine(intNum);
 
-            //More Explicit Conversions
+            //More Explicit Conversions (NOTE: they are not implicit conversions)
             string stringVar = x.ToString(); //Another way to convert
             Console.WriteLine(stringVar);
 

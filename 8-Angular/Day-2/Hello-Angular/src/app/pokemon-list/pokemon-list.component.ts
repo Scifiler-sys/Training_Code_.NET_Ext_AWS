@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Pokemon } from "../models/pokemon.model";
-import { PokeService } from "../services/poke.service";
 
 @Component({
     selector:'app-pokemon-list',
@@ -11,33 +9,40 @@ import { PokeService } from "../services/poke.service";
 export class PokemonListComponent {
     title:string = "List of Pokemon";
     src1:string = "https://upload.wikimedia.org/wikipedia/commons/6/6a/Door_Tree_1898.png";
-    isVisible:boolean = true;
+    isImageVisible:boolean = true;
+    isPokeSearched:boolean = false;
+    
+    foundPokemon: Pokemon;
+    listOfPokemon:Pokemon[];
 
-    listOfPokemon:Pokemon[] = 
-    [{
-        id:132,
-        base_experience: 101,
-        name: 'ditto',
-        sprites: {
-            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'
-        }
-    },
-    {
-        id:25,
-        base_experience: 112,
-        name: 'pikachu',
-        sprites: {
-            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
-        }
-    }];
-
-    listOfPokeTest: any[]; 
-
-    faStar = faStar;
-
-    constructor(poke:PokeService) {
-        this.listOfPokeTest = [];
-        // poke.getAllPoke().subscribe(result => this.listOfPokeTest = result);
+    constructor() {
+        this.listOfPokemon = [{
+            id:132,
+            base_experience: 101,
+            name: 'ditto',
+            rating: 5,
+            sprites: {
+                front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'
+            }
+        },
+        {
+            id:25,
+            base_experience: 112,
+            name: 'pikachu',
+            rating: 3.2,
+            sprites: {
+                front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
+            }
+        }];
+        
+        this.foundPokemon = {
+            id: 0,
+            base_experience: 0,
+            name: 'default',
+            sprites: {
+                front_default: ''
+            }
+        };
     }
 
     changeTitle()
@@ -47,8 +52,23 @@ export class PokemonListComponent {
         this.listOfPokemon.push({base_experience:64, id:1,name:'bulbasaur',sprites:{front_default:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'}});
     }
 
-    changeVisible()
+    changeImageVisible()
     {
-        this.isVisible = !this.isVisible;
+        this.isImageVisible = !this.isImageVisible;
+    }
+
+    changeSearchVisible()
+    {
+        this.isPokeSearched = true;
+    }
+
+    AddPokeToList()
+    {
+        this.isPokeSearched = false;
+    }
+
+    NoAddPokeToList()
+    {
+        this.isPokeSearched = false;
     }
 }

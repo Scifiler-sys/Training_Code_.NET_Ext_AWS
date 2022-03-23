@@ -20,7 +20,7 @@ namespace MenuFunction
             Console.WriteLine("Welcome to C# Coding!");
             Console.WriteLine("What is your name?");
 
-            //Getting user input
+            //Getting user inputD
             this.Name = Console.ReadLine();
 
             //While loop will do the same as the while loop in shell
