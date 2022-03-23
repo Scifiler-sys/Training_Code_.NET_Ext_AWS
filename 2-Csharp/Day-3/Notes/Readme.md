@@ -55,6 +55,8 @@
     * Can't add numerical datatypes anymore
     * Can't use specific methods from a class
     * etc.
+### ArrayList
+* Works the same as a List but it is non-generic version of it
 
 # Conversion
 * C# is statically typed at compiled time. Meaning after a variable is declared, it cannot be declared again.
