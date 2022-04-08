@@ -52,7 +52,7 @@ while (repeat)
             break;
         case MenuType.SearchPokemon:
             Log.Information("Displaying SearchPokemon menu");
-            menu = new SearchPokemon(new PokemonBL(new Repository()));
+            menu = new SearchPokemon(new PokemonBL(new SQLRepository(_connection)));
             break;
         default:
             Log.Information("Rerouted to page that doesn't exist");

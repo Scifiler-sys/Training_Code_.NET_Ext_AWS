@@ -151,3 +151,30 @@ Defense: 46
 2022-01-31 13:11:25.106 -05:00 [INF] Displaying MainMenu
 2022-01-31 13:11:50.159 -05:00 [INF] Exiting Application
 2022-01-31 14:37:47.918 -05:00 [INF] Exiting Application
+2022-04-08 16:06:35.756 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:06:41.316 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:06:44.171 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:06:55.088 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:07:12.245 -04:00 [INF] Founded 4 Pokemon(s)
+2022-04-08 16:07:17.123 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:07:38.278 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:07:39.159 -04:00 [INF] Founded 4 Pokemon(s)
+2022-04-08 16:07:46.352 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:08:20.519 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:08:22.333 -04:00 [INF] Founded 1 Pokemon(s)
+2022-04-08 16:08:26.177 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:08:27.739 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:08:29.864 -04:00 [INF] Founded 1 Pokemon(s)
+2022-04-08 16:08:33.347 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:08:34.473 -04:00 [INF] Displaying MainMenu
+2022-04-08 16:08:35.946 -04:00 [INF] Diplaying AddPokemon menu
+2022-04-08 16:08:40.553 -04:00 [INF] Diplaying AddPokemon menu
+2022-04-08 16:08:43.073 -04:00 [INF] Diplaying AddPokemon menu
+2022-04-08 16:08:44.270 -04:00 [INF] Adding Pokemon
+ ===Pokemon Info===
+Name: Pikachu Lv: 65
+Health: 55
+Attack: 55
+Defense: 55
+2022-04-08 16:08:44.342 -04:00 [INF] Successful adding Pokemon
+2022-04-08 16:08:44.342 -04:00 [INF] Displaying MainMenu
