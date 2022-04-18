@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - yum install dotnet-sdk-6.0
+      - sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
       - cd 6-DevOps/Day-3/Poke
       - dotnet restore
       - dotnet test --no-restore
