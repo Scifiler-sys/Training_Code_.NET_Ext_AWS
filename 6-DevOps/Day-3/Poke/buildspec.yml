@@ -3,10 +3,10 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - sudo add-apt-repository universe
-      - sudo apt-get install apt-transport-https
-      - sudo apt-get update
-      - sudo apt-get install dotnet-sdk-6.0
+      - add-apt-repository universe
+      - yum install apt-transport-https
+      - yum update
+      - yum install dotnet-sdk-6.0
       - cd 6-DevOps/Day-3/Poke
       - dotnet restore
       - dotnet test --no-restore
