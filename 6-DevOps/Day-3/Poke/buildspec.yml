@@ -3,7 +3,6 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - yum update
       - yum install dotnet-sdk-6.0
       - cd 6-DevOps/Day-3/Poke
       - dotnet restore
