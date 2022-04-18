@@ -115,10 +115,18 @@ namespace PokeApi.Controllers
         // }
 
         // DELETE: api/Pokemon/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("Delete")]
+        public IActionResult Delete(int p_id)
         {
-
+            try
+            {
+                return Ok(_pokeBL.DeletePokemonById(p_id));
+            }
+            catch (System.Exception exc)
+            {
+                
+                return Conflict(exc.Message);
+            }
         }
     }
 }

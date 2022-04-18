@@ -52,7 +52,7 @@ while (repeat)
             break;
         case MenuType.SearchPokemon:
             Log.Information("Displaying SearchPokemon menu");
-            menu = new SearchPokemon(new PokemonBL(new Repository()));
+            menu = new SearchPokemon(new PokemonBL(new SQLRepository(_connection)));
             break;
         case MenuType.GetPokeAbility:
             menu = new GetPokeAbility(new PokemonBL(new SQLRepository(_connection)));

@@ -11,7 +11,7 @@ namespace PokeDL
         }
         public Pokemon Add(Pokemon p_resource)
         {
-            string sqlQuery = @"Insert into Pokemon(@name, @level, @attack, @defense, @health, @speed, @type)";
+            string sqlQuery = @"Insert into Pokemon output inserted.pokeId values(@name, @level, @attack, @defense, @health, @speed, @type)";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -28,7 +28,7 @@ namespace PokeDL
                 com.Parameters.AddWithValue("@speed", p_resource.Speed);
                 com.Parameters.AddWithValue("@type", p_resource.Type);
 
-                com.ExecuteNonQuery();
+                p_resource.Id = (int)com.ExecuteScalar();
             }
 
             return p_resource;
@@ -37,6 +37,7 @@ namespace PokeDL
         public Pokemon Delete(Pokemon p_resource)
         {
             string sqlQuery = @"delete from Pokemon
+                                output delete.
                                 where pokeId = @Id";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
@@ -72,11 +73,12 @@ namespace PokeDL
                     listOfPoke.Add(new Pokemon(){
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        Attack = reader.GetInt32(2),
-                        Defense = reader.GetInt32(3),
-                        Health = reader.GetInt32(4),
-                        Speed = reader.GetInt32(5),
-                        Type = reader.GetString(6)
+                        Level = reader.GetInt32(2),
+                        Attack = reader.GetInt32(3),
+                        Defense = reader.GetInt32(4),
+                        Health = reader.GetInt32(5),
+                        Speed = reader.GetInt32(6),
+                        Type = reader.GetString(7)
                     });
                 }
             }

@@ -41,6 +41,11 @@ namespace PokeBL
             }
         }
 
+        public Pokemon DeletePokemonById(int p_id)
+        {
+            return _repo.Delete(new Pokemon(){Id = p_id});
+        }
+
         public List<Ability> GetAbilityByPokeId(int p_pokeId)
         {
             throw new NotImplementedException();

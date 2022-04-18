@@ -161,3 +161,16 @@ Defense: 46
 2022-02-02 15:28:15.309 -05:00 [INF] Exiting Application
 2022-02-02 15:28:48.235 -05:00 [INF] Displaying MainMenu
 2022-02-02 15:28:48.841 -05:00 [INF] Exiting Application
+2022-04-08 16:46:06.728 -04:00 [INF] Displaying MainMenu
+2022-04-08 16:46:10.202 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:46:12.825 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:46:15.400 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:46:16.784 -04:00 [INF] Founded 4 Pokemon(s)
+2022-04-08 16:46:18.477 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:46:20.771 -04:00 [INF] Displaying MainMenu
+2022-04-08 16:46:40.666 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:46:42.875 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:46:44.261 -04:00 [INF] Founded 1 Pokemon(s)
+2022-04-08 16:46:45.926 -04:00 [INF] Displaying SearchPokemon menu
+2022-04-08 16:46:47.494 -04:00 [INF] Displaying MainMenu
+2022-04-08 16:46:48.557 -04:00 [INF] Diplaying AddPokemon menu

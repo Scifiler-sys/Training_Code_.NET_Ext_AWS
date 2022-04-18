@@ -36,6 +36,13 @@ namespace PokeBL
         /// <param name="p_pokeId">Pokemon</param>
         /// <returns>Returns list of ability object from the pokemon</returns>
         List<Ability> GetAbilityByPokeId(int p_pokeId);
+
+        /// <summary>
+        /// Will delete pokemon resource from database
+        /// </summary>
+        /// <param name="p_id">pokemon Id used to delete specific resource</param>
+        /// <returns>Gives the deleted pokemon</returns>
+        Pokemon DeletePokemonById(int p_id);
     }
 }
 

@@ -178,3 +178,4 @@ Attack: 55
 Defense: 55
 2022-04-08 16:08:44.342 -04:00 [INF] Successful adding Pokemon
 2022-04-08 16:08:44.342 -04:00 [INF] Displaying MainMenu
+2022-04-08 16:18:21.375 -04:00 [INF] Exiting Application
