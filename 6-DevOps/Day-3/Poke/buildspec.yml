@@ -12,6 +12,6 @@ phases:
       - dotnet build
       - echo building!
   
-  artifacts:
-    files:
-      - .\6-DevOps\Day-3\Poke\dockerfile
+artifacts:
+  files:
+    - .\6-DevOps\Day-3\Poke\dockerfile
