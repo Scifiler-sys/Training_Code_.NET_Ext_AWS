@@ -1,9 +1,16 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - cd 6-DevOps/Day-3/Poke
+      - dotnet restore
+      - dotnet test --no-restore
+  
   build:
     commands:
-      - echo 'Hopefully building the image and running it'
+      - dotnet build
+      - echo building!
   
   artifacts:
     files:
