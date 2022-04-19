@@ -19,3 +19,4 @@ phases:
 artifacts:
   files:
     - 6-DevOps/Day-3/Poke/dockerfile
+    - 6-DevOps/Day-3/Poke/*
