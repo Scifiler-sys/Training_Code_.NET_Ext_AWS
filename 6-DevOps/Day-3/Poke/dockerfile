@@ -1,7 +1,7 @@
 #Docker is like a virtual OS (not a VM) and like our CI/CD build agent, we have to specify what it needs to fully run our application
 #So the first thing is getting the SDK so we can build and publish our application
 #Unlike github actions, we get out SDK through another image that was already published by Microsoft themselves that we can just utilize
-from mcr.microsoft.com/dotnet/sdk:latest as build
+from mcr.microsoft.com/dotnet/sdk:latest
 
 #workdir docker instruction let us create what our working directory will be in this virtual OS
 workdir /app
@@ -33,7 +33,7 @@ run dotnet publish -c Release -o publish
 from mcr.microsoft.com/dotnet/aspnet:latest as runtime
 
 workdir /app
-copy --from=build /app/publish ./
+copy --from=0 /app/publish ./
 
 #CMD to set that PokeApi.dll assembly will be our default entrypoint
 entrypoint ["dotnet", "PokeApi.dll"]
