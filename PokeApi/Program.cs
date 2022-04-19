@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// builder.Services.AddScoped<IRepository<Pokemon>>(repo => new PokemonRepo(builder.Configuration.GetConnectionString("Reference2DB")));
+//  builder.Services.AddScoped<IRepository<Pokemon>>(repo => new PokemonRepo(builder.Configuration.GetConnectionString("Reference2DB")));
 builder.Services.AddScoped<IRepository<Pokemon>>(repo => new PokemonRepo(Environment.GetEnvironmentVariable("Connection_String")));
 builder.Services.AddScoped<IPokemonBL, PokemonBL>();
 
