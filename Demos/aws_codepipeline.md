@@ -35,7 +35,7 @@ builder.Services.AddScoped<IRepository<Pokemon>>(repo => new PokemonRepo(Environ
 >This will break your image if you run it locally only because Environment Variables wasn't setup in the docker container. So skip this step if you want to test if your image is working first then add this step and build the image again.
 
 2. Create a file called "Dockerfile" and write the following info:
-```docker
+```Dockerfile
 #Getting .NET 6 runtime to just run our application
 from mcr.microsoft.com/dotnet/aspnet:latest as runtime
 
