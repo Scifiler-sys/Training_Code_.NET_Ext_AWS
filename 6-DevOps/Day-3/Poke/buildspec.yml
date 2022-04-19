@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - yum update httpd
+      - yum install dotnet-sdk-6.0
 
   pre_build:
     commands:
