@@ -39,4 +39,4 @@ copy --from=build /app/publish ./
 entrypoint ["dotnet", "PokeApi.dll"]
 
 #Expose to port 80
-expose 80
+expose 5000
