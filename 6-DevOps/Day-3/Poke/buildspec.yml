@@ -4,12 +4,12 @@ phases:
   install:
     commands:
       - wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-      - sudo dpkg -i packages-microsoft-prod.deb
+      - dpkg -i packages-microsoft-prod.deb
       - rm packages-microsoft-prod.deb
-      - sudo apt-get update
-      - sudo apt-get install apt-transport-https
-      - sudo apt-get update
-      - sudo apt-get install dotnet-sdk-6.0
+      - apt-get update
+      - apt-get install apt-transport-https
+      - apt-get update
+      - apt-get install dotnet-sdk-6.0
 
   pre_build:
     commands:
