@@ -37,7 +37,10 @@ workdir /app
 copy --from=0 /app/publish ./
 
 #CMD to set that PokeApi.dll assembly will be our default entrypoint
-cmd ["dotnet", "PokeApi.dll"]
+entrypoint ["dotnet", "PokeApi.dll"]
 
-#Expose to port 80
+#Expose to port 5000
 expose 5000
+
+#Changes the port from the runtime image to listen to 5000
+env ASPNETCORE_URLS=http://+:5000
