@@ -1,9 +1,12 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      dotnet: 6.0
+
   pre_build:
     commands:
-      - sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
       - cd 6-DevOps/Day-3/Poke
       - dotnet restore
       - dotnet test --no-restore
