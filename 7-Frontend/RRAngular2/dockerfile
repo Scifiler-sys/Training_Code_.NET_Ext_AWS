@@ -1,0 +1,19 @@
+#Declaring the runtime environment we use to create our angular environment
+from node:latest as build
+
+#Setting our working directory
+workdir /usr/local/app
+
+#Copying our angular project to that working directory
+copy ./ /usr/local/app/
+
+#Restoring our dependencies and then building our app
+run npm install
+run npm run build
+
+#Serving the app with nginx server
+from nginx:latest
+copy --from=build /usr/local/app/dist/RRAngular2 /usr/share/nginx/html
+
+#exposing this port because by default nginx deploys the app in that port
+expose 80

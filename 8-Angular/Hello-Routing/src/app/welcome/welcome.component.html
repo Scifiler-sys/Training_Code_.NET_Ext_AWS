@@ -1,0 +1,18 @@
+<p>{{currentPokemon}}</p>
+<button class = "btn btn-primary" (click) = "swapView()">Go To Home page</button>
+<br>
+<button id = "buttonOne" class = "btn btn-primary" (click) = "pokeGetOne()">Get Scyther</button>
+<br>
+<button class = "btn btn-primary" (click) = "pokeGetTwo()">Get Scyther Details</button>
+
+<div>
+    <form [formGroup] = "pokeGroup">
+        <div class = "form-group">
+            <h2>Input PokeID</h2>
+            <input type = "text" formControlName = "id">
+            <h2>Input Pokename</h2>
+            <input type = "text" formControlName = "name">
+            <button class = "btn btn-primary" (click) = "pokeGetThree(pokeGroup)">Get Pokemon</button>
+        </div>
+    </form>
+</div>
