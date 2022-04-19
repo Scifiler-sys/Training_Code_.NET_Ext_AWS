@@ -5,7 +5,7 @@ phases:
     commands:
       - yum update httpd
       - rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
-      - yum install dotnet-sdk-6.0
+      - sudo yum install dotnet-sdk-6.0
 
   pre_build:
     commands:
