@@ -6,6 +6,7 @@ from mcr.microsoft.com/dotnet/sdk:latest
 #workdir docker instruction let us create what our working directory will be in this virtual OS
 workdir /app
 
+
 #copy docker instructions let us copy the files from our computer into the docker image
 #So in this case, we are copying our csproj files and putting it in their corresponding folders
 #Also the solution file and putting it on the working directory 
