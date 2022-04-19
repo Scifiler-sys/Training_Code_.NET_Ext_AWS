@@ -3,19 +3,26 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo 'Installing dotNet 6'
       - /usr/local/bin/dotnet-install.sh --channel LTS
 
   pre_build:
     commands:
+      - echo 'Restoring dependencies and unit testing'
       - dotnet restore
       - dotnet test --no-restore
   
   build:
     commands:
+      - echo 'Building the app'
       - dotnet build
-      - echo building!
+
+  post_build:
+    commands:
+      - echo 'Creating Publish folder for the app'
+      - dotnet publish -c Release -o publish
   
 artifacts:
   files:
     - 'Dockerfile'
-    - '**/*'
+    - publish/**/*
