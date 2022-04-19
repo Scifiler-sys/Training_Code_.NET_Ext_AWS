@@ -7,7 +7,6 @@ phases:
 
   pre_build:
     commands:
-      - cd 6-DevOps/Day-3/Poke
       - dotnet restore
       - dotnet test --no-restore
   
@@ -18,5 +17,5 @@ phases:
   
 artifacts:
   files:
-    - 6-DevOps/Day-3/Poke/dockerfile
-    - 6-DevOps/Day-3/Poke/**/*
+    - 'Dockerfile'
+    - '**/*'
