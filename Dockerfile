@@ -37,7 +37,7 @@ workdir /app
 copy --from=0 /app/publish ./
 
 #CMD to set that PokeApi.dll assembly will be our default entrypoint
-entrypoint ["dotnet", "PokeApi.dll"]
+cmd ["dotnet", "PokeApi.dll"]
 
 #Expose to port 80
 expose 5000
