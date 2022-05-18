@@ -64,8 +64,13 @@
 * Since C# only understands classes and objects while SQL only understands tables, this class is the middle man that will provide the conversion tools required to convert SQL datatypes to C# datatypes
 * You still have to map things manually but at least you can grab the data and convert it into datatypes that C# understands
 ### DataSet
-* This is the actual model that SQLDataReader uses to grab a "table" in C#
-* You can think of it as a representation of a table in SQL but in C#
+* Class made to support the disconnected architecture of ADO.NET
+* Instead of SqlDataReader reading from the database to get information, DataSet will actually store information from the database into the memory of your computer
+* It will also store any special constraints in each column and the relationships between tables
+* Since it stores that information in your computer, you don't need a constant connection to the database
+* You can relate it to DVCS and CVCS
+    * Distributed Version Control System stores the application so you can have your own local repository
+    * Centralized Version Control System needs a constant connection to the remote repository to change it
 
 ## SqlDataAdapter
 * A class that we don't need to use (mostly because the other classes I stated above already uses this class to do their operations) but it is the actual class that stores information in a DataSet after grabbing information from a database
