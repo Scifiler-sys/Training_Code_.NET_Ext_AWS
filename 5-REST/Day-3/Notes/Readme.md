@@ -1,6 +1,3 @@
-# NOTE
-* This continues from last ASP.NET topics
-
 ## Routing
 * Allows ASP.NET to know where to take the user's http request
     * In our case, which controller and which action inside of the controller should the http request go to
