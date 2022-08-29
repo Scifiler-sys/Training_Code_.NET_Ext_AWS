@@ -8,6 +8,7 @@ namespace PokeUI
         AddPokemon,
         SearchPokemon
     }
+    
     /*
         Interfaces are one of the best way to implement abstraction
         Every method is implicitly abstract meaning you do not have to write any implementation details for it

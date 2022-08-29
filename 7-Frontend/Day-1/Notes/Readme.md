@@ -9,6 +9,8 @@
 * so like XML, it uses tags to define what something should be displayed and instead of calling them "tags" we also call them HTML elements
 * They are, for the most part, a basic graphical unit of something you want to display/structure on your web page
 
+# PUT NOTES FOR INLINE AND BLOCK 
+
 ## HTML attributes
 * They are used to provide extra information that the tag can use
 * Ex: img tag using src attribute to find a specific image to display
@@ -34,17 +36,14 @@
 * Inline CSS
     * Applies CSS to a single element
     * It uses the style attribute
-    * Has the highest priority
 * Internal CSS
     * Applies CSS by using the style tag inside of a HTML doc
     * Used to apply multiple css to multiple elements
-    * Second priority
 * External CSS
     * Creating an external .css file to apply css to multiple HTML docs (you can just apply it to one HTML but that kind of defeats the purpose of using an external css)
     * HTML doc must use the link tag to reference the external css
     * Used to apply multiple css to multiple elements in multiple HTML docs
         * So useful to create a universal theme of your website
-    * Least priority
 
 # Responsive Web Design
 * Making your elements not have rigid in size but changes its size based on the viewport

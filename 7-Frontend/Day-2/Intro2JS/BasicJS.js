@@ -55,6 +55,7 @@ function CreatingClassesFunction() {
         }
         
         //This is a method
+        //Method Overriding
         speak() {
             super.speak(); //To call on parent's method
             console.log("Bark! Bark!");

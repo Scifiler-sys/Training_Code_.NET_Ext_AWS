@@ -18,6 +18,7 @@
     * Ex: We have 16 gb of ram in my computer, I stated the VM to use 8 gb of ram then my computer will only have 8 gb of ram and the VM will only have 8 gb of ram and that will not change until I close the VM
 
 # What is the purpose of Docker?
+* Analogy with business and hiring more people
 * It allows developers to work in standardized environments using Containers
     * Meaning they can work with whatever development environment (Java, .NET, Ruby, etc.) they want with whatever OS (Windows, Linux, Mac, etc.) they want and still be able to give their application to everyone (as long as they have a docker engine)
 * It makes it perfect for CI/CD workflows and for scaling
